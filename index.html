@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajay Yadav — AI Search & SEO</title>
+  <meta name="description" content="Product & Technical Lead working on AI search systems, SEO/AEO frameworks and experimentation with how LLMs retrieve and cite web content." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ff6a00;
+      --bg: #0a0a0a;
+      --bg-2: #111111;
+      --bg-3: #181818;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+      --border: #222222;
+      --font: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--orange);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-family: var(--font);
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      padding: 100px 0 80px;
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span { color: var(--orange); }
+
+    .hero-subtitle {
+      font-family: var(--font);
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: #c8c8c8;
+      max-width: 540px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #000;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .btn-outline:hover { border-color: var(--muted); color: var(--text); }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: #333; }
+
+    .card-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card-grid-2 {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-title-link {
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .card-title-link:hover { color: var(--orange); }
+
+    .card-role {
+      font-family: var(--font);
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-family: var(--font);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 3px 8px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Experiments ── */
+    .experiment-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experiment-item:last-child { border-bottom: none; }
+
+    .experiment-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .experiment-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Writing ── */
+    .writing-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+    }
+
+    .writing-item:hover .writing-title { color: var(--orange); }
+
+    .writing-item:last-child { border-bottom: none; }
+
+    .writing-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .writing-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .writing-summary {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 32px 28px;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+    }
+
+    .timeline-item:first-child::before {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .timeline-period {
+      font-family: var(--font);
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .timeline-focus {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Now ── */
+    .now-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .now-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #d0d0d0;
+    }
+
+    .now-list li::before {
+      content: '→';
+      font-family: var(--font);
+      color: var(--orange);
+      font-size: 13px;
+    }
+
+    /* ── Contact ── */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px 16px;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-link:hover {
+      color: var(--text);
+      border-color: #444;
+    }
+
+    .contact-link svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-name {
+      font-family: var(--font);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-tag {
+      font-family: var(--font);
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      #hero { padding: 72px 0 60px; }
+      .card-grid-2 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <div class="container">
+      <a href="#hero" class="nav-logo">ajay.yadav</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <div class="container">
+      <p class="hero-subtitle">// product & technical lead</p>
+      <h1 class="hero-title">Ajay<br><span>Yadav</span></h1>
+      <p class="hero-desc">
+        Building systems for AI Search, SEO and Answer Engine Optimization.
+        Working at the intersection of AI systems, search technology and product development.
+      </p>
+      <div class="hero-links">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#writing" class="btn btn-outline">Read Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Current Work ── -->
+  <section id="work">
+    <div class="container">
+      <p class="section-label">Current Work</p>
+      <div class="card-grid card-grid-2">
+
+        <div class="card">
+          <div class="card-header">
+            <a href="https://flozi.io/" target="_blank" rel="noopener" class="card-title card-title-link">Flozi ↗</a>
+            <span class="card-role">Product & Technical Lead</span>
+          </div>
+          <p class="card-desc">
+            Building a platform focused on improving website visibility in AI-driven search systems
+            such as ChatGPT, Gemini and other LLM-powered discovery platforms.
+          </p>
+          <div class="tag-list">
+            <span class="tag">AI search visibility</span>
+            <span class="tag">AEO</span>
+            <span class="tag">content structure</span>
+            <span class="tag">citation patterns</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a href="https://www.neue.world/" target="_blank" rel="noopener" class="card-title card-title-link">Neue World ↗</a>
+            <span class="card-role">SEO & AEO Lead</span>
+          </div>
+          <p class="card-desc">
+            Leading SEO and AI Search Optimization initiatives. Building systems that help teams
+            execute SEO faster using AI tools and automation.
+          </p>
+          <div class="tag-list">
+            <span class="tag">AI-assisted SEO</span>
+            <span class="tag">technical SEO</span>
+            <span class="tag">AI adoption</span>
+            <span class="tag">search visibility</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Projects</p>
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-header">
+            <a href="https://flozi.io/" target="_blank" rel="noopener" class="card-title card-title-link">Flozi ↗</a>
+            <span class="card-role">Product</span>
+          </div>
+          <p class="card-desc">
+            Platform designed to analyze how websites perform in AI search systems and provide
+            guidance for improving retrievability and citations.
+          </p>
+          <div class="tag-list">
+            <span class="tag">AI search visibility</span>
+            <span class="tag">retrievability analysis</span>
+            <span class="tag">AEO diagnostics</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Embedding Similarity Analyzer</span>
+            <span class="card-role">Experiment</span>
+          </div>
+          <p class="card-desc">
+            System that analyzes semantic similarity across website pages using vector embeddings
+            and cosine similarity to detect redundancy and topic drift.
+          </p>
+          <div class="tag-list">
+            <span class="tag">vector embeddings</span>
+            <span class="tag">cosine similarity</span>
+            <span class="tag">semantic clustering</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">AI SEO Execution System</span>
+            <span class="card-role">Internal System</span>
+          </div>
+          <p class="card-desc">
+            AI-assisted workflow system for executing SEO tasks faster using modern AI tools
+            combined with traditional SEO platforms.
+          </p>
+          <div class="tag-list">
+            <span class="tag">AI automation</span>
+            <span class="tag">SEO execution</span>
+            <span class="tag">content optimization</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experiments ── -->
+  <section id="experiments">
+    <div class="container">
+      <p class="section-label">Experiments</p>
+      <div>
+
+        <div class="experiment-item">
+          <p class="experiment-title">AI Citation Testing</p>
+          <p class="experiment-desc">
+            Testing how different content structures influence whether AI systems cite a page
+            in generated answers.
+          </p>
+        </div>
+
+        <div class="experiment-item">
+          <p class="experiment-title">Retrievability vs Authority</p>
+          <p class="experiment-desc">
+            Exploring why pages retrieved by search engines are not always cited by AI systems.
+          </p>
+        </div>
+
+        <div class="experiment-item">
+          <p class="experiment-title">Semantic Content Mapping</p>
+          <p class="experiment-desc">
+            Using embeddings to visualize relationships between pages and detect content gaps.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Writing ── -->
+  <section id="writing">
+    <div class="container">
+      <p class="section-label">Writing</p>
+      <div>
+
+        <a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener" class="writing-item">
+          <div class="writing-dot"></div>
+          <div>
+            <p class="writing-title">SEO vs AEO</p>
+            <p class="writing-summary">What changes when search systems shift from ranking links to generating answers.</p>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener" class="writing-item">
+          <div class="writing-dot"></div>
+          <div>
+            <p class="writing-title">How AI Search Retrieves Web Content</p>
+            <p class="writing-summary">Explaining retrieval, ranking and synthesis in AI-powered search.</p>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener" class="writing-item">
+          <div class="writing-dot"></div>
+          <div>
+            <p class="writing-title">Retrievability in AI Search</p>
+            <p class="writing-summary">Why being retrieved is the first step before an AI system can cite your content.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ── -->
+  <section id="timeline">
+    <div class="container">
+      <p class="section-label">Timeline</p>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <p class="timeline-period">2025 — Present</p>
+          <p class="timeline-role">SEO & AEO</p>
+          <p class="timeline-focus">Working on AI search visibility and answer engine optimization.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-period">2024 — Present</p>
+          <p class="timeline-role">AI Strategy & Systems</p>
+          <p class="timeline-focus">Exploring AI adoption, internal tools and automation.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-period">2022 — 2024</p>
+          <p class="timeline-role">Project Lead</p>
+          <p class="timeline-focus">Led development of internal blockchain product initiatives.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-period">2021 — 2022</p>
+          <p class="timeline-role">Blockchain Developer</p>
+          <p class="timeline-focus">Smart contracts, decentralized systems and Web3 infrastructure.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Now ── -->
+  <section id="now">
+    <div class="container">
+      <p class="section-label">Now</p>
+      <ul class="now-list">
+        <li>Building Flozi</li>
+        <li>Experimenting with AI search retrieval</li>
+        <li>Developing AEO frameworks</li>
+        <li>Testing AI citation patterns</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <div class="contact-links">
+
+        <a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/aduttya" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+          GitHub
+        </a>
+
+        <a href="https://x.com/aduttya" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          X / Twitter
+        </a>
+
+        <a href="mailto:anjayyadaav379@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+          </svg>
+          Email
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Ajay Yadav</span>
+        <span class="footer-tag">Building systems for AI Search & SEO</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
