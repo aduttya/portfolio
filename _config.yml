@@ -6,3 +6,6 @@ permalink: /blog/:slug/
 exclude:
   - PLAN.md
   - SEO.md
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
