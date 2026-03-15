@@ -1,0 +1,8 @@
+title: Ajay Yadav
+description: AI Search, SEO & AEO
+url: https://aduttya.com
+permalink: /blog/:slug/
+
+exclude:
+  - PLAN.md
+  - SEO.md

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} — Ajay Yadav</title>
+  <meta name="description" content="{{ page.description }}" />
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+  <meta property="og:title" content="{{ page.title }} — Ajay Yadav" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:site_name" content="Ajay Yadav" />
+  {% if page.image %}<meta property="og:image" content="{{ page.image | prepend: site.url }}" />{% endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@aduttya" />
+  <meta name="twitter:creator" content="@aduttya" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+  <meta name="twitter:description" content="{{ page.description }}" />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="nav-logo">ajay.yadav</a>
+      <ul class="nav-links">
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#experiments">Experiments</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#timeline">Timeline</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <article>
+      <div class="container">
+
+        <div class="post-header">
+          <p class="post-meta">
+            <a href="/blog/" class="post-back">← Blog</a>
+            <span>{{ page.date | date: "%B %d, %Y" }}</span>
+          </p>
+          <h1 class="post-title">{{ page.title }}</h1>
+          {% if page.description %}
+          <p class="post-description">{{ page.description }}</p>
+          {% endif %}
+          {% if page.image %}
+          <img src="{{ page.image }}" alt="{{ page.title }}" class="post-thumbnail" />
+          {% endif %}
+        </div>
+
+        <div class="post-content">
+          {{ content }}
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Ajay Yadav</span>
+        <span class="footer-tag">AI Search, SEO & AEO</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Ajay Yadav</title>
+  <meta name="description" content="Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns." />
+  <link rel="canonical" href="https://aduttya.com/blog/" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aduttya.com/blog/" />
+  <meta property="og:title" content="Blog — Ajay Yadav" />
+  <meta property="og:description" content="Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns." />
+  <meta property="og:site_name" content="Ajay Yadav" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@aduttya" />
+  <meta name="twitter:creator" content="@aduttya" />
+  <meta name="twitter:title" content="Blog — Ajay Yadav" />
+  <meta name="twitter:description" content="Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns." />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="nav-logo">ajay.yadav</a>
+      <ul class="nav-links">
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#experiments">Experiments</a></li>
+        <li><a href="/blog/" class="nav-active">Blog</a></li>
+        <li><a href="/#timeline">Timeline</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="blog">
+      <div class="container">
+        <h2 class="section-label">Blog</h2>
+        <div>
+
+          {% for post in site.posts %}
+          <a href="{{ post.url }}" class="writing-item">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="writing-thumb" />
+            {% else %}
+            <div class="writing-dot"></div>
+            {% endif %}
+            <div>
+              <p class="writing-title">{{ post.title }}</p>
+              {% if post.description %}
+              <p class="writing-summary">{{ post.description }}</p>
+              {% endif %}
+              <p class="writing-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            </div>
+          </a>
+          {% endfor %}
+
+          {% if site.posts.size == 0 %}
+          <p style="color: var(--muted); font-size: 14px; padding: 20px 0;">No posts yet.</p>
+          {% endif %}
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Ajay Yadav</span>
+        <span class="footer-tag">AI Search, SEO & AEO</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
