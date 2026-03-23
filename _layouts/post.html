@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} — Ajay Yadav</title>
   <meta name="description" content="{{ page.description }}" />
-  <link rel="canonical" href="{{ page.url | prepend: site.url }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="stylesheet" href="/style.css" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:title" content="{{ page.title }} — Ajay Yadav" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:site_name" content="Ajay Yadav" />
