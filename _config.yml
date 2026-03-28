@@ -6,6 +6,8 @@ permalink: /blog/:slug/
 markdown: kramdown
 kramdown:
   input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
 
 exclude:
   - PLAN.md
