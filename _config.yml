@@ -3,6 +3,8 @@ description: AI Search, SEO & AEO
 url: https://aduttya.com
 permalink: /blog/:slug/
 
+encoding: utf-8
+
 markdown: kramdown
 kramdown:
   input: GFM
