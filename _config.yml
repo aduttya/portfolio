@@ -3,6 +3,10 @@ description: AI Search, SEO & AEO
 url: https://aduttya.com
 permalink: /blog/:slug/
 
+markdown: kramdown
+kramdown:
+  input: GFM
+
 exclude:
   - PLAN.md
   - SEO.md
