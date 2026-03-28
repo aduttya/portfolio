@@ -10,6 +10,7 @@
   --border: #222222;
   --font: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
 }
 
 html { scroll-behavior: smooth; }
@@ -289,6 +290,7 @@ nav .container {
 
 .writing-item:last-child { border-bottom: none; }
 
+
 .writing-dot {
   width: 5px;
   height: 5px;
@@ -513,6 +515,7 @@ footer {
   max-width: 580px;
 }
 
+
 .post-thumbnail {
   width: 100%;
   max-height: 400px;
@@ -524,6 +527,7 @@ footer {
 
 .post-content img {
   width: 100%;
+  max-width: 600px;
   border-radius: 6px;
   border: 1px solid var(--border);
   margin: 8px 0 24px;
@@ -615,6 +619,43 @@ footer {
   border: none;
   border-top: 1px solid var(--border);
   margin: 40px 0;
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.post-content th {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 500;
+  font-family: var(--font);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.post-content td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: #d0d0d0;
+  vertical-align: top;
+}
+
+.post-content tr:last-child td {
+  border-bottom: none;
+}
+
+.post-content td:first-child {
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 /* ── Responsive ── */
