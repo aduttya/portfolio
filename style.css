@@ -658,6 +658,13 @@ footer {
   white-space: nowrap;
 }
 
+/* ── Related Posts ── */
+.related-posts {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   section { padding: 60px 0; }

@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,11 +40,14 @@
       "https://flozi.io/"
     ],
     "knowsAbout": [
-      "AI Search",
+      "AI Search Optimization",
       "Answer Engine Optimization",
+      "Generative Engine Optimization",
+      "How to get cited in ChatGPT and AI answers",
+      "Google AI Overviews optimization",
+      "AEO vs SEO",
       "Search Engine Optimization",
-      "LLM citation patterns",
-      "content retrievability"
+      "Content optimization for AI search engines"
     ],
     "worksFor": [
       {
@@ -269,20 +274,25 @@
         <h2 class="section-label">Writing</h2>
         <div>
 
-          <a href="/blog/why-ai-wont-cite-my-content/" class="writing-item">
+          {% for post in site.posts limit:5 %}
+          <a href="{{ post.url }}" class="writing-item">
             <div class="writing-dot"></div>
             <div>
-              <p class="writing-title">Why AI Won't Cite Your Content (And What to Fix)</p>
-              <p class="writing-summary">Your page can rank and still never appear in AI answers. Here's why AI retrieves but doesn't cite — and what actually fixes it.</p>
+              <p class="writing-title">{{ post.title }}</p>
+              {% if post.description %}<p class="writing-summary">{{ post.description }}</p>{% endif %}
+              <time class="writing-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
             </div>
           </a>
+          {% endfor %}
 
+          {% if site.posts.size > 5 %}
           <a href="/blog/" class="writing-item">
             <div class="writing-dot"></div>
             <div>
               <p class="writing-title">View all posts →</p>
             </div>
           </a>
+          {% endif %}
 
         </div>
       </div>
