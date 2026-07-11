@@ -37,15 +37,19 @@
         "url": "{{ page.url | absolute_url }}",
         "author": {
           "@type": "Person",
+          "@id": "https://aduttya.com/#person",
           "name": "Ajay Yadav",
           "url": "https://aduttya.com/",
+          "image": "https://aduttya.com/assets/images/profile/ajay-yadav.png",
           "sameAs": [
             "https://linkedin.com/in/ajayyadav420",
-            "https://x.com/aduttya"
+            "https://x.com/aduttya",
+            "https://github.com/aduttya"
           ]
         },
         "publisher": {
           "@type": "Person",
+          "@id": "https://aduttya.com/#person",
           "name": "Ajay Yadav",
           "url": "https://aduttya.com/"
         },
@@ -83,19 +87,7 @@
 </head>
 <body>
 
-  <nav>
-    <div class="container">
-      <a href="/" class="nav-logo">ajay.yadav</a>
-      <ul class="nav-links">
-        <li><a href="/#work">Work</a></li>
-        <li><a href="/#projects">Projects</a></li>
-        <li><a href="/#experiments">Experiments</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#timeline">Timeline</a></li>
-        <li><a href="/#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+{% include nav.html %}
 
   <main>
     <article>
@@ -139,14 +131,7 @@
     </article>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-name">Ajay Yadav</span>
-        <span class="footer-tag">AI Search, SEO & AEO</span>
-      </div>
-    </div>
-  </footer>
+{% include footer.html %}
 
 </body>
 </html>

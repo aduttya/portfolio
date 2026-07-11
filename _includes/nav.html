@@ -1,0 +1,11 @@
+  <nav>
+    <div class="container">
+      <a href="/" class="nav-logo">ajay.yadav</a>
+      <ul class="nav-links">
+        <li><a href="/"{% if page.url == "/" %} class="nav-active"{% endif %}>Home</a></li>
+        <li><a href="/about/"{% if page.url == "/about/" %} class="nav-active"{% endif %}>About</a></li>
+        <li><a href="/work/"{% if page.url == "/work/" or page.url contains "/research" %} class="nav-active"{% endif %}>Work</a></li>
+        <li><a href="/blog/"{% if page.url contains "/blog" %} class="nav-active"{% endif %}>Blog</a></li>
+      </ul>
+    </div>
+  </nav>

@@ -16,15 +16,15 @@ This post breaks down why the dominant GEO mental models are flawed, what actual
 
 Traditional search operates on a predictable loop:
 
-```
-Search → Click → Website
-```
+1. Search
+2. Click
+3. Website
 
 LLM-driven discovery compresses or eliminates that loop:
 
-```
-Prompt → Answer → (Optional Click)
-```
+1. Prompt
+2. Answer
+3. (Optional Click)
 
 The implication isn't just that users click less. It's that the entire feedback mechanism that made SEO tractable stable SERPs, deterministic rankings, click-based attribution no longer exists. GEO practitioners are trying to optimize a probabilistic, generative system using tools built for a deterministic, retrieval-based one.
 
@@ -135,9 +135,13 @@ These are harder to attribute than rankings. They are also the only signals that
 
 ## A unified mental model
 
-```
-ICP → Problem Space → Query Simulation → Retrieval → Answer Generation → Influence → Business Outcome
-```
+1. ICP
+2. Problem Space
+3. Query Simulation
+4. Retrieval
+5. Answer Generation
+6. Influence
+7. Business Outcome
 
 The current GEO approach focuses almost entirely on the **Answer Generation → Influence** layer (visibility) while ignoring the upstream retrieval mechanics and downstream business signals. That is where the measurement gap lives and where the real optimization opportunity is.
 

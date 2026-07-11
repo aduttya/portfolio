@@ -10,6 +10,24 @@
   </url>
 
   <url>
+    <loc>https://aduttya.com/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aduttya.com/work/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aduttya.com/research/beyond-rankings/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://aduttya.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

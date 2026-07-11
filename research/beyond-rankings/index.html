@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,9 +33,16 @@
     "description": "Introduces ISIC — a four-dimensional probabilistic visibility model as the measurement framework for AI-driven discovery. Empirically validates that LLM and Google search channels direct buyers toward fundamentally different vendors.",
     "author": {
       "@type": "Person",
+      "@id": "https://aduttya.com/#person",
       "name": "Ajay Yadav",
       "url": "https://aduttya.com/",
-      "email": "anjayyadaav379@gmail.com"
+      "email": "anjayyadaav379@gmail.com",
+      "image": "https://aduttya.com/assets/images/profile/ajay-yadav.png",
+      "sameAs": [
+        "https://linkedin.com/in/ajayyadav420",
+        "https://x.com/aduttya",
+        "https://github.com/aduttya"
+      ]
     },
     "datePublished": "2026-04-01",
     "url": "https://aduttya.com/research/beyond-rankings/",
@@ -43,24 +52,13 @@
 </head>
 <body>
 
-  <!-- ── Navigation ── -->
-  <nav>
-    <div class="container">
-      <a href="/" class="nav-logo">ajay.yadav</a>
-      <ul class="nav-links">
-        <li><a href="/#work">Work</a></li>
-        <li><a href="/#projects">Projects</a></li>
-        <li><a href="/#research">Research</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+{% include nav.html %}
 
   <main>
     <section id="paper">
       <div class="container">
 
+        <p class="post-meta"><a href="/work/" class="post-back">← Work</a></p>
         <p class="hero-subtitle">// pilot study · april 2026</p>
         <h1 class="hero-title" style="font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.2;">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h1>
 
@@ -101,14 +99,7 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-name">Ajay Yadav</span>
-        <span class="footer-tag">AI Search, SEO & AEO</span>
-      </div>
-    </div>
-  </footer>
+{% include footer.html %}
 
 </body>
 </html>
