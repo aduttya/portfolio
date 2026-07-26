@@ -299,23 +299,10 @@ nav .container {
 
 .card:hover { border-color: #3a352c; transform: translateY(-2px); }
 
-.card-grid {
-  display: grid;
-  gap: 16px;
-}
-
-.card-grid-2 {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
 .outside-grid {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.outside-grid .card-title {
-  margin-bottom: 10px;
 }
 
 .outside-secondary {
@@ -326,15 +313,6 @@ nav .container {
 
 @media (max-width: 600px) {
   .outside-secondary { grid-template-columns: 1fr; }
-}
-
-.card-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 6px 12px;
-  margin-bottom: 10px;
 }
 
 .card-title {
@@ -1225,7 +1203,6 @@ footer {
   section { padding: 60px 0; }
   #about-intro + section, #work-intro + section, #blog-intro + section { padding-top: 32px; }
   #hero { padding: 72px 0 60px; }
-  .card-grid-2 { grid-template-columns: 1fr; }
   nav .container { flex-wrap: wrap; row-gap: 6px; }
   .nav-links { flex-wrap: wrap; gap: 2px; }
   .nav-links a { font-size: 11px; padding: 6px 10px; }
