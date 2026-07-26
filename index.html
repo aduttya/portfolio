@@ -5,9 +5,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
   <title>Ajay Yadav — AI Search, SEO & AEO</title>
   <meta name="description" content="Product & Technical Lead working on AI search systems, SEO/AEO frameworks and experiments exploring how LLMs retrieve and cite web content." />
   <link rel="canonical" href="https://aduttya.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Open Graph -->
@@ -74,36 +82,40 @@
     <!-- ── Hero ── -->
     <section id="hero">
       <div class="container">
-        <p class="hero-subtitle">// product & technical lead</p>
-        <h1 class="hero-title">Ajay<br><span>Yadav</span></h1>
-        <p class="hero-tagline">Building systems for AI Search &amp; SEO</p>
-        <div class="hero-identity">
-          <span>Product &amp; Technical Lead at <a href="https://flozi.io/" target="_blank" rel="noopener">Flozi</a></span>
-          <span>AI Strategy &amp; SEO/AEO at <a href="https://www.neue.world/" target="_blank" rel="noopener">Neue World</a></span>
-        </div>
-        <p class="hero-desc">
-          Working on AI search systems, SEO/AEO frameworks and experiments exploring
-          how LLMs retrieve and cite web content.
-        </p>
-        <div class="hero-links">
-          <a href="/work/" class="btn btn-primary">View Work</a>
-          <a href="/blog/" class="btn btn-outline">Read Writing</a>
+        <div class="hero-head">
+          <div class="hero-main">
+            <p class="hero-subtitle">Product &amp; Technical Lead</p>
+            <h1 class="hero-title">Ajay<br><span>Yadav</span></h1>
+            <p class="hero-tagline">I build the AI search systems most people only write about.</p>
+            <div class="hero-identity">
+              <span>Product &amp; Technical Lead at <a href="https://flozi.io/" target="_blank" rel="noopener">Flozi</a></span>
+              <span>AI Strategy &amp; SEO/AEO at <a href="https://www.neue.world/" target="_blank" rel="noopener">Neue World</a></span>
+            </div>
+            <div class="hero-links">
+              <a href="/work/" class="btn btn-primary">View Work</a>
+              <a href="/blog/" class="btn btn-outline">Read Writing</a>
+            </div>
+          </div>
+          <div class="numplate">
+            <div class="mark">AY</div>
+            <div class="cls">AI Search / SEO</div>
+          </div>
         </div>
       </div>
     </section>
+
+    <div class="container"><div class="tail-bar"></div></div>
 
     <!-- ── Current Work ── -->
     <section id="work">
       <div class="container">
         <h2 class="section-label">Current Work</h2>
-        <div class="card-grid card-grid-2">
+        <div class="headlight-pair">
 
-          <div class="card">
-            <div class="card-header">
-              <a href="https://flozi.io/" target="_blank" rel="noopener" class="card-title card-title-link">Flozi ↗</a>
-              <span class="card-role">Product & Technical Lead</span>
-            </div>
-            <p class="card-desc">
+          <a class="headlight" href="https://flozi.io/" target="_blank" rel="noopener">
+            <span class="tag-label">Product & Technical Lead</span>
+            <h3>Flozi ↗</h3>
+            <p>
               Building a platform focused on improving website visibility in AI-driven search systems
               such as ChatGPT, Gemini and other LLM-powered discovery platforms.
             </p>
@@ -113,14 +125,12 @@
               <span class="tag">content structure</span>
               <span class="tag">citation patterns</span>
             </div>
-          </div>
+          </a>
 
-          <div class="card">
-            <div class="card-header">
-              <a href="https://www.neue.world/" target="_blank" rel="noopener" class="card-title card-title-link">Neue World ↗</a>
-              <span class="card-role">SEO & AEO Lead</span>
-            </div>
-            <p class="card-desc">
+          <a class="headlight" href="https://www.neue.world/" target="_blank" rel="noopener">
+            <span class="tag-label">SEO & AEO Lead</span>
+            <h3>Neue World ↗</h3>
+            <p>
               Leading SEO and AI Search Optimization initiatives. Building systems that help teams
               execute SEO faster using AI tools and automation.
             </p>
@@ -130,7 +140,7 @@
               <span class="tag">AI adoption</span>
               <span class="tag">search visibility</span>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
@@ -140,35 +150,36 @@
     <section id="writing">
       <div class="container">
         <h2 class="section-label">Latest Writing</h2>
-        <div>
+
+        {% if site.posts.size > 0 %}
+        <div class="post-grid">
 
           {% for post in site.posts limit:3 %}
-          <a href="{{ post.url }}" class="writing-item">
-            <div class="writing-dot"></div>
-            <div>
-              <p class="writing-title">{{ post.title }}</p>
-              {% if post.description %}<p class="writing-summary">{{ post.description }}</p>{% endif %}
-              <time class="writing-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            </div>
-          </a>
+          {% include post-card.html post=post %}
           {% endfor %}
 
           {% if site.posts.size > 3 %}
-          <a href="/blog/" class="writing-item">
-            <div class="writing-dot"></div>
-            <div>
-              <p class="writing-title">View all posts →</p>
-            </div>
+          <a href="/blog/" class="post-panel post-panel--more">
+            <span class="roof"></span><span class="cut"></span>
+            <span class="inner"><h3>View all posts →</h3></span>
           </a>
           {% endif %}
 
-          {% if site.posts.size == 0 %}
-          <p style="color: var(--muted); font-size: 14px; padding: 20px 0;">No posts yet.</p>
-          {% endif %}
-
         </div>
+        {% else %}
+        <p style="color: var(--muted); font-size: 14px; padding: 20px 0;">No posts yet.</p>
+        {% endif %}
       </div>
     </section>
+
+    <div class="container">
+      <div class="tail-card">
+        <div class="bar"></div>
+        <h3>Talking AI Search &amp; AEO</h3>
+        <p>If you're figuring out how your site shows up in ChatGPT, Perplexity, or AI Overviews, I'm always up for that conversation.</p>
+        <a class="cta" href="mailto:anjayyadaav379@gmail.com">Get in touch</a>
+      </div>
+    </div>
 
   </main>
 

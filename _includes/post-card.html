@@ -1,0 +1,11 @@
+{% assign words = include.post.content | number_of_words %}
+{% assign read_time = words | divided_by: 200 %}
+{% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
+<a href="{{ include.post.url }}" class="post-panel">
+  <span class="roof"></span><span class="cut"></span>
+  <span class="inner">
+    <h3>{{ include.post.title }}</h3>
+    {% if include.post.description %}<p>{{ include.post.description }}</p>{% endif %}
+    <span class="meta">{{ include.post.date | date: "%b %d, %Y" }} · {{ read_time }} min</span>
+  </span>
+</a>

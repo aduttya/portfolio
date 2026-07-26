@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <polygon points="8,8 60,8 60,50 50,60 8,60" fill="#f97316" />
+  <polygon points="2,2 54,2 54,44 44,54 2,54" fill="#ffffff" stroke="#141414" stroke-width="4" stroke-linejoin="round" />
+  <text x="27" y="29" text-anchor="middle" dominant-baseline="central"
+        font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="24"
+        fill="#f97316" stroke="#141414" stroke-width="2" paint-order="stroke fill">AY</text>
+</svg>

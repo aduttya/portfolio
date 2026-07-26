@@ -5,24 +5,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work — Ajay Yadav</title>
-  <meta name="description" content="Projects, research and experiments in AI search visibility, retrievability and answer engine optimization." />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <title>Work — AI Search Projects, Research &amp; Experiments</title>
+  <meta name="description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
   <link rel="canonical" href="https://aduttya.com/work/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aduttya.com/work/" />
-  <meta property="og:title" content="Work — Ajay Yadav" />
-  <meta property="og:description" content="Projects, research and experiments in AI search visibility, retrievability and answer engine optimization." />
+  <meta property="og:title" content="Work — AI Search Projects, Research & Experiments" />
+  <meta property="og:description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
   <meta property="og:site_name" content="Ajay Yadav" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@aduttya" />
   <meta name="twitter:creator" content="@aduttya" />
-  <meta name="twitter:title" content="Work — Ajay Yadav" />
-  <meta name="twitter:description" content="Projects, research and experiments in AI search visibility, retrievability and answer engine optimization." />
+  <meta name="twitter:title" content="Work — AI Search Projects, Research & Experiments" />
+  <meta name="twitter:description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
 
   <!-- JSON-LD: CollectionPage + BreadcrumbList -->
   <script type="application/ld+json">
@@ -31,9 +39,9 @@
     "@graph": [
       {
         "@type": "CollectionPage",
-        "name": "Work — Ajay Yadav",
+        "name": "Work — AI Search Projects, Research & Experiments",
         "url": "https://aduttya.com/work/",
-        "description": "Projects, research and experiments in AI search visibility, retrievability and answer engine optimization.",
+        "description": "Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav.",
         "author": {
           "@type": "Person",
           "@id": "https://aduttya.com/#person",
@@ -67,11 +75,11 @@
     <!-- ── Work intro ── -->
     <section id="work-intro">
       <div class="container post-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-        <p class="post-meta"><a href="/" class="post-back">← Home</a></p>
+        <p class="post-meta"><a href="/" class="post-back"><span class="post-back-arrow">←</span> Home</a></p>
         <h1 class="post-title">Work</h1>
         <p class="post-description">
-          Products, research and experiments — all in service of the same question:
-          what makes content retrievable and citable by AI search systems.
+          I don't just study AI search, I build the products and run the experiments
+          that test what actually gets cited.
         </p>
       </div>
     </section>
@@ -80,30 +88,26 @@
     <section id="projects">
       <div class="container">
         <h2 class="section-label">Projects</h2>
-        <div class="card-grid">
-
-          <div class="card">
-            <div class="card-header">
-              <a href="https://flozi.io/" target="_blank" rel="noopener" class="card-title card-title-link">Flozi ↗</a>
-              <span class="card-role">Product</span>
-            </div>
-            <p class="card-desc">
-              Platform designed to analyze how websites perform in AI search systems and provide
-              guidance for improving retrievability and citations.
-            </p>
-            <div class="tag-list">
-              <span class="tag">AI search visibility</span>
-              <span class="tag">retrievability analysis</span>
-              <span class="tag">AEO diagnostics</span>
-            </div>
+        <div class="wing-card">
+          <span class="pin">★ Flagship project</span>
+          <a href="https://flozi.io/" target="_blank" rel="noopener" class="card-title-link">Flozi ↗</a>
+          <p>
+            Platform designed to analyze how websites perform in AI search systems and provide
+            guidance for improving retrievability and citations.
+          </p>
+          <div class="tag-list">
+            <span class="tag">AI search visibility</span>
+            <span class="tag">retrievability analysis</span>
+            <span class="tag">AEO diagnostics</span>
           </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header">
-              <span class="card-title">Embedding Similarity Analyzer</span>
-              <span class="card-role">Experiment</span>
-            </div>
-            <p class="card-desc">
+        <div class="headlight-pair">
+
+          <div class="headlight">
+            <span class="tag-label">Experiment</span>
+            <h3>Embedding Similarity Analyzer</h3>
+            <p>
               System that analyzes semantic similarity across website pages using vector embeddings
               and cosine similarity to detect redundancy and topic drift.
             </p>
@@ -114,12 +118,10 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-header">
-              <span class="card-title">AI SEO Execution System</span>
-              <span class="card-role">Internal System</span>
-            </div>
-            <p class="card-desc">
+          <div class="headlight">
+            <span class="tag-label">Internal System</span>
+            <h3>AI SEO Execution System</h3>
+            <p>
               AI-assisted workflow system for executing SEO tasks faster using modern AI tools
               combined with traditional SEO platforms.
             </p>
@@ -138,26 +140,24 @@
     <section id="research">
       <div class="container">
         <h2 class="section-label">Research</h2>
-        <div class="card-grid">
+        <div class="headlight-pair">
 
-          <div class="card">
-            <div class="card-header">
-              <a href="/research/beyond-rankings/" class="card-title card-title-link">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery ↗</a>
-              <span class="card-role">Pilot Study · GPT-4o · April 2026</span>
-            </div>
-            <p class="card-desc">
+          <a class="headlight" href="/research/beyond-rankings/">
+            <span class="tag-label">Pilot Study · GPT-4o · April 2026</span>
+            <h3>Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery ↗</h3>
+            <p>
               Introduces ISIC — a four-dimensional probabilistic visibility model (Inclusion, Stability,
               Influence, Coverage) — as the measurement framework for AI-driven discovery. Empirically
               validates that LLM and Google search channels direct buyers toward fundamentally different
               vendors, with an average Jaccard overlap of 0.03 across 27 B2B CRM queries.
             </p>
             <div class="tag-list">
-              <span class="tag">AEO measurement</span>
-              <span class="tag">probabilistic visibility</span>
-              <span class="tag">LLM citation bias</span>
-              <span class="tag">B2B discovery</span>
+              <span class="tag tag--teal">AEO measurement</span>
+              <span class="tag tag--teal">probabilistic visibility</span>
+              <span class="tag tag--teal">LLM citation bias</span>
+              <span class="tag tag--teal">B2B discovery</span>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
@@ -167,26 +167,26 @@
     <section id="experiments">
       <div class="container">
         <h2 class="section-label">Experiments</h2>
-        <div>
+        <div class="headlight-pair">
 
-          <div class="experiment-item">
-            <p class="experiment-title">AI Citation Testing</p>
-            <p class="experiment-desc">
+          <div class="headlight">
+            <h3>AI Citation Testing</h3>
+            <p>
               Testing how different content structures influence whether AI systems cite a page
               in generated answers.
             </p>
           </div>
 
-          <div class="experiment-item">
-            <p class="experiment-title">Retrievability vs Authority</p>
-            <p class="experiment-desc">
+          <div class="headlight">
+            <h3>Retrievability vs Authority</h3>
+            <p>
               Exploring why pages retrieved by search engines are not always cited by AI systems.
             </p>
           </div>
 
-          <div class="experiment-item">
-            <p class="experiment-title">Semantic Content Mapping</p>
-            <p class="experiment-desc">
+          <div class="headlight">
+            <h3>Semantic Content Mapping</h3>
+            <p>
               Using embeddings to visualize relationships between pages and detect content gaps.
             </p>
           </div>
