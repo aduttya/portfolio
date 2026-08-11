@@ -24,11 +24,17 @@ This post is the architecture. Not the code, not the scoring weights, the design
 
 The following three failure modes cover them:
 
-**The model is doing the scoring:** Ask an LLM to rank fifty pages by opportunity and it will hand you fifty numbers. Those numbers are not a calculation. They are a plausible-looking distribution. You cannot audit them, you cannot reproduce them, and if you rerun the same input tomorrow you will get a different order. Ranking is arithmetic and arithmetic does not belong in a language model.
+### The model is doing the scoring
 
-**The system is shaped like its data source, not like the question:** Most tools are built as "a Search Console tool" or "a rank-tracker tool," so every problem gets bent into the shape of the data they hold. This is the failure people notice last, because within the boundaries of that one source everything works. The boundary is where it breaks and Search Console has a hard one I will come back to in a minute.
+Ask an LLM to rank fifty pages by opportunity and it will hand you fifty numbers. Those numbers are not a calculation. They are a plausible-looking distribution. You cannot audit them, you cannot reproduce them, and if you rerun the same input tomorrow you will get a different order. Ranking is arithmetic and arithmetic does not belong in a language model.
 
-**The output is a label, not a fix:** "Intent mismatch on 14 pages." "CTR gap detected." Fine, but now a human has to open each page, work out what the actual problem is, and write the actual replacement. The tool has moved the work around rather than doing it. A category name is not a deliverable.
+### The system is shaped like its data source, not like the question
+
+Most tools are built as "a Search Console tool" or "a rank-tracker tool," so every problem gets bent into the shape of the data they hold. This is the failure people notice last, because within the boundaries of that one source everything works. The boundary is where it breaks and Search Console has a hard one I will come back to in a minute.
+
+### The output is a label, not a fix
+
+"Intent mismatch on 14 pages." "CTR gap detected." Fine, but now a human has to open each page, work out what the actual problem is, and write the actual replacement. The tool has moved the work around rather than doing it. A category name is not a deliverable.
 
 Fixing all three is mostly a matter of deciding, up front, which parts of the system are allowed to be judgment and which parts have to be arithmetic and then never letting those two mix.
 
@@ -65,18 +71,21 @@ In a well-built recommendation system, the language model does far less than peo
 
 Here is the split I use:
 
-**Mechanical, no model involved:**
-- Aggregate performance data,
-- Ranking pages against the site's own distribution,
-- computing benchmarks,
-- flagging gaps,
-- comparing expected intent against observed intent,
-- scoring opportunity,
-- merging findings into one record per page.
+### Mechanical: no model involved
+
+- Aggregating performance data
+- Ranking pages against the site's own distribution
+- Computing benchmarks
+- Flagging gaps
+- Comparing expected intent against observed intent
+- Scoring opportunity
+- Merging findings into one record per page
 
 All of it is arithmetic and lookups. All of it is reproducible, auditable, and free.
 
-**Model, narrowly scoped:** one genuine judgment call, plus drafting.
+### Model, narrowly scoped
+
+One genuine judgment call, plus drafting.
 
 The judgment call is this: *does this page's content actually mean what its incoming queries suggest it means?* That is a semantic question about meaning and audience. No formula can answer it. A page can be well-written, fast, and well-linked, and still be built for an audience entirely different from the one arriving on it and if that is true, every other optimisation is polishing the wrong thing, so it gets checked first, before anything else is scored.
 
@@ -106,21 +115,29 @@ Every finding the system emits carries a provenance tag, and the tag is visible 
 
 The reason this matters is that these four things get treated as interchangeable everywhere else in the industry, and they are not remotely equivalent. Observed behaviour is what actually happened. A modeled search volume is a vendor's estimate with error bars nobody shows you. A hypothesis is a plausible story.
 
-So: **first-party observed behaviour is always the final word on whether a real problem exists.** Third-party data never gets that authority. It has exactly three legitimate jobs, finding things your own data structurally cannot see, sanity-checking whether a guessed explanation is even plausible, and providing a directional competitive benchmark when nothing better exists. Directional. Never definitive.
+So **first-party observed behaviour is always the final word on whether a real problem exists.** Third-party data never gets that authority. It has exactly three legitimate jobs:
+
+1. Finding things your own data structurally cannot see.
+2. Sanity-checking whether a guessed explanation is even plausible.
+3. Providing a directional competitive benchmark when nothing better exists.
+
+Directional. Never definitive.
 
 There is a fifth category I had to add after testing, and it is worth flagging because it will bite anyone building for AEO. Text pulled out of a live AI Overview is not observed behaviour and not a vendor estimate. It is other websites' unverified marketing claims, laundered through a generative summary into something that reads like a neutral source. It is legitimate to record that the text was shown. It is not legitimate to treat it as guidance about what is true or what you should say. I keep it as a structural fact at most.
 
-The practical consequence: **never blend provenance tiers into one number.** A modeled whitespace opportunity and an observed conversion leak are not comparable on a single score, and forcing them onto one is false precision that hides exactly the information the user needs. Segment the output instead — content opportunities, repositioning fixes, conversion fixes, technical blockers. Each list internally comparable, each line carrying its tier.
+The practical consequence: **never blend provenance tiers into one number.** A modeled whitespace opportunity and an observed conversion leak are not comparable on a single score, and forcing them onto one is false precision that hides exactly the information the user needs. Segment the output instead, into content opportunities, repositioning fixes, conversion fixes, and technical blockers. Each list internally comparable, each line carrying its tier.
 
 ---
 
 ## Every output is a fix, not a label
 
-The rule I hold hardest: the system never hands back a category and leaves the human to work out what to do about it.
+The rule I hold hardest: the system never hands back a category and leaves the human to work out what to do about it. What that looks like in practice:
 
-If a page has a click-through gap, the output is the proposed title and meta description text — grounded in the page's actual current title, actual current meta, and the actual phrasing of the query it is meant to win. If a page is close to the first page but not on it, the output names the specific subtopics its current content does not cover and the specific internal links to add, with anchor text. If pages are competing with each other, the output names which page survives, and what unique material to preserve from the others before merging.
+- **A page has a click-through gap.** The output is the proposed title and meta description text, grounded in the page's actual current title, actual current meta, and the actual phrasing of the query it is meant to win.
+- **A page is close to the first page but not on it.** The output names the specific subtopics its current content does not cover, and the specific internal links to add, with anchor text.
+- **Pages are competing with each other.** The output names which page survives, and what unique material to preserve from the others before merging.
 
-Underneath that sits the grounding constraint, which is what stops the whole thing collapsing back into plausible nonsense: **every fix must quote the fetched facts it is revising.** The real title, the real queries, verbatim. If those facts could not be fetched — the crawl failed, the query data was too thin — the system is required to say *not computable from available data* and produce nothing.
+Underneath that sits the grounding constraint, which is what stops the whole thing collapsing back into plausible nonsense: **every fix must quote the fetched facts it is revising.** The real title, the real queries, verbatim. If those facts could not be fetched, whether because the crawl failed or because the query data was too thin, the system is required to say *not computable from available data* and produce nothing.
 
 That last part is the expensive one to build and the whole reason the output is worth anything. A model asked to write a better title with no page content will write one. It will read fine. It will be about a page that does not exist. The only defence is a hard structural rule that no fix is emitted unless its grounding facts are present.
 
@@ -130,11 +147,11 @@ An honest "not computable" beats a guessed recommendation every time. It is also
 
 ## Degrade gracefully, upgrade automatically
 
-Real sites have ragged data. A new site has no meaningful search history, a client will not always have analytics wired up, and some engagements have a budget for paid data and some do not. The wrong response is a tool that only works on well-instrumented sites. The right response is capability detection: before anything runs, establish what actually exists for this site, and route each of the five questions to the best available source for *this* run.
+Real sites have ragged data. A new site has no meaningful search history, a website owner will not always have analytics wired up, and some engagements have a budget for paid data and some do not. The wrong response is a tool that only works on well-instrumented sites. The right response is capability detection: before anything runs, establish what actually exists for this site, and route each of the five questions to the best available source for *this* run.
 
-Every question still produces an answer — a weaker answer, correctly labelled as weaker, but never a blank. And because provenance is already tagged, the upgrade path is free: when better data arrives, observed values override modeled ones on the next run and the confidence tier rises by itself. No redesign. The same five questions just get better inputs over time.
+Every question still produces an answer: a weaker answer, correctly labelled as weaker, but never a blank. And because provenance is already tagged, the upgrade path is free: when better data arrives, observed values override modeled ones on the next run and the confidence tier rises by itself. No redesign. The same five questions just get better inputs over time.
 
-The one place this genuinely strains is winnability. Assessing competitive strength across a large keyword set without paid data does not scale the way the other four fall back — you can spot-check a handful of results by hand, but you cannot do it for a thousand. It is worth naming that honestly rather than pretending the fallback is equivalent. Every architecture has one load-bearing dependency; that is mine.
+The one place this genuinely strains is winnability. Assessing competitive strength across a large keyword set without paid data does not scale the way the other four fall back. You can spot-check a handful of results by hand, but you cannot do it for a thousand. It is worth naming that honestly rather than pretending the fallback is equivalent. Every architecture has one load-bearing dependency; that is mine.
 
 ---
 
@@ -142,11 +159,17 @@ The one place this genuinely strains is winnability. Assessing competitive stren
 
 For anyone building SEO automation of their own, the three parts that took the longest to get right:
 
-**Expected purpose is assigned per page, before any performance data is looked at.** What a page is *for* does not depend on which queries happen to land on it this month, so it is never recomputed. Obvious cases go by URL pattern; ambiguous ones get a single batched model call. This is what makes the later mismatch check a plain comparison instead of another judgment call.
+### Assign expected purpose per page, before looking at performance data
 
-**Thresholds come from the site's own distribution, never from a constant.** Which pages count as high-priority, what a normal click-through rate looks like at a given position — all computed from this site's own data, segmented by position and page purpose. An industry-average benchmark carried in from another project is worse than no benchmark, because it produces confident findings about problems that do not exist. Keep an absolute floor underneath so a page cannot look important purely by being the tallest thing in an empty room.
+What a page is *for* does not depend on which queries happen to land on it this month, so it is never recomputed. Obvious cases go by URL pattern; ambiguous ones get a single batched model call. This is what makes the later mismatch check a plain comparison instead of another judgment call.
 
-**Gate the expensive steps behind the cheap ones.** The model call and the paid data call are the only parts that cost real money per page. So everything mechanical runs first, and only pages that clear a volume-and-symptom threshold get either — flagged pages only, never a sitewide sweep, and data already fetched for one purpose gets reused rather than re-fetched. One model call per page rather than a batch keeps the reasoning focused on a single page's evidence and makes the run resumable when something fails halfway through. This is not housekeeping: cost discipline is what decides whether the system is economically viable to run every month, and a system you can only afford to run once is a consulting deliverable, not automation.
+### Take thresholds from the site's own distribution, never a constant
+
+Which pages count as high-priority, and what a normal click-through rate looks like at a given position, are both computed from this site's own data, segmented by position and page purpose. An industry-average benchmark carried in from another project is worse than no benchmark, because it produces confident findings about problems that do not exist. Keep an absolute floor underneath so a page cannot look important purely by being the tallest thing in an empty room.
+
+### Gate the expensive steps behind the cheap ones
+
+The model call and the paid data call are the only parts that cost real money per page. So everything mechanical runs first, and only pages that clear a volume-and-symptom threshold get either: flagged pages only, never a sitewide sweep, and data already fetched for one purpose gets reused rather than re-fetched. One model call per page rather than a batch keeps the reasoning focused on a single page's evidence and makes the run resumable when something fails halfway through. This is not housekeeping: cost discipline is what decides whether the system is economically viable to run every month, and a system you can only afford to run once is a consulting deliverable, not automation.
 
 ---
 
@@ -156,9 +179,9 @@ Here is the question I would ask of any AI SEO tool, including mine.
 
 **If you removed the language model entirely, would anything be left?**
 
-If the answer is no — if the model is what finds the opportunities, ranks them, and decides they are worth doing — then what you have is a system that generates plausible SEO-shaped text, and its accuracy is not something you or anyone else can measure.
+If the answer is no, if the model is what finds the opportunities, ranks them, and decides they are worth doing, then what you have is a system that generates plausible SEO-shaped text, and its accuracy is not something you or anyone else can measure.
 
-If the answer is yes — if underneath there is a set of grounded findings, computed mechanically, tagged with where they came from, and the model's job is the narrow interpretive work and the writing — then you have a system whose recommendations can be checked, argued with, and proven wrong. Which is the only kind worth acting on.
+If the answer is yes, if underneath there is a set of grounded findings, computed mechanically, tagged with where they came from, and the model's job is the narrow interpretive work and the writing, then you have a system whose recommendations can be checked, argued with, and proven wrong. Which is the only kind worth acting on.
 
 The AI is not the product. The grounding is the product. The AI is how you get from a grounded finding to something a person can actually go and do on Monday.
 
