@@ -795,12 +795,16 @@ footer {
   padding: 0;
 }
 
+/* Scoped to .post-content so it outranks the `.post-content p` body rule. */
+.post-content .img-caption,
 .img-caption {
   font-family: var(--font);
   font-size: 12px;
+  line-height: 1.6;
   color: var(--muted);
   text-align: center;
-  margin: -16px 0 24px;
+  max-width: 600px;
+  margin: -16px auto 32px;
   letter-spacing: 0.02em;
 }
 
