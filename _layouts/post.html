@@ -16,20 +16,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 
+  {% comment %}
+    og_image feeds the social card only; image renders as a visible hero
+    thumbnail as well. og_image wins when both are set.
+  {% endcomment %}
+  {% assign og_image = page.og_image | default: page.image %}
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:title" content="{{ page.title }} — Ajay Yadav" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:site_name" content="Ajay Yadav" />
-  {% if page.image %}<meta property="og:image" content="{{ page.image | prepend: site.url }}" />{% endif %}
+  <meta property="og:locale" content="en_US" />
+  {% if og_image %}
+  <meta property="og:image" content="{{ og_image | prepend: site.url }}" />
+  <meta property="og:image:alt" content="{{ page.og_image_alt | default: page.title | escape }}" />
+  {% endif %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+  <meta property="article:author" content="https://aduttya.com/about/" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="{% if og_image %}summary_large_image{% else %}summary{% endif %}" />
   <meta name="twitter:site" content="@aduttya" />
   <meta name="twitter:creator" content="@aduttya" />
   <meta name="twitter:title" content="{{ page.title }}" />
   <meta name="twitter:description" content="{{ page.description }}" />
+  {% if og_image %}
+  <meta name="twitter:image" content="{{ og_image | prepend: site.url }}" />
+  <meta name="twitter:image:alt" content="{{ page.og_image_alt | default: page.title | escape }}" />
+  {% endif %}
 
   <!-- JSON-LD: BlogPosting + BreadcrumbList -->
   <script type="application/ld+json">
