@@ -18,21 +18,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://aduttya.com/about/" />
-  <meta property="og:title" content="About — Ajay Yadav, Product & Growth in AI Search" />
-  <meta property="og:description" content="From blockchain development to building AI search, SEO, and AEO systems. Ajay Yadav's background, current work at Flozi and Neue World, and timeline." />
-  <meta property="og:site_name" content="Ajay Yadav" />
-  <meta property="og:image" content="https://aduttya.com/assets/images/profile/ajay-yadav.png" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@aduttya" />
-  <meta name="twitter:creator" content="@aduttya" />
-  <meta name="twitter:title" content="About — Ajay Yadav, Product & Growth in AI Search" />
-  <meta name="twitter:description" content="From blockchain development to building AI search, SEO, and AEO systems. Ajay Yadav's background, current work at Flozi and Neue World, and timeline." />
-  <meta name="twitter:image" content="https://aduttya.com/assets/images/profile/ajay-yadav.png" />
+{% include head-meta.html
+     type="profile"
+     url="https://aduttya.com/about/"
+     title="About — Ajay Yadav, Product & Growth in AI Search"
+     description="From blockchain development to building AI search, SEO, and AEO systems. Ajay Yadav's background, current work at Flozi and Neue World, and timeline."
+     image="/assets/images/og/about.png"
+     image_alt="From blockchain to AI search — Ajay Yadav's background and current work at Flozi and Neue World"
+     image_width="1200"
+     image_height="630" %}
 
   <!-- JSON-LD: AboutPage + BreadcrumbList -->
   <script type="application/ld+json">

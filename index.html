@@ -18,19 +18,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aduttya.com/" />
-  <meta property="og:title" content="Ajay Yadav — AI Search, SEO & AEO" />
-  <meta property="og:description" content="Product & Technical Lead working on AI search systems, SEO/AEO frameworks and experiments exploring how LLMs retrieve and cite web content." />
-  <meta property="og:site_name" content="Ajay Yadav" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@aduttya" />
-  <meta name="twitter:creator" content="@aduttya" />
-  <meta name="twitter:title" content="Ajay Yadav — AI Search, SEO & AEO" />
-  <meta name="twitter:description" content="Product & Technical Lead working on AI search systems, SEO/AEO frameworks and experiments exploring how LLMs retrieve and cite web content." />
+{% include head-meta.html
+     type="website"
+     url="https://aduttya.com/"
+     title="Ajay Yadav — AI Search, SEO & AEO"
+     description="Product & Technical Lead working on AI search systems, SEO/AEO frameworks and experiments exploring how LLMs retrieve and cite web content."
+     image="/assets/images/og/home.png"
+     image_alt="Ajay Yadav — Product and Technical Lead working on AI search systems, SEO and AEO frameworks"
+     image_width="1200"
+     image_height="630" %}
 
   <!-- JSON-LD: Person -->
   <script type="application/ld+json">

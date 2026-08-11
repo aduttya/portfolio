@@ -18,19 +18,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aduttya.com/work/" />
-  <meta property="og:title" content="Work — AI Search Projects, Research & Experiments" />
-  <meta property="og:description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
-  <meta property="og:site_name" content="Ajay Yadav" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@aduttya" />
-  <meta name="twitter:creator" content="@aduttya" />
-  <meta name="twitter:title" content="Work — AI Search Projects, Research & Experiments" />
-  <meta name="twitter:description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
+{% include head-meta.html
+     type="website"
+     url="https://aduttya.com/work/"
+     title="Work — AI Search Projects, Research & Experiments"
+     description="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav."
+     image="/assets/images/og/work.png"
+     image_alt="AI search projects, research and experiments in search visibility, retrievability and answer engine optimization"
+     image_width="1200"
+     image_height="630" %}
 
   <!-- JSON-LD: CollectionPage + BreadcrumbList -->
   <script type="application/ld+json">
