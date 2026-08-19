@@ -795,6 +795,25 @@ footer {
   padding: 0;
 }
 
+.post-content video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  aspect-ratio: 576 / 1280;
+  border: 1px solid var(--border);
+  margin: 8px auto 24px;
+  background: #000;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .post-content video {
+    max-height: 420px;
+  }
+}
+
 /* Scoped to .post-content so it outranks the `.post-content p` body rule. */
 .post-content .img-caption,
 .img-caption {
