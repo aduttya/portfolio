@@ -16,6 +16,7 @@ kramdown:
 exclude:
   - PLAN.md
   - SEO.md
+  - SEO-CHANGELOG.md
   - assets/images/posts/README.md
   - vendor/
   - Gemfile
