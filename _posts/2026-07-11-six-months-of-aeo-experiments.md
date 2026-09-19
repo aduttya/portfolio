@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "Six Months of AEO Experiments: What Actually Gets You Cited"
-description: "Six months of hands-on AEO testing at Flozi. What works, what doesn't, and why most advice skips the one variable that determines everything: whether you can win the gap at all."
+seo_title: "What Six Months of AEO Tests Taught Me"
+description: "Six months of hands-on AEO testing at Flozi. What works, what doesn't, and why most advice skips whether you can win the gap at all."
+og_image: /assets/images/posts/og-six-months-aeo-experiments.png
+og_image_alt: "Six Months of AEO Experiments"
 ---
 
 **From the last six months I have been doing** testing what actually gets a page cited in ChatGPT, Google AI Overviews, and Perplexity, versus what the AEO industry insists you should be doing. The two lists don't overlap much.

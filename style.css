@@ -47,6 +47,34 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   --glow-orange: 0 0 14px rgba(249, 115, 22, .45);
   --glow-drl: 0 0 14px rgba(255, 255, 255, .5), 0 0 36px rgba(255, 240, 200, .18);
   --glow-tail: 0 0 18px rgba(255, 45, 0, .5), 0 0 50px rgba(255, 45, 0, .2);
+
+  /* ── Semantic tier ──────────────────────────────────────────
+     Named roles pointing at the raw values above. Reach for these
+     when styling; add a new one rather than typing a hex inline. */
+
+  /* Text ramp, lightest → faintest */
+  --text-lead: #d8d2c6;        /* hero tagline, lead paragraphs */
+  --text-prose: #d0cbc2;       /* long-form post body, lists, tables */
+  --text-faint: #6b6459;       /* eyebrow labels */
+  --text-dim: #5c5648;         /* footer fine print */
+  --ink-muted: #4a453d;        /* secondary text on light panels */
+
+  /* Borders */
+  --border-hover: #3a352c;     /* card / headlight hover */
+  --border-on-light: #e2ddd4;  /* border on white panels */
+  --border-led: #1d1d1d;       /* LED board divider */
+  --border-lip: #3d3d3d;       /* lip highlight edge */
+
+  /* Surfaces */
+  --black: #000;               /* video embed backdrop */
+  --surface-led: #050505;      /* LED board ground */
+  --led-label: #666;           /* LED board label text */
+
+  /* Composed gradients */
+  --grad-card: linear-gradient(160deg, var(--bg-2), #0e0c0a);
+  --grad-headlight: linear-gradient(160deg, #181410, #0b0a08);
+  --grad-tail-card: linear-gradient(160deg, #181310, #0a0808);
+  --grad-lip: linear-gradient(180deg, #2c2c2c, #101010);
 }
 
 html { scroll-behavior: smooth; }
@@ -184,7 +212,7 @@ nav .container {
 
 .hero-tagline {
   font-size: 17px;
-  color: #d8d2c6;
+  color: var(--text-lead);
   margin-bottom: 16px;
   font-weight: 500;
 }
@@ -243,7 +271,7 @@ nav .container {
   font-family: var(--font);
   font-size: 0.55rem;
   letter-spacing: 0.24em;
-  color: #6b6459;
+  color: var(--text-faint);
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 4px;
@@ -289,7 +317,7 @@ nav .container {
 /* ── Cards ── */
 .card {
   min-width: 0;
-  background: linear-gradient(160deg, var(--bg-2), #0e0c0a);
+  background: var(--grad-card);
   border: 1px solid var(--border);
   border-top: 2px solid var(--orange-deep);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
@@ -297,7 +325,7 @@ nav .container {
   transition: border-color 0.2s, transform 0.2s;
 }
 
-.card:hover { border-color: #3a352c; transform: translateY(-2px); }
+.card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
 
 .outside-grid {
   display: flex;
@@ -384,7 +412,7 @@ nav .container {
   display: block;
   color: var(--text);
   text-decoration: none;
-  background: linear-gradient(160deg, #181410, #0b0a08);
+  background: var(--grad-headlight);
   border: 1px solid var(--border);
   padding: 40px 24px 24px;
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
@@ -405,7 +433,7 @@ nav .container {
 
 .headlight:hover, .headlight:focus-visible {
   transform: translateY(-4px);
-  border-color: #3a352c;
+  border-color: var(--border-hover);
   box-shadow: 0 16px 44px rgba(255, 200, 120, .12);
   outline: none;
 }
@@ -560,12 +588,12 @@ footer {
 .footer-copyright {
   font-family: var(--font);
   font-size: 11px;
-  color: #5c5648;
+  color: var(--text-dim);
   letter-spacing: 0.03em;
 }
 
 .footer-copyright a {
-  color: #5c5648;
+  color: var(--text-dim);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -784,7 +812,7 @@ footer {
   max-width: 600px;
   border: 1px solid var(--border);
   margin: 8px auto 24px;
-  background: #ffffff;
+  background: var(--white-pure);
   padding: 24px;
   box-sizing: border-box;
 }
@@ -804,7 +832,7 @@ footer {
   aspect-ratio: 576 / 1280;
   border: 1px solid var(--border);
   margin: 8px auto 24px;
-  background: #000;
+  background: var(--black);
   box-sizing: border-box;
 }
 
@@ -848,7 +876,7 @@ footer {
 
 .post-content p {
   font-size: 15px;
-  color: #d0cbc2;
+  color: var(--text-prose);
   line-height: 1.75;
   margin-bottom: 20px;
 }
@@ -863,7 +891,7 @@ footer {
 .post-content ul,
 .post-content ol {
   margin: 0 0 20px 20px;
-  color: #d0cbc2;
+  color: var(--text-prose);
 }
 
 .post-content li {
@@ -896,7 +924,7 @@ footer {
   background: none;
   border: none;
   padding: 0;
-  color: #d0cbc2;
+  color: var(--text-prose);
   font-size: 13px;
   font-family: 'SF Mono', 'Fira Code', monospace;
 }
@@ -937,7 +965,7 @@ footer {
 .post-content td {
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
-  color: #d0cbc2;
+  color: var(--text-prose);
   vertical-align: top;
 }
 
@@ -962,7 +990,7 @@ footer {
 .wing-card {
   position: relative;
   margin: 30px 0 24px;
-  background: linear-gradient(160deg, var(--bg-2), #0e0c0a);
+  background: var(--grad-card);
   border: 1px solid var(--border);
   padding: 30px 26px 26px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut-lg)), calc(100% - var(--cut-lg)) 100%, 0 100%);
@@ -975,8 +1003,8 @@ footer {
   left: 8%;
   right: 8%;
   height: 11px;
-  background: linear-gradient(180deg, #2c2c2c, #101010);
-  border-top: 2px solid #3d3d3d;
+  background: var(--grad-lip);
+  border-top: 2px solid var(--border-lip);
   clip-path: polygon(0 100%, 4% 0, 96% 0, 100% 100%);
 }
 
@@ -1009,7 +1037,7 @@ footer {
 
 .step-card {
   position: relative;
-  background: linear-gradient(160deg, var(--bg-2), #0e0c0a);
+  background: var(--grad-card);
   border: 1px solid var(--border);
   padding: 18px 22px 18px 92px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
@@ -1047,7 +1075,7 @@ footer {
 
 /* ── LED board (dashboard metrics) ── */
 .led-board {
-  background: #050505;
+  background: var(--surface-led);
   border: 1px solid var(--border);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, .9);
   padding: 18px 22px;
@@ -1058,7 +1086,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #1d1d1d;
+  border-bottom: 1px solid var(--border-led);
   padding-bottom: 10px;
   margin-bottom: 12px;
 }
@@ -1069,7 +1097,7 @@ footer {
   font-size: 0.64rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #666;
+  color: var(--led-label);
 }
 
 .led-board .head .live {
@@ -1089,7 +1117,7 @@ footer {
   font-family: var(--font);
   font-weight: 700;
   font-size: 1.6rem;
-  color: #fff;
+  color: var(--white-pure);
   text-shadow: 0 0 12px rgba(255, 255, 255, .5);
   display: block;
   line-height: 1.1;
@@ -1109,7 +1137,7 @@ footer {
 
 /* ── Tail card (status / soft CTA) ── */
 .tail-card {
-  background: linear-gradient(160deg, #181310, #0a0808);
+  background: var(--grad-tail-card);
   border: 1px solid var(--border);
   padding: 24px 26px;
   clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--cut));
@@ -1167,7 +1195,7 @@ footer {
 .post-panel {
   background: var(--white-pure);
   color: var(--ink);
-  border: 1px solid #e2ddd4;
+  border: 1px solid var(--border-on-light);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
   box-shadow: 0 14px 34px rgba(10, 8, 4, .35);
   display: flex;
@@ -1204,7 +1232,7 @@ footer {
   color: var(--ink);
 }
 
-.post-panel p { font-size: 0.86rem; color: #4a453d; margin-top: 8px; font-weight: 400; flex: 1; }
+.post-panel p { font-size: 0.86rem; color: var(--ink-muted); margin-top: 8px; font-weight: 400; flex: 1; }
 
 .post-panel .meta {
   margin-top: 14px;

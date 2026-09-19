@@ -6,17 +6,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
+  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
   <title>Work — AI Search Projects, Research &amp; Experiments</title>
   <meta name="description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
   <link rel="canonical" href="https://aduttya.com/work/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="website"
@@ -65,136 +64,97 @@
 </head>
 <body>
 
-{% include nav.html %}
+{% include nav-warm.html %}
 
-  <main>
+<main>
 
-    <!-- ── Work intro ── -->
-    <section id="work-intro">
-      <div class="container post-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-        <p class="post-meta"><a href="/" class="post-back"><span class="post-back-arrow">←</span> Home</a></p>
-        <h1 class="post-title">Work</h1>
-        <p class="post-description">
-          I don't just study AI search, I build the products and run the experiments
-          that test what actually gets cited.
-        </p>
+  <!-- ── Intro ── -->
+  <section class="sheet">
+    <div class="panel p-ink c-12 settle">
+      <span class="shape circle sh-orange" aria-hidden="true" style="width:34%;padding-bottom:34%;right:-8%;top:-16%"></span>
+      <h1 class="display h-xl">Work</h1>
+      <p class="lede lede--wide">I don't just study AI search, I build the products and run the experiments that test what actually gets cited.</p>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section class="sheet">
+    <div class="strip"><h2 class="display h-lg">Projects</h2></div>
+
+    <a class="panel p-orange card-link c-12 settle" href="https://flozi.io/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">★ Flagship project</span>
+      <h3 class="display h-md">Flozi</h3>
+      <p class="meta meta--sub">Platform designed to analyze how websites perform in AI search systems and provide guidance for improving retrievability and citations.</p>
+      <div class="tags">
+        <span class="tag">AI search visibility</span>
+        <span class="tag">retrievability analysis</span>
+        <span class="tag">AEO diagnostics</span>
       </div>
-    </section>
+    </a>
 
-    <!-- ── Projects ── -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-label">Projects</h2>
-        <div class="wing-card">
-          <span class="pin">★ Flagship project</span>
-          <a href="https://flozi.io/" target="_blank" rel="noopener" class="card-title-link">Flozi ↗</a>
-          <p>
-            Platform designed to analyze how websites perform in AI search systems and provide
-            guidance for improving retrievability and citations.
-          </p>
-          <div class="tag-list">
-            <span class="tag">AI search visibility</span>
-            <span class="tag">retrievability analysis</span>
-            <span class="tag">AEO diagnostics</span>
-          </div>
-        </div>
-
-        <div class="headlight-pair">
-
-          <div class="headlight">
-            <span class="tag-label">Experiment</span>
-            <h3>Embedding Similarity Analyzer</h3>
-            <p>
-              System that analyzes semantic similarity across website pages using vector embeddings
-              and cosine similarity to detect redundancy and topic drift.
-            </p>
-            <div class="tag-list">
-              <span class="tag">vector embeddings</span>
-              <span class="tag">cosine similarity</span>
-              <span class="tag">semantic clustering</span>
-            </div>
-          </div>
-
-          <div class="headlight">
-            <span class="tag-label">Internal System</span>
-            <h3>AI SEO Execution System</h3>
-            <p>
-              AI-assisted workflow system for executing SEO tasks faster using modern AI tools
-              combined with traditional SEO platforms.
-            </p>
-            <div class="tag-list">
-              <span class="tag">AI automation</span>
-              <span class="tag">SEO execution</span>
-              <span class="tag">content optimization</span>
-            </div>
-          </div>
-
-        </div>
+    <div class="panel p-panel c-6 settle">
+      <span class="meta meta--solid">Experiment</span>
+      <h3 class="display h-md">Embedding Similarity Analyzer</h3>
+      <p class="meta meta--sub">System that analyzes semantic similarity across website pages using vector embeddings and cosine similarity to detect redundancy and topic drift.</p>
+      <div class="tags">
+        <span class="tag">vector embeddings</span>
+        <span class="tag">cosine similarity</span>
+        <span class="tag">semantic clustering</span>
       </div>
-    </section>
+    </div>
 
-    <!-- ── Research ── -->
-    <section id="research">
-      <div class="container">
-        <h2 class="section-label">Research</h2>
-        <div class="headlight-pair">
-
-          <a class="headlight" href="/research/beyond-rankings/">
-            <span class="tag-label">Pilot Study · GPT-4o · April 2026</span>
-            <h3>Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery ↗</h3>
-            <p>
-              Introduces ISIC — a four-dimensional probabilistic visibility model (Inclusion, Stability,
-              Influence, Coverage) — as the measurement framework for AI-driven discovery. Empirically
-              validates that LLM and Google search channels direct buyers toward fundamentally different
-              vendors, with an average Jaccard overlap of 0.03 across 27 B2B CRM queries.
-            </p>
-            <div class="tag-list">
-              <span class="tag tag--teal">AEO measurement</span>
-              <span class="tag tag--teal">probabilistic visibility</span>
-              <span class="tag tag--teal">LLM citation bias</span>
-              <span class="tag tag--teal">B2B discovery</span>
-            </div>
-          </a>
-
-        </div>
+    <div class="panel p-panel c-6 settle">
+      <span class="meta meta--solid">Internal System</span>
+      <h3 class="display h-md">AI SEO Execution System</h3>
+      <p class="meta meta--sub">AI-assisted workflow system for executing SEO tasks faster using modern AI tools combined with traditional SEO platforms.</p>
+      <div class="tags">
+        <span class="tag">AI automation</span>
+        <span class="tag">SEO execution</span>
+        <span class="tag">content optimization</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ── Experiments ── -->
-    <section id="experiments">
-      <div class="container">
-        <h2 class="section-label">Experiments</h2>
-        <div class="headlight-pair">
+  <!-- ── Research ── -->
+  <section class="sheet">
+    <div class="strip"><h2 class="display h-lg">Research</h2></div>
 
-          <div class="headlight">
-            <h3>AI Citation Testing</h3>
-            <p>
-              Testing how different content structures influence whether AI systems cite a page
-              in generated answers.
-            </p>
-          </div>
-
-          <div class="headlight">
-            <h3>Retrievability vs Authority</h3>
-            <p>
-              Exploring why pages retrieved by search engines are not always cited by AI systems.
-            </p>
-          </div>
-
-          <div class="headlight">
-            <h3>Semantic Content Mapping</h3>
-            <p>
-              Using embeddings to visualize relationships between pages and detect content gaps.
-            </p>
-          </div>
-
-        </div>
+    <a class="panel p-ink card-link c-12 settle" href="/research/beyond-rankings/">
+      <span class="meta meta--solid">Pilot Study &middot; GPT-4o &middot; April 2026</span>
+      <h3 class="display h-md">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h3>
+      <p class="meta meta--sub">Introduces ISIC, a four-dimensional probabilistic visibility model (Inclusion, Stability, Influence, Coverage), as the measurement framework for AI-driven discovery. Empirically validates that LLM and Google search channels direct buyers toward fundamentally different vendors, with an average Jaccard overlap of 0.03 across 27 B2B CRM queries.</p>
+      <div class="tags">
+        <span class="tag">AEO measurement</span>
+        <span class="tag">probabilistic visibility</span>
+        <span class="tag">LLM citation bias</span>
+        <span class="tag">B2B discovery</span>
       </div>
-    </section>
+    </a>
+  </section>
 
-  </main>
+  <!-- ── Experiments ── -->
+  <section class="sheet">
+    <div class="strip"><h2 class="display h-lg">Experiments</h2></div>
 
-{% include footer.html %}
+    <div class="panel p-panel c-4 settle">
+      <h3 class="display h-md">AI Citation Testing</h3>
+      <p class="meta meta--sub">Testing how different content structures influence whether AI systems cite a page in generated answers.</p>
+    </div>
+
+    <div class="panel p-panel c-4 settle">
+      <h3 class="display h-md">Retrievability vs Authority</h3>
+      <p class="meta meta--sub">Exploring why pages retrieved by search engines are not always cited by AI systems.</p>
+    </div>
+
+    <div class="panel p-panel c-4 settle">
+      <h3 class="display h-md">Semantic Content Mapping</h3>
+      <p class="meta meta--sub">Using embeddings to visualize relationships between pages and detect content gaps.</p>
+    </div>
+  </section>
+
+</main>
+
+{% include footer-warm.html %}
 
 </body>
 </html>

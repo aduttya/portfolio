@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "AEO Tracking Tells You If You're Winning, Not How to Win"
+seo_title: "AEO Tracking Tells You If You Win, Not How"
 description: "Most AEO tracking tools are optimizing against unknown demand. Here's why I use GSC and Bing as the decision layer, and AEO tracking only to verify."
+og_image: /assets/images/posts/og-aeo-tracking-verification.png
+og_image_alt: "AEO Tracking Tells You If You're Winning, Not How to Win"
 ---
 
 **Every AEO tracking tool on the market works roughly the same way.** Feed it business information, website pages, and industry context. It generates a list of prompts, or you write your own. It tracks how those prompts perform across ChatGPT, Google AI, Perplexity. You optimize based on the results.

@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "I Tried to Make GT3 Easier to Understand Then Google Started Finding Apex Insights"
-description: "I built Apex Insights as a GT3 knowledge base, not another motorsport blog. A few weeks in, a brand-new site with no backlinks started showing up across teams, championships, and races."
+seo_title: "How Apex Insights Got Found by Google"
+description: "I built Apex Insights as a GT3 knowledge base, not another motorsport blog. Within weeks a new site with no backlinks was showing up across teams and races."
+og_image: /assets/images/posts/og-apex-insights-gt3.png
+og_image_alt: "I Tried to Make GT3 Easier to Understand, Then Google Started Finding Apex Insights"
 ---
-<!-- TODO: add og_image + og_image_alt once a social card is generated for this post -->
 
 ## I was trying to understand GT3
 

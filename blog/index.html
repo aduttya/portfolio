@@ -6,23 +6,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
+  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
   <title>Blog — Ajay Yadav</title>
-  <meta name="description" content="Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns." />
+  <meta name="description" content="Experiments and field notes on AI search, SEO, AEO and LLM citation patterns, from building and testing visibility systems." />
   <link rel="canonical" href="https://aduttya.com/blog/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="website"
      url="https://aduttya.com/blog/"
      title="Blog — Ajay Yadav"
-     description="Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns."
+     description="Experiments and field notes on AI search, SEO, AEO and LLM citation patterns, from building and testing visibility systems."
      image="/assets/images/og/blog.png"
      image_alt="Writing on AI search and answer engines — experiments and field notes on AI search, SEO, AEO and LLM citation patterns"
      image_width="1200"
@@ -65,39 +64,45 @@
 </head>
 <body>
 
-{% include nav.html %}
+{% include nav-warm.html %}
 
-  <main>
+<main>
 
-    <!-- ── Blog intro ── -->
-    <section id="blog-intro">
-      <div class="container post-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-        <p class="post-meta"><a href="/" class="post-back"><span class="post-back-arrow">←</span> Home</a></p>
-        <h1 class="post-title">Blog</h1>
-        <p class="post-description">
-          Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns.
-        </p>
-      </div>
-    </section>
+  <!-- ── Intro ── -->
+  <section class="sheet">
+    <div class="panel p-ink c-12 settle">
+      <h1 class="display h-xl">Blog</h1>
+      <p class="lede lede--wide">Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns.</p>
+    </div>
+  </section>
 
-    <section id="blog">
-      <div class="container">
-
-        {% if site.posts.size > 0 %}
-        <div class="post-grid">
-          {% for post in site.posts %}
-          {% include post-card.html post=post %}
-          {% endfor %}
+  <!-- ── Posts ── -->
+  <section class="sheet">
+    {% if site.posts.size > 0 %}
+    <div class="panel p-panel posts">
+      {% for post in site.posts %}
+      {%- assign words = post.content | number_of_words -%}
+      {%- assign read_time = words | divided_by: 200 -%}
+      {%- if read_time == 0 %}{% assign read_time = 1 %}{% endif -%}
+      <a class="post" href="{{ post.url }}">
+        <div class="post-main">
+          <h3 class="display h-sm">{{ post.title }}</h3>
+          {% if post.description %}<p>{{ post.description }}</p>{% endif %}
         </div>
-        {% else %}
-        <p style="color: var(--muted); font-size: 14px; padding: 20px 0;">No posts yet.</p>
-        {% endif %}
+        <span class="meta">{{ post.date | date: "%-d %b %Y" }} &middot; {{ read_time }} min</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="panel p-panel c-12">
+      <p class="meta">No posts yet.</p>
+    </div>
+    {% endif %}
+  </section>
 
-      </div>
-    </section>
-  </main>
+</main>
 
-{% include footer.html %}
+{% include footer-warm.html %}
 
 </body>
 </html>

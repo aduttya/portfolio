@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "The AEO/SEO Optimization Categories I Actually Check Before I Trust an AI Recommendation"
-description: "Nine categories cover almost every AEO/SEO fix. Here's why I still run every AI-generated recommendation through them by hand — including a story about 150 internal-link suggestions, only 20 of which held up."
+seo_title: "AEO/SEO Checks I Run Before Trusting AI Advice"
+description: "Nine categories cover almost every AEO/SEO fix. Why I still run every AI recommendation through them by hand, including 150 link suggestions where 20 held up."
+og_image: /assets/images/posts/og-aeo-optimization-categories.png
+og_image_alt: "Categories I Check Before Trusting an AI Recommendation"
 ---
 
 **You've probably seen the pattern by now.** Feed Claude your GSC data, ask it to churn through the numbers, get back a list of recommendations, apply them. It's become a default workflow for a lot of AEO/SEO work, and on the surface it looks fantastic. My experience running that workflow has been consistent enough that I want to share it before getting into what I actually check for.

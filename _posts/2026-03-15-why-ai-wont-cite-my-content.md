@@ -2,6 +2,8 @@
 layout: post
 title: "Why AI Won't Cite Your Content (And What to Fix)"
 description: "Your page can rank and still never appear in AI answers. Here's why AI retrieves but doesn't cite and what actually fixes it."
+og_image: /assets/images/posts/og-why-ai-wont-cite.png
+og_image_alt: "Why AI Won't Cite Your Content (And What to Fix)"
 ---
 
 Your page ranks. AI crawlers visit it but when someone asks ChatGPT or Perplexity a question you should own, your content never appears.

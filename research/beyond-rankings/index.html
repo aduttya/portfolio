@@ -6,15 +6,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
+  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
   <title>Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery — Ajay Yadav</title>
   <meta name="description" content="A pilot study introducing ISIC — a four-dimensional probabilistic visibility model for measuring vendor visibility in AI-driven discovery systems." />
   <link rel="canonical" href="https://aduttya.com/research/beyond-rankings/" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="article"
@@ -57,64 +58,59 @@
 </head>
 <body>
 
-{% include nav.html %}
+{% include nav-warm.html %}
 
-  <main>
-    <section id="paper">
-      <div class="container">
+<main>
 
-        <p class="post-meta"><a href="/work/" class="post-back"><span class="post-back-arrow">←</span> Work</a></p>
-        <p class="hero-subtitle">// pilot study · april 2026</p>
-        <h1 class="hero-title" style="font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.2;">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h1>
-
-        <p style="color: var(--muted); font-family: var(--font-mono); font-size: 0.85rem; margin: 1rem 0 2rem;">
-          Ajay Yadav &nbsp;·&nbsp; <a href="mailto:anjayyadaav379@gmail.com" style="color: var(--muted);">anjayyadaav379@gmail.com</a>
-        </p>
-
-        <a href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-bottom: 3rem; display: inline-block;">Download PDF ↗</a>
-
-        <div class="card" style="margin-bottom: 2rem;">
-          <p class="card-role" style="margin-bottom: 0.75rem;">Abstract</p>
-          <p class="card-desc">
-            As large language models replace traditional search engines as primary discovery interfaces,
-            businesses face a fundamental measurement problem: LLM outputs are stochastic. The same
-            query submitted multiple times produces different vendor sets, different framings, and
-            different recommendations — making ranking-based metrics structurally inapplicable.
-          </p>
-          <p class="card-desc" style="margin-top: 1rem;">
-            We introduce a four-dimensional probabilistic visibility model — Inclusion, Stability,
-            Influence, and Coverage (ISIC) — as the replacement measurement framework for AI-driven
-            discovery. Across 27 queries spanning 9 problem areas and 81 GPT-4o responses, results
-            indicate an average Jaccard overlap of 0.03, with 19 of 27 queries showing zero overlap
-            between LLM and Google results — indicating that these two discovery channels direct
-            buyers toward fundamentally different resources.
-          </p>
-        </div>
-
-        <div class="led-board">
-          <div class="head"><span class="t">Study · Key Metrics</span><span class="live">● GPT-4o</span></div>
-          <div class="vals">
-            <div class="val"><b class="o">0.03</b><span>Avg Jaccard overlap</span></div>
-            <div class="val"><b>27</b><span>B2B queries tested</span></div>
-            <div class="val"><b class="t">19/27</b><span>Zero-overlap queries</span></div>
-            <div class="val"><b>81</b><span>GPT-4o responses</span></div>
-          </div>
-        </div>
-
-        <div class="tag-list" style="margin-bottom: 3rem;">
-          <span class="tag">AEO measurement</span>
-          <span class="tag">probabilistic visibility</span>
-          <span class="tag">LLM citation bias</span>
-          <span class="tag">B2B discovery</span>
-          <span class="tag">ISIC framework</span>
-          <span class="tag">GPT-4o</span>
-        </div>
-
+  <!-- ── Header ── -->
+  <section class="sheet">
+    <div class="panel p-ink c-12">
+      <div class="post-hero-meta">
+        <a href="/work/" class="back">
+          <svg class="back-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 5 10l7 6"/><path d="M5 10h11"/></svg>
+          <span class="back-label">← Work</span>
+        </a>
+        <span class="meta">Pilot Study &middot; GPT-4o &middot; April 2026</span>
       </div>
-    </section>
-  </main>
+      <h1 class="display h-xl">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h1>
+      <p class="meta meta--sub">Ajay Yadav &middot; <a href="mailto:anjayyadaav379@gmail.com" style="text-decoration:underline">anjayyadaav379@gmail.com</a></p>
+      <div><a class="btn" href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" target="_blank" rel="noopener">Download PDF ↗</a></div>
+    </div>
+  </section>
 
-{% include footer.html %}
+  <!-- ── Abstract ── -->
+  <section class="sheet">
+    <div class="strip"><h2 class="display h-lg">Abstract</h2></div>
+    <div class="panel p-panel c-12 post-content">
+      <p>As large language models replace traditional search engines as primary discovery interfaces, businesses face a fundamental measurement problem. LLM outputs are stochastic. The same query submitted multiple times produces different vendor sets, different framings, and different recommendations, making ranking-based metrics structurally inapplicable.</p>
+      <p>We introduce a four-dimensional probabilistic visibility model, ISIC (Inclusion, Stability, Influence, and Coverage), as the replacement measurement framework for AI-driven discovery. Across 27 queries spanning 9 problem areas and 81 GPT-4o responses, results indicate an average Jaccard overlap of 0.03, with 19 of 27 queries showing zero overlap between LLM and Google results, indicating that these two discovery channels direct buyers toward fundamentally different resources.</p>
+      <div class="tags">
+        <span class="tag">AEO measurement</span>
+        <span class="tag">probabilistic visibility</span>
+        <span class="tag">LLM citation bias</span>
+        <span class="tag">B2B discovery</span>
+        <span class="tag">ISIC framework</span>
+        <span class="tag">GPT-4o</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Key Metrics ── -->
+  <section class="sheet">
+    <div class="strip"><h2 class="display h-lg">Key Metrics</h2><span class="meta">&#9679; GPT-4o</span></div>
+    <div class="panel p-ink c-12 stats settle">
+      <div class="stat"><b>0.03</b><span>Avg Jaccard overlap</span></div>
+      <div class="stat"><b>27</b><span>B2B queries tested</span></div>
+      <div class="stat"><b>19/27</b><span>Zero-overlap queries</span></div>
+      <div class="stat"><b>81</b><span>GPT-4o responses</span></div>
+    </div>
+  </section>
+
+</main>
+
+{% include footer-warm.html %}
+
+<script src="/main.js" defer></script>
 
 </body>
 </html>

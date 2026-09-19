@@ -6,3 +6,5 @@ vendor/
 _site/
 .jekyll-cache/
 .scratch/
+agent_agnostic_web_operations_concept_brief.pdf
+__pycache__/

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design system — aduttya.com</title>
+<link rel="stylesheet" href="../style-warm.css">
+<style>
+  @font-face { font-family:'Archivo'; src:url('../assets/fonts/Archivo-Variable.ttf');
+                font-weight:100 900; font-stretch:62% 125%; }
+  :root { color-scheme: light; }
+  body { padding:48px 40px 96px; } /* base margin/colour/font come from style-warm.css itself */
+  h1,h2,h3 { letter-spacing:.01em; font-weight:800; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.18em;
+        color:#fa6614; margin:56px 0 18px;
+        border-bottom:1px solid rgba(240, 232, 220, .18); padding-bottom:10px; }
+  h3 { font-size:14px; text-transform:uppercase; letter-spacing:.14em;
+        margin:32px 0 12px; font-weight:700; }
+  .dim { opacity:.6; font-weight:400; letter-spacing:.06em; }
+  .lead { opacity:.7; margin:0 0 8px; font-size:14px; }
+  .sws { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px; }
+  .sw { display:flex; align-items:center; gap:10px; background:#e6dccc;
+         border:1px solid rgba(20, 18, 16, .14); padding:8px 10px; border-radius:8px; }
+  .chip { width:34px; height:34px; flex:none; border-radius:6px;
+           border:1px solid rgba(20, 18, 16, .14); }
+  .sw code { font-size:12px; }
+  .sw span { margin-left:auto; font-size:11px; opacity:.6; }
+  .grads { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; }
+  .band { height:64px; border:1px solid rgba(20, 18, 16, .14); margin-bottom:6px; border-radius:8px; }
+  .grad code { font-size:12px; opacity:.6; }
+  table { border-collapse:collapse; font-size:13px; }
+  td { padding:6px 18px 6px 0; border-bottom:1px solid rgba(20, 18, 16, .14); opacity:.75; }
+  td code { opacity:1; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--col),1fr)); gap:16px; }
+  figure { margin:0; }
+  figure img { width:100%; display:block; border:1px solid rgba(20, 18, 16, .14); border-radius:8px; }
+  figcaption { font-size:11px; opacity:.6; margin-top:6px; word-break:break-all; }
+  .type-row { margin:0 0 14px; }
+  .type-row span { display:block; font-size:11px; opacity:.6;
+                    letter-spacing:.14em; text-transform:uppercase; margin-bottom:2px; }
+  .comp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+                gap:11px; margin-bottom:28px; }
+  .comp { border:1px solid rgba(20, 18, 16, .14); border-radius:12px; overflow:hidden;
+           background:#f0e8dc; display:flex; flex-direction:column; }
+  .comp-head { display:flex; align-items:center; justify-content:space-between;
+                padding:8px 12px; border-bottom:1px solid rgba(20, 18, 16, .14); }
+  .comp-head code { font-size:12px; color:#8a3a12; }
+  .copy { font:inherit; font-size:11px; letter-spacing:.04em; cursor:pointer;
+           background:#e6dccc; color:#141210; border:0;
+           border-radius:999px; padding:4px 10px; transition:background .2s cubic-bezier(.32, .72, .28, 1); }
+  .copy:hover { background:#fa6614; }
+  .comp-live { padding:22px; display:flex; align-items:center; justify-content:center;
+                min-height:64px; max-height:320px; overflow:auto; }
+  .comp-src { margin:0; padding:12px 14px; background:#141210; color:#f0e8dc;
+               font-size:11px; line-height:1.6; overflow-x:auto; max-height:140px; overflow-y:auto; }
+  .comp-src code { font-family:'SF Mono','Fira Code',monospace; }
+</style></head><body>
+
+<h1>Design system</h1>
+<p class="lead">Generated from <code>style-warm.css</code> and the built site.
+Rebuild with <code>python3 _scripts/make_preview.py</code>.</p>
+
+<h2>Colour</h2>
+<div class="sws">
+<div class="sw"><div class="chip" style="background:#fa6614"></div><code>--orange</code><span>#fa6614</span></div>
+<div class="sw"><div class="chip" style="background:#141210"></div><code>--ink</code><span>#141210</span></div>
+<div class="sw"><div class="chip" style="background:#f0e8dc"></div><code>--bone</code><span>#f0e8dc</span></div>
+<div class="sw"><div class="chip" style="background:#e6dccc"></div><code>--panel</code><span>#e6dccc</span></div>
+<div class="sw"><div class="chip" style="background:#8a3a12"></div><code>--rust</code><span>#8a3a12</span></div>
+<div class="sw"><div class="chip" style="background:rgba(20, 18, 16, .14)"></div><code>--ink-veil</code><span>rgba(20, 18, 16, .14)</span></div>
+<div class="sw"><div class="chip" style="background:rgba(240, 232, 220, .13)"></div><code>--bone-veil</code><span>rgba(240, 232, 220, .13)</span></div>
+<div class="sw"><div class="chip" style="background:rgba(240, 232, 220, .1)"></div><code>--bone-veil-soft</code><span>rgba(240, 232, 220, .1)</span></div>
+<div class="sw"><div class="chip" style="background:rgba(240, 232, 220, .18)"></div><code>--bone-rule</code><span>rgba(240, 232, 220, .18)</span></div>
+</div>
+
+<h2>Type</h2>
+<div class="type-row"><span>--font · Archivo (variable, wdth/wght)</span>
+  <div style="font-variation-settings:'wdth' 122,'wght' 780;font-size:34px">
+    Headings, labels, nav, card eyebrows</div></div>
+<div class="type-row"><span>--font · Archivo, regular weight</span>
+  <div style="font-variation-settings:'wdth' 100,'wght' 420;font-size:19px">
+    Body copy, post prose, subtitles and descriptions</div></div>
+
+<h2>Components</h2>
+<p class="lead">Every class below is lifted from real markup the built site currently
+ships (see <code>_scripts/scan_components.py</code>) — nothing here is hand-typed, so a
+class disappears from this page the moment nothing on the site uses it anymore. Hit
+Copy for the exact source.</p>
+<h3>Type</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.display</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><h1 class="display h-xl">About</h1></div>
+  <pre class="comp-src"><code>&lt;h1 class=&quot;display h-xl&quot;&gt;About&lt;/h1&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;h1 class=&quot;display h-xl&quot;&gt;About&lt;/h1&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.h-xl</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><h1 class="display h-xl">About</h1></div>
+  <pre class="comp-src"><code>&lt;h1 class=&quot;display h-xl&quot;&gt;About&lt;/h1&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;h1 class=&quot;display h-xl&quot;&gt;About&lt;/h1&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.h-lg</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><h2 class="display h-lg">Current Work</h2></div>
+  <pre class="comp-src"><code>&lt;h2 class=&quot;display h-lg&quot;&gt;Current Work&lt;/h2&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;h2 class=&quot;display h-lg&quot;&gt;Current Work&lt;/h2&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.h-md</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><h3 class="display h-md">Flozi</h3></div>
+  <pre class="comp-src"><code>&lt;h3 class=&quot;display h-md&quot;&gt;Flozi&lt;/h3&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;h3 class=&quot;display h-md&quot;&gt;Flozi&lt;/h3&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.h-sm</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><h3 class="display h-sm">SEO &amp; AEO</h3></div>
+  <pre class="comp-src"><code>&lt;h3 class=&quot;display h-sm&quot;&gt;SEO &amp;amp; AEO&lt;/h3&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;h3 class=&quot;display h-sm&quot;&gt;SEO &amp;amp; AEO&lt;/h3&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.lede</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><p class="lede lede--wide">I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World's clients too, and stay hands-on across engineering and QA.</p></div>
+  <pre class="comp-src"><code>&lt;p class=&quot;lede lede--wide&quot;&gt;I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World&#x27;s clients too, and stay hands-on across engineering and QA.&lt;/p&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;p class=&quot;lede lede--wide&quot;&gt;I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World&#x27;s clients too, and stay hands-on across engineering and QA.&lt;/p&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.meta</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="meta meta--solid">Product &amp; Technical Lead</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.meta--solid</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="meta meta--solid">Product &amp; Technical Lead</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.meta--sub</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p></div>
+  <pre class="comp-src"><code>&lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;</textarea>
+</div></div>
+<h3>Sheet + panels</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.panel</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="panel about-photo c-4 settle">
+      <img src="../assets/images/profile/ajay-yadav.png" alt="Ajay Yadav" width="820" height="813" />
+      <span class="badge-ay">AY</span>
+    </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;panel about-photo c-4 settle&quot;&gt;
+      &lt;img src=&quot;/assets/images/profile/ajay-yadav.png&quot; alt=&quot;Ajay Yadav&quot; width=&quot;820&quot; height=&quot;813&quot; /&gt;
+      &lt;span class=&quot;badge-ay&quot;&gt;AY&lt;/span&gt;
+    &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;panel about-photo c-4 settle&quot;&gt;
+      &lt;img src=&quot;/assets/images/profile/ajay-yadav.png&quot; alt=&quot;Ajay Yadav&quot; width=&quot;820&quot; height=&quot;813&quot; /&gt;
+      &lt;span class=&quot;badge-ay&quot;&gt;AY&lt;/span&gt;
+    &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.p-orange</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="panel p-orange card-link c-6 settle" href="https://flozi.io/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">Product &amp; Technical Lead</span>
+      <h3 class="display h-md">Flozi</h3>
+      <p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p>
+    </a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;panel p-orange card-link c-6 settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h3 class=&quot;display h-md&quot;&gt;Flozi&lt;/h3&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;panel p-orange card-link c-6 settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h3 class=&quot;display h-md&quot;&gt;Flozi&lt;/h3&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.p-panel</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="panel p-panel card-link c-6 settle" href="https://www.neue.world/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">SEO &amp; AEO Lead</span>
+      <h3 class="display h-md">Neue World</h3>
+      <p class="meta meta--sub">Systems that help teams execute SEO faster with AI tooling and automation.</p>
+    </a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;panel p-panel card-link c-6 settle&quot; href=&quot;https://www.neue.world/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;SEO &amp;amp; AEO Lead&lt;/span&gt;
+      &lt;h3 class=&quot;display h-md&quot;&gt;Neue World&lt;/h3&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Systems that help teams execute SEO faster with AI tooling and automation.&lt;/p&gt;
+    &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;panel p-panel card-link c-6 settle&quot; href=&quot;https://www.neue.world/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;SEO &amp;amp; AEO Lead&lt;/span&gt;
+      &lt;h3 class=&quot;display h-md&quot;&gt;Neue World&lt;/h3&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Systems that help teams execute SEO faster with AI tooling and automation.&lt;/p&gt;
+    &lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.shape</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape arch sh-ink" style="width:56%;height:66%;right:-12%;top:-14%"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape arch sh-ink&quot; style=&quot;width:56%;height:66%;right:-12%;top:-14%&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape arch sh-ink&quot; style=&quot;width:56%;height:66%;right:-12%;top:-14%&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.sh-ink</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape arch sh-ink" style="width:56%;height:66%;right:-12%;top:-14%"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape arch sh-ink&quot; style=&quot;width:56%;height:66%;right:-12%;top:-14%&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape arch sh-ink&quot; style=&quot;width:56%;height:66%;right:-12%;top:-14%&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.sh-bone</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape circle sh-bone" style="width:20%;padding-bottom:20%;left:9%;bottom:16%"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape circle sh-bone&quot; style=&quot;width:20%;padding-bottom:20%;left:9%;bottom:16%&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape circle sh-bone&quot; style=&quot;width:20%;padding-bottom:20%;left:9%;bottom:16%&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.sh-orange</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape circle sh-orange contact-dot" aria-hidden="true"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape circle sh-orange contact-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape circle sh-orange contact-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.circle</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape circle sh-bone" style="width:20%;padding-bottom:20%;left:9%;bottom:16%"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape circle sh-bone&quot; style=&quot;width:20%;padding-bottom:20%;left:9%;bottom:16%&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape circle sh-bone&quot; style=&quot;width:20%;padding-bottom:20%;left:9%;bottom:16%&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.arch</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape arch sh-ink" style="width:56%;height:66%;right:-12%;top:-14%"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape arch sh-ink&quot; style=&quot;width:56%;height:66%;right:-12%;top:-14%&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape arch sh-ink&quot; style=&quot;width:56%;height:66%;right:-12%;top:-14%&quot;&gt;&lt;/span&gt;</textarea>
+</div></div>
+<h3>Nav</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.nav-icon</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><svg class="nav-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 10 3l7 6.5"/><path d="M5 8.5V17h10V8.5"/></svg></div>
+  <pre class="comp-src"><code>&lt;svg class=&quot;nav-icon&quot; viewBox=&quot;0 0 20 20&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 9.5 10 3l7 6.5&quot;/&gt;&lt;path d=&quot;M5 8.5V17h10V8.5&quot;/&gt;&lt;/svg&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;svg class=&quot;nav-icon&quot; viewBox=&quot;0 0 20 20&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 9.5 10 3l7 6.5&quot;/&gt;&lt;path d=&quot;M5 8.5V17h10V8.5&quot;/&gt;&lt;/svg&gt;</textarea>
+</div></div>
+<h3>Buttons</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.btn</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="btn" href="mailto:anjayyadaav379@gmail.com">Start a conversation</a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;btn&quot; href=&quot;mailto:anjayyadaav379@gmail.com&quot;&gt;Start a conversation&lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;btn&quot; href=&quot;mailto:anjayyadaav379@gmail.com&quot;&gt;Start a conversation&lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.btn-quiet</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="btn btn-quiet" href="../blog/gt3-knowledge-base-seo-apex-insights/">Read what it taught me</a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;btn btn-quiet&quot; href=&quot;/blog/gt3-knowledge-base-seo-apex-insights/&quot;&gt;Read what it taught me&lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;btn btn-quiet&quot; href=&quot;/blog/gt3-knowledge-base-seo-apex-insights/&quot;&gt;Read what it taught me&lt;/a&gt;</textarea>
+</div></div>
+<h3>Hero</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.hero-portrait</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="panel hero-portrait settle">
+      <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png"
+           alt="Ajay Yadav, Product and Technical Lead working on AI search systems"
+           width="1145" height="1374" />
+    </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;panel hero-portrait settle&quot;&gt;
+      &lt;img src=&quot;https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png&quot;
+           alt=&quot;Ajay Yadav, Product and Technical Lead working on AI search systems&quot;
+           width=&quot;1145&quot; height=&quot;1374&quot; /&gt;
+    &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;panel hero-portrait settle&quot;&gt;
+      &lt;img src=&quot;https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png&quot;
+           alt=&quot;Ajay Yadav, Product and Technical Lead working on AI search systems&quot;
+           width=&quot;1145&quot; height=&quot;1374&quot; /&gt;
+    &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.role</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="panel p-orange role role--a settle" href="https://flozi.io/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">Product &amp; Technical Lead</span>
+      <h2 class="display h-md">Flozi</h2>
+      <p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p>
+    </a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;panel p-orange role role--a settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h2 class=&quot;display h-md&quot;&gt;Flozi&lt;/h2&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;panel p-orange role role--a settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h2 class=&quot;display h-md&quot;&gt;Flozi&lt;/h2&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.role--a</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="panel p-orange role role--a settle" href="https://flozi.io/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">Product &amp; Technical Lead</span>
+      <h2 class="display h-md">Flozi</h2>
+      <p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p>
+    </a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;panel p-orange role role--a settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h2 class=&quot;display h-md&quot;&gt;Flozi&lt;/h2&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;panel p-orange role role--a settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h2 class=&quot;display h-md&quot;&gt;Flozi&lt;/h2&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.role--b</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="panel p-panel role role--b settle" href="https://www.neue.world/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">SEO &amp; AEO Lead</span>
+      <h2 class="display h-md">Neue World</h2>
+      <p class="meta meta--sub">Systems that help teams execute SEO faster with AI tooling and automation.</p>
+    </a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;panel p-panel role role--b settle&quot; href=&quot;https://www.neue.world/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;SEO &amp;amp; AEO Lead&lt;/span&gt;
+      &lt;h2 class=&quot;display h-md&quot;&gt;Neue World&lt;/h2&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Systems that help teams execute SEO faster with AI tooling and automation.&lt;/p&gt;
+    &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;panel p-panel role role--b settle&quot; href=&quot;https://www.neue.world/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;SEO &amp;amp; AEO Lead&lt;/span&gt;
+      &lt;h2 class=&quot;display h-md&quot;&gt;Neue World&lt;/h2&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Systems that help teams execute SEO faster with AI tooling and automation.&lt;/p&gt;
+    &lt;/a&gt;</textarea>
+</div></div>
+<h3>Proof</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.beat</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="beat">
+          <span>The setup</span>
+          <p>I built Apex Insights as a GT3 knowledge base rather than another motorsport blog. Brand-new domain, no backlinks, no authority to trade on.</p>
+        </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;beat&quot;&gt;
+          &lt;span&gt;The setup&lt;/span&gt;
+          &lt;p&gt;I built Apex Insights as a GT3 knowledge base rather than another motorsport blog. Brand-new domain, no backlinks, no authority to trade on.&lt;/p&gt;
+        &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;beat&quot;&gt;
+          &lt;span&gt;The setup&lt;/span&gt;
+          &lt;p&gt;I built Apex Insights as a GT3 knowledge base rather than another motorsport blog. Brand-new domain, no backlinks, no authority to trade on.&lt;/p&gt;
+        &lt;/div&gt;</textarea>
+</div></div>
+<h3>Writing</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.strip</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="strip"><h2 class="display h-lg">Current Work</h2></div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;strip&quot;&gt;&lt;h2 class=&quot;display h-lg&quot;&gt;Current Work&lt;/h2&gt;&lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;strip&quot;&gt;&lt;h2 class=&quot;display h-lg&quot;&gt;Current Work&lt;/h2&gt;&lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.post-main</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="post-main">
+          <h3 class="display h-sm">I Tried to Make GT3 Easier to Understand Then Google Started Finding Apex Insights</h3>
+          <p>I built Apex Insights as a GT3 knowledge base, not another motorsport blog. A few weeks in, a brand-new site with no backlinks started showing up across teams, championships, and races.</p>
+        </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;post-main&quot;&gt;
+          &lt;h3 class=&quot;display h-sm&quot;&gt;I Tried to Make GT3 Easier to Understand Then Google Started Finding Apex Insights&lt;/h3&gt;
+          &lt;p&gt;I built Apex Insights as a GT3 knowledge base, not another motorsport blog. A few weeks in, a brand-new site with no backlinks started showing up across teams, championships, and races.&lt;/p&gt;
+        &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;post-main&quot;&gt;
+          &lt;h3 class=&quot;display h-sm&quot;&gt;I Tried to Make GT3 Easier to Understand Then Google Started Finding Apex Insights&lt;/h3&gt;
+          &lt;p&gt;I built Apex Insights as a GT3 knowledge base, not another motorsport blog. A few weeks in, a brand-new site with no backlinks started showing up across teams, championships, and races.&lt;/p&gt;
+        &lt;/div&gt;</textarea>
+</div></div>
+<h3>Band + note</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.band</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="panel p-ink band">
+      <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/sitting.png"
+           alt="Ajay Yadav sitting still against colliding planes of orange and black"
+           loading="lazy" />
+    </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;panel p-ink band&quot;&gt;
+      &lt;img src=&quot;https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/sitting.png&quot;
+           alt=&quot;Ajay Yadav sitting still against colliding planes of orange and black&quot;
+           loading=&quot;lazy&quot; /&gt;
+    &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;panel p-ink band&quot;&gt;
+      &lt;img src=&quot;https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/sitting.png&quot;
+           alt=&quot;Ajay Yadav sitting still against colliding planes of orange and black&quot;
+           loading=&quot;lazy&quot; /&gt;
+    &lt;/div&gt;</textarea>
+</div></div>
+<h3>Contact</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.contact-dot</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="shape circle sh-orange contact-dot" aria-hidden="true"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;shape circle sh-orange contact-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;shape circle sh-orange contact-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.mail</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="mail" href="mailto:anjayyadaav379@gmail.com">anjayyadaav379@gmail.com</a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;mail&quot; href=&quot;mailto:anjayyadaav379@gmail.com&quot;&gt;anjayyadaav379@gmail.com&lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;mail&quot; href=&quot;mailto:anjayyadaav379@gmail.com&quot;&gt;anjayyadaav379@gmail.com&lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.elsewhere</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="elsewhere">
+        <a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/aduttya" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/aduttya" target="_blank" rel="noopener">X</a>
+      </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;elsewhere&quot;&gt;
+        &lt;a href=&quot;https://linkedin.com/in/ajayyadav420&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LinkedIn&lt;/a&gt;
+        &lt;a href=&quot;https://github.com/aduttya&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;
+        &lt;a href=&quot;https://x.com/aduttya&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;X&lt;/a&gt;
+      &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;elsewhere&quot;&gt;
+        &lt;a href=&quot;https://linkedin.com/in/ajayyadav420&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LinkedIn&lt;/a&gt;
+        &lt;a href=&quot;https://github.com/aduttya&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;
+        &lt;a href=&quot;https://x.com/aduttya&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;X&lt;/a&gt;
+      &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.site-foot</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><footer class="site-foot meta">
+    <span>&copy; 2026 Ajay Yadav</span>
+    <span>
+      <a href="https://flozi.io/" target="_blank" rel="noopener">Flozi</a> &middot;
+      <a href="https://www.neue.world/" target="_blank" rel="noopener">Neue World</a>
+    </span>
+  </footer></div>
+  <pre class="comp-src"><code>&lt;footer class=&quot;site-foot meta&quot;&gt;
+    &lt;span&gt;&amp;copy; 2026 Ajay Yadav&lt;/span&gt;
+    &lt;span&gt;
+      &lt;a href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Flozi&lt;/a&gt; &amp;middot;
+      &lt;a href=&quot;https://www.neue.world/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Neue World&lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/footer&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;footer class=&quot;site-foot meta&quot;&gt;
+    &lt;span&gt;&amp;copy; 2026 Ajay Yadav&lt;/span&gt;
+    &lt;span&gt;
+      &lt;a href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Flozi&lt;/a&gt; &amp;middot;
+      &lt;a href=&quot;https://www.neue.world/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Neue World&lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/footer&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.card-link</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a class="panel p-orange card-link c-6 settle" href="https://flozi.io/" target="_blank" rel="noopener">
+      <span class="meta meta--solid">Product &amp; Technical Lead</span>
+      <h3 class="display h-md">Flozi</h3>
+      <p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p>
+    </a></div>
+  <pre class="comp-src"><code>&lt;a class=&quot;panel p-orange card-link c-6 settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h3 class=&quot;display h-md&quot;&gt;Flozi&lt;/h3&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a class=&quot;panel p-orange card-link c-6 settle&quot; href=&quot;https://flozi.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;span class=&quot;meta meta--solid&quot;&gt;Product &amp;amp; Technical Lead&lt;/span&gt;
+      &lt;h3 class=&quot;display h-md&quot;&gt;Flozi&lt;/h3&gt;
+      &lt;p class=&quot;meta meta--sub&quot;&gt;Website visibility in ChatGPT, Gemini and other LLM-powered discovery.&lt;/p&gt;
+    &lt;/a&gt;</textarea>
+</div></div>
+<h3>Tags (Work)</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.tags</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="tags">
+        <span class="tag">AEO measurement</span>
+        <span class="tag">probabilistic visibility</span>
+        <span class="tag">LLM citation bias</span>
+        <span class="tag">B2B discovery</span>
+        <span class="tag">ISIC framework</span>
+        <span class="tag">GPT-4o</span>
+      </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;tags&quot;&gt;
+        &lt;span class=&quot;tag&quot;&gt;AEO measurement&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;probabilistic visibility&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;LLM citation bias&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;B2B discovery&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;ISIC framework&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;GPT-4o&lt;/span&gt;
+      &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;tags&quot;&gt;
+        &lt;span class=&quot;tag&quot;&gt;AEO measurement&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;probabilistic visibility&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;LLM citation bias&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;B2B discovery&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;ISIC framework&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;GPT-4o&lt;/span&gt;
+      &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.tag</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="tag">AEO measurement</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;tag&quot;&gt;AEO measurement&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;tag&quot;&gt;AEO measurement&lt;/span&gt;</textarea>
+</div></div>
+<h3>About: intro</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.about-photo</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="panel about-photo c-4 settle">
+      <img src="../assets/images/profile/ajay-yadav.png" alt="Ajay Yadav" width="820" height="813" />
+      <span class="badge-ay">AY</span>
+    </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;panel about-photo c-4 settle&quot;&gt;
+      &lt;img src=&quot;/assets/images/profile/ajay-yadav.png&quot; alt=&quot;Ajay Yadav&quot; width=&quot;820&quot; height=&quot;813&quot; /&gt;
+      &lt;span class=&quot;badge-ay&quot;&gt;AY&lt;/span&gt;
+    &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;panel about-photo c-4 settle&quot;&gt;
+      &lt;img src=&quot;/assets/images/profile/ajay-yadav.png&quot; alt=&quot;Ajay Yadav&quot; width=&quot;820&quot; height=&quot;813&quot; /&gt;
+      &lt;span class=&quot;badge-ay&quot;&gt;AY&lt;/span&gt;
+    &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.lede--wide</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><p class="lede lede--wide">I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World's clients too, and stay hands-on across engineering and QA.</p></div>
+  <pre class="comp-src"><code>&lt;p class=&quot;lede lede--wide&quot;&gt;I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World&#x27;s clients too, and stay hands-on across engineering and QA.&lt;/p&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;p class=&quot;lede lede--wide&quot;&gt;I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World&#x27;s clients too, and stay hands-on across engineering and QA.&lt;/p&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.badge-ay</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="badge-ay">AY</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;badge-ay&quot;&gt;AY&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;badge-ay&quot;&gt;AY&lt;/span&gt;</textarea>
+</div></div>
+<h3>About: timeline</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.tl-row</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="tl-row">
+        <span class="num">01</span>
+        <div>
+          <h3 class="display h-sm">SEO &amp; AEO</h3>
+          <p>Working on AI search visibility and answer engine optimization.</p>
+        </div>
+        <span class="meta period">2025—Now</span>
+      </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;tl-row&quot;&gt;
+        &lt;span class=&quot;num&quot;&gt;01&lt;/span&gt;
+        &lt;div&gt;
+          &lt;h3 class=&quot;display h-sm&quot;&gt;SEO &amp;amp; AEO&lt;/h3&gt;
+          &lt;p&gt;Working on AI search visibility and answer engine optimization.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;span class=&quot;meta period&quot;&gt;2025—Now&lt;/span&gt;
+      &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;tl-row&quot;&gt;
+        &lt;span class=&quot;num&quot;&gt;01&lt;/span&gt;
+        &lt;div&gt;
+          &lt;h3 class=&quot;display h-sm&quot;&gt;SEO &amp;amp; AEO&lt;/h3&gt;
+          &lt;p&gt;Working on AI search visibility and answer engine optimization.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;span class=&quot;meta period&quot;&gt;2025—Now&lt;/span&gt;
+      &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.num</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="num">01</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;num&quot;&gt;01&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;num&quot;&gt;01&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.period</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="meta period">2025—Now</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;meta period&quot;&gt;2025—Now&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;meta period&quot;&gt;2025—Now&lt;/span&gt;</textarea>
+</div></div>
+<h3>About: now</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.dot</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="dot"></span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.now-list</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><ul class="now-list">
+        <li>Building Flozi</li>
+        <li>Experimenting with AI search retrieval</li>
+        <li>Developing AEO frameworks</li>
+        <li>Testing AI citation patterns</li>
+      </ul></div>
+  <pre class="comp-src"><code>&lt;ul class=&quot;now-list&quot;&gt;
+        &lt;li&gt;Building Flozi&lt;/li&gt;
+        &lt;li&gt;Experimenting with AI search retrieval&lt;/li&gt;
+        &lt;li&gt;Developing AEO frameworks&lt;/li&gt;
+        &lt;li&gt;Testing AI citation patterns&lt;/li&gt;
+      &lt;/ul&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;ul class=&quot;now-list&quot;&gt;
+        &lt;li&gt;Building Flozi&lt;/li&gt;
+        &lt;li&gt;Experimenting with AI search retrieval&lt;/li&gt;
+        &lt;li&gt;Developing AEO frameworks&lt;/li&gt;
+        &lt;li&gt;Testing AI citation patterns&lt;/li&gt;
+      &lt;/ul&gt;</textarea>
+</div></div>
+<h3>Post header</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.back</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><a href="../blog/" class="back">
+          <svg class="back-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 5 10l7 6"/><path d="M5 10h11"/></svg>
+          <span class="back-label">← Blog</span>
+        </a></div>
+  <pre class="comp-src"><code>&lt;a href=&quot;/blog/&quot; class=&quot;back&quot;&gt;
+          &lt;svg class=&quot;back-icon&quot; viewBox=&quot;0 0 20 20&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 4 5 10l7 6&quot;/&gt;&lt;path d=&quot;M5 10h11&quot;/&gt;&lt;/svg&gt;
+          &lt;span class=&quot;back-label&quot;&gt;← Blog&lt;/span&gt;
+        &lt;/a&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;a href=&quot;/blog/&quot; class=&quot;back&quot;&gt;
+          &lt;svg class=&quot;back-icon&quot; viewBox=&quot;0 0 20 20&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 4 5 10l7 6&quot;/&gt;&lt;path d=&quot;M5 10h11&quot;/&gt;&lt;/svg&gt;
+          &lt;span class=&quot;back-label&quot;&gt;← Blog&lt;/span&gt;
+        &lt;/a&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.back-icon</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><svg class="back-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 5 10l7 6"/><path d="M5 10h11"/></svg></div>
+  <pre class="comp-src"><code>&lt;svg class=&quot;back-icon&quot; viewBox=&quot;0 0 20 20&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 4 5 10l7 6&quot;/&gt;&lt;path d=&quot;M5 10h11&quot;/&gt;&lt;/svg&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;svg class=&quot;back-icon&quot; viewBox=&quot;0 0 20 20&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 4 5 10l7 6&quot;/&gt;&lt;path d=&quot;M5 10h11&quot;/&gt;&lt;/svg&gt;</textarea>
+</div></div>
+<h3>Post body</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.screenshot</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><img src="../assets/images/posts/bing.png" alt="The Flozi IndexNow-for-Webflow article surfaced as a citation inside Bing's AI chat panel" class="screenshot" /></div>
+  <pre class="comp-src"><code>&lt;img src=&quot;/assets/images/posts/bing.png&quot; alt=&quot;The Flozi IndexNow-for-Webflow article surfaced as a citation inside Bing&#x27;s AI chat panel&quot; class=&quot;screenshot&quot; /&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;img src=&quot;/assets/images/posts/bing.png&quot; alt=&quot;The Flozi IndexNow-for-Webflow article surfaced as a citation inside Bing&#x27;s AI chat panel&quot; class=&quot;screenshot&quot; /&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.img-caption</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><p class="img-caption">The IndexNow piece from that library, showing up as a citation inside Bing's AI chat.</p></div>
+  <pre class="comp-src"><code>&lt;p class=&quot;img-caption&quot;&gt;The IndexNow piece from that library, showing up as a citation inside Bing&#x27;s AI chat.&lt;/p&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;p class=&quot;img-caption&quot;&gt;The IndexNow piece from that library, showing up as a citation inside Bing&#x27;s AI chat.&lt;/p&gt;</textarea>
+</div></div>
+<h3>Stats (Research)</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.stats</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="panel p-ink c-12 stats settle">
+      <div class="stat"><b>0.03</b><span>Avg Jaccard overlap</span></div>
+      <div class="stat"><b>27</b><span>B2B queries tested</span></div>
+      <div class="stat"><b>19/27</b><span>Zero-overlap queries</span></div>
+      <div class="stat"><b>81</b><span>GPT-4o responses</span></div>
+    </div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;panel p-ink c-12 stats settle&quot;&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;0.03&lt;/b&gt;&lt;span&gt;Avg Jaccard overlap&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;27&lt;/b&gt;&lt;span&gt;B2B queries tested&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;19/27&lt;/b&gt;&lt;span&gt;Zero-overlap queries&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;81&lt;/b&gt;&lt;span&gt;GPT-4o responses&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;panel p-ink c-12 stats settle&quot;&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;0.03&lt;/b&gt;&lt;span&gt;Avg Jaccard overlap&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;27&lt;/b&gt;&lt;span&gt;B2B queries tested&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;19/27&lt;/b&gt;&lt;span&gt;Zero-overlap queries&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;&lt;b&gt;81&lt;/b&gt;&lt;span&gt;GPT-4o responses&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.stat</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><div class="stat"><b>0.03</b><span>Avg Jaccard overlap</span></div></div>
+  <pre class="comp-src"><code>&lt;div class=&quot;stat&quot;&gt;&lt;b&gt;0.03&lt;/b&gt;&lt;span&gt;Avg Jaccard overlap&lt;/span&gt;&lt;/div&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;div class=&quot;stat&quot;&gt;&lt;b&gt;0.03&lt;/b&gt;&lt;span&gt;Avg Jaccard overlap&lt;/span&gt;&lt;/div&gt;</textarea>
+</div></div>
+<h3>Responsive</h3><div class="comp-grid">
+<div class="comp">
+  <div class="comp-head">
+    <code>.nav-label</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="nav-label">Home</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;nav-label&quot;&gt;Home&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;nav-label&quot;&gt;Home&lt;/span&gt;</textarea>
+</div>
+<div class="comp">
+  <div class="comp-head">
+    <code>.back-label</code>
+    <button class="copy" type="button" data-copy>Copy</button>
+  </div>
+  <div class="comp-live"><span class="back-label">← Blog</span></div>
+  <pre class="comp-src"><code>&lt;span class=&quot;back-label&quot;&gt;← Blog&lt;/span&gt;</code></pre>
+  <textarea class="comp-raw" hidden>&lt;span class=&quot;back-label&quot;&gt;← Blog&lt;/span&gt;</textarea>
+</div></div>
+
+<h2>Other tokens</h2>
+<table><tr><td><code>--font</code></td><td>'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif</td></tr>
+<tr><td><code>--gutter</code></td><td>11px</td></tr>
+<tr><td><code>--pad</code></td><td>clamp(22px, 3.2vw, 46px)</td></tr>
+<tr><td><code>--r</code></td><td>clamp(20px, 2.4vw, 34px)</td></tr>
+<tr><td><code>--ease</code></td><td>cubic-bezier(.32, .72, .28, 1)</td></tr></table>
+
+<h2>Share cards</h2>
+<h3>og <span class="dim">1200×630 · 13 cards</span></h3><div class="grid" style="--col:300px"><figure><img src="../assets/images/og/about.png" loading="lazy"><figcaption>about.png</figcaption></figure>
+<figure><img src="../assets/images/og/blog.png" loading="lazy"><figcaption>blog.png</figcaption></figure>
+<figure><img src="../assets/images/og/home.png" loading="lazy"><figcaption>home.png</figcaption></figure>
+<figure><img src="../assets/images/og/research.png" loading="lazy"><figcaption>research.png</figcaption></figure>
+<figure><img src="../assets/images/og/work.png" loading="lazy"><figcaption>work.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-aeo-optimization-categories.png" loading="lazy"><figcaption>og-aeo-optimization-categories.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-aeo-tracking-verification.png" loading="lazy"><figcaption>og-aeo-tracking-verification.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-apex-insights-gt3.png" loading="lazy"><figcaption>og-apex-insights-gt3.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-geo-aeo-strategy-shift.png" loading="lazy"><figcaption>og-geo-aeo-strategy-shift.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-seo-automation.png" loading="lazy"><figcaption>og-seo-automation.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-six-months-aeo-experiments.png" loading="lazy"><figcaption>og-six-months-aeo-experiments.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-text-embeddings.png" loading="lazy"><figcaption>og-text-embeddings.png</figcaption></figure>
+<figure><img src="../assets/images/posts/og-why-ai-wont-cite.png" loading="lazy"><figcaption>og-why-ai-wont-cite.png</figcaption></figure></div>
+<h3>linkedin <span class="dim">1200×627 · 13 cards</span></h3><div class="grid" style="--col:300px"><figure><img src="../assets/images/social/linkedin/about.png" loading="lazy"><figcaption>about.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/blog.png" loading="lazy"><figcaption>blog.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/home.png" loading="lazy"><figcaption>home.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-aeo-optimization-categories.png" loading="lazy"><figcaption>og-aeo-optimization-categories.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-aeo-tracking-verification.png" loading="lazy"><figcaption>og-aeo-tracking-verification.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-apex-insights-gt3.png" loading="lazy"><figcaption>og-apex-insights-gt3.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-geo-aeo-strategy-shift.png" loading="lazy"><figcaption>og-geo-aeo-strategy-shift.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-seo-automation.png" loading="lazy"><figcaption>og-seo-automation.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-six-months-aeo-experiments.png" loading="lazy"><figcaption>og-six-months-aeo-experiments.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-text-embeddings.png" loading="lazy"><figcaption>og-text-embeddings.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/og-why-ai-wont-cite.png" loading="lazy"><figcaption>og-why-ai-wont-cite.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/research.png" loading="lazy"><figcaption>research.png</figcaption></figure>
+<figure><img src="../assets/images/social/linkedin/work.png" loading="lazy"><figcaption>work.png</figcaption></figure></div>
+<h3>square <span class="dim">1080×1080 · 13 cards</span></h3><div class="grid" style="--col:300px"><figure><img src="../assets/images/social/square/about.png" loading="lazy"><figcaption>about.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/blog.png" loading="lazy"><figcaption>blog.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/home.png" loading="lazy"><figcaption>home.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-aeo-optimization-categories.png" loading="lazy"><figcaption>og-aeo-optimization-categories.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-aeo-tracking-verification.png" loading="lazy"><figcaption>og-aeo-tracking-verification.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-apex-insights-gt3.png" loading="lazy"><figcaption>og-apex-insights-gt3.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-geo-aeo-strategy-shift.png" loading="lazy"><figcaption>og-geo-aeo-strategy-shift.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-seo-automation.png" loading="lazy"><figcaption>og-seo-automation.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-six-months-aeo-experiments.png" loading="lazy"><figcaption>og-six-months-aeo-experiments.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-text-embeddings.png" loading="lazy"><figcaption>og-text-embeddings.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/og-why-ai-wont-cite.png" loading="lazy"><figcaption>og-why-ai-wont-cite.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/research.png" loading="lazy"><figcaption>research.png</figcaption></figure>
+<figure><img src="../assets/images/social/square/work.png" loading="lazy"><figcaption>work.png</figcaption></figure></div>
+<h3>story <span class="dim">1080×1920 · 13 cards</span></h3><div class="grid" style="--col:190px"><figure><img src="../assets/images/social/story/about.png" loading="lazy"><figcaption>about.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/blog.png" loading="lazy"><figcaption>blog.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/home.png" loading="lazy"><figcaption>home.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-aeo-optimization-categories.png" loading="lazy"><figcaption>og-aeo-optimization-categories.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-aeo-tracking-verification.png" loading="lazy"><figcaption>og-aeo-tracking-verification.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-apex-insights-gt3.png" loading="lazy"><figcaption>og-apex-insights-gt3.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-geo-aeo-strategy-shift.png" loading="lazy"><figcaption>og-geo-aeo-strategy-shift.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-seo-automation.png" loading="lazy"><figcaption>og-seo-automation.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-six-months-aeo-experiments.png" loading="lazy"><figcaption>og-six-months-aeo-experiments.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-text-embeddings.png" loading="lazy"><figcaption>og-text-embeddings.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/og-why-ai-wont-cite.png" loading="lazy"><figcaption>og-why-ai-wont-cite.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/research.png" loading="lazy"><figcaption>research.png</figcaption></figure>
+<figure><img src="../assets/images/social/story/work.png" loading="lazy"><figcaption>work.png</figcaption></figure></div>
+<h3>x_header <span class="dim">1500×500 · 13 cards</span></h3><div class="grid" style="--col:300px"><figure><img src="../assets/images/social/x_header/about.png" loading="lazy"><figcaption>about.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/blog.png" loading="lazy"><figcaption>blog.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/home.png" loading="lazy"><figcaption>home.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-aeo-optimization-categories.png" loading="lazy"><figcaption>og-aeo-optimization-categories.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-aeo-tracking-verification.png" loading="lazy"><figcaption>og-aeo-tracking-verification.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-apex-insights-gt3.png" loading="lazy"><figcaption>og-apex-insights-gt3.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-geo-aeo-strategy-shift.png" loading="lazy"><figcaption>og-geo-aeo-strategy-shift.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-seo-automation.png" loading="lazy"><figcaption>og-seo-automation.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-six-months-aeo-experiments.png" loading="lazy"><figcaption>og-six-months-aeo-experiments.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-text-embeddings.png" loading="lazy"><figcaption>og-text-embeddings.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/og-why-ai-wont-cite.png" loading="lazy"><figcaption>og-why-ai-wont-cite.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/research.png" loading="lazy"><figcaption>research.png</figcaption></figure>
+<figure><img src="../assets/images/social/x_header/work.png" loading="lazy"><figcaption>work.png</figcaption></figure></div>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var ta = btn.closest('.comp').querySelector('.comp-raw');
+    navigator.clipboard.writeText(ta.value).then(function () {
+      var old = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = old; }, 1200);
+    });
+  });
+});
+</script>
+
+</body></html>

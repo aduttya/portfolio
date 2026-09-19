@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "Text Embeddings for AEO and SEO: A Practitioner's Guide"
+seo_title: "Text Embeddings for AEO and SEO Guide"
 description: "How embeddings power AI answer engines, where they fail, and how to run a two-stage content audit, embedding retrieval plus LLM verification for AEO."
+og_image: /assets/images/posts/og-text-embeddings.png
+og_image_alt: "Text Embeddings for AEO and SEO"
 ---
 
 **Text embeddings have become the connective tissue between content and AI answer engines.** Understanding how they work is now essential for any content team optimizing for visibility in ChatGPT, Perplexity, Google AI Overviews, and similar systems.

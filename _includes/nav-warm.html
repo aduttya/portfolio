@@ -1,0 +1,29 @@
+{%- comment -%}
+  Pill nav for the panel system (style-warm.css). Pages still on the
+  dark livery use nav.html instead — the two aren't interchangeable.
+
+  Each link carries an icon + text label. Desktop shows the label only;
+  the mobile rail (style-warm.css) shows the icon only and visually
+  hides the label (kept for screen readers, not removed).
+{%- endcomment -%}
+<header class="bar">
+  <b><img src="/assets/images/favicon/favicon-512.png" alt="" width="32" height="32" />AJAY.YADAV</b>
+  <nav>
+    <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>
+      <svg class="nav-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 10 3l7 6.5"/><path d="M5 8.5V17h10V8.5"/></svg>
+      <span class="nav-label">Home</span>
+    </a>
+    <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>
+      <svg class="nav-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="7" r="3.2"/><path d="M3.5 17c1-3.6 4-5 6.5-5s5.5 1.4 6.5 5"/></svg>
+      <span class="nav-label">About</span>
+    </a>
+    <a href="/work/"{% if page.url == "/work/" or page.url contains "/research" %} aria-current="page"{% endif %}>
+      <svg class="nav-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="14" height="9" rx="1.5"/><path d="M7.5 7V5.5A1.5 1.5 0 0 1 9 4h2a1.5 1.5 0 0 1 1.5 1.5V7"/></svg>
+      <span class="nav-label">Work</span>
+    </a>
+    <a href="/blog/"{% if page.url contains "/blog" %} aria-current="page"{% endif %}>
+      <svg class="nav-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="12" height="14" rx="1.2"/><path d="M7 8h6M7 11h6M7 14h3.5"/></svg>
+      <span class="nav-label">Blog</span>
+    </a>
+  </nav>
+</header>

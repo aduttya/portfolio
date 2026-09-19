@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "SEO Automation That Doesn't Hallucinate: How to Build a Recommendation System You Can Trust"
-description: "Most SEO automation generates plausible recommendations, not grounded ones. The architecture I use to tell them apart and why the language model gets exactly one job."
+seo_title: "SEO Automation That Doesn't Hallucinate"
+description: "Most SEO automation generates plausible recommendations, not grounded ones. The architecture I use to tell them apart, and why the model gets one job."
 og_image: /assets/images/posts/og-seo-automation.png
 og_image_alt: "Matrix of five growth questions against three data sources, showing that your own behaviour data structurally cannot answer the whitespace question"
 ---

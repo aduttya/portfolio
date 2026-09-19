@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "GEO / AEO Strategy Shift: Why Renaming SEO Metrics Won't Work"
+seo_title: "Why Renaming SEO Metrics Won't Work for GEO/AEO"
 description: "Prompt volume is a weak signal. AI visibility is a vanity metric. Attribution is broken. Here's what actually matters in Generative Engine Optimization."
+og_image: /assets/images/posts/og-geo-aeo-strategy-shift.png
+og_image_alt: "GEO / AEO Strategy Shift"
 ---
 
 **The GEO industry is making the same mistake it was designed to correct.** Early frameworks for Generative Engine Optimization are borrowing SEO primitives wholesale swapping "keyword volume" for "prompt volume" and "rankings" for "AI visibility", without questioning whether those primitives apply to a fundamentally different system.
