@@ -697,6 +697,10 @@ a.panel[target="_blank"]:hover::after {
   }
   .role--a { margin-top: 0; }
   .band { aspect-ratio: 16 / 10; }
+
+  /* Stacked cards: drop the desktop height so the text sits under the number. */
+  .what { min-height: 0; }
+  .what h3 { margin-top: 12px; }
 }
 
 @media (max-width: 620px) {
