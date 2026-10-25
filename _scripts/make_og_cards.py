@@ -77,6 +77,18 @@ POST_CARDS = [
      "Started Finding Apex Insights",
      "A GT3 knowledge base with no backlinks started showing up across "
      "teams, championships, and races within weeks."),
+    ("og-beyond-ai-automation", "Essay",
+     "Beyond AI Automation",
+     "Not just making AI do more. Designing how human and AI intelligence "
+     "change each other throughout the work."),
+    ("og-product-design-ai-era", "Essay",
+     "Product Design in the AI Era",
+     "When producing an interface gets easy, production stops being the "
+     "edge. How designers and AI shape each other's thinking."),
+    ("og-ai-for-growth", "Essay",
+     "AI for Growth",
+     "More experiments isn't better growth. Using human and AI "
+     "intelligence to ask better questions and learn what works."),
 ]
 
 
