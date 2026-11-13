@@ -21,3 +21,5 @@ exclude:
   - vendor/
   - Gemfile
   - Gemfile.lock
+  - growth/
+  - reference/

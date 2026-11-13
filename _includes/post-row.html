@@ -1,0 +1,13 @@
+{%- assign words = include.post.content | number_of_words -%}
+{%- assign read_time = words | divided_by: 200 -%}
+{%- if read_time == 0 %}{% assign read_time = 1 %}{% endif -%}
+<a class="rp-row rp-nothumb" href="{{ include.post.url }}">
+  <div>
+    <small><time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: "%-d %b %Y" }}</time> &middot; {{ read_time }} min</small>
+    <h3>{{ include.post.title }}</h3>
+    {%- if include.post.description %}
+    <p>{{ include.post.description }}</p>
+    {%- endif %}
+  </div>
+  <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+</a>

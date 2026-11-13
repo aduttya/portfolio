@@ -1,11 +1,16 @@
-{% assign words = include.post.content | number_of_words %}
-{% assign read_time = words | divided_by: 200 %}
-{% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
-<a href="{{ include.post.url }}" class="post-panel">
-  <span class="roof"></span><span class="cut"></span>
-  <span class="inner">
-    <h3>{{ include.post.title }}</h3>
-    {% if include.post.description %}<p>{{ include.post.description }}</p>{% endif %}
-    <span class="meta">{{ include.post.date | date: "%b %d, %Y" }} · {{ read_time }} min</span>
-  </span>
+{%- comment -%} Rail card for a blog post. The post's social image stands in for a cover. {%- endcomment -%}
+{%- assign words = include.post.content | number_of_words -%}
+{%- assign read_time = words | divided_by: 200 -%}
+{%- if read_time == 0 %}{% assign read_time = 1 %}{% endif -%}
+<a class="rp-gcard" href="{{ include.post.url }}">
+  {%- assign img = include.post.og_image | default: include.post.image -%}
+  {%- if img %}
+  <div class="rp-shot"><img src="{{ img }}" alt="" loading="lazy" width="1200" height="630" /></div>
+  {%- endif %}
+  <div class="rp-meta"><span>{{ include.post.date | date: "%-d %b %Y" }} &middot; {{ read_time }} min</span></div>
+  <h3>{{ include.post.title }}</h3>
+  {%- if include.post.description %}
+  <p>{{ include.post.description }}</p>
+  {%- endif %}
+  <span class="rp-go">Read {% include icon.html name="arrow" %}</span>
 </a>

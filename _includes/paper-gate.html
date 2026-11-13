@@ -1,0 +1,37 @@
+{%- comment -%}
+  Email-then-download for the Beyond Rankings PDF. States via
+  data-state: form (default) / done / direct (repeat visit or no JS).
+  Params: id (unique per page), plain (true inside the modal: no card
+  heading, the modal supplies its own).
+{%- endcomment -%}
+{%- assign gid = include.id | default: "gate" -%}
+<div class="rp-dl" data-gate>
+  <div class="rp-gate-form">
+    {%- unless include.plain %}<h3>Get the full paper.</h3>{% endunless %}
+    <form novalidate>
+      <div class="rp-field">
+        <input id="{{ gid }}-email" type="email" name="email" placeholder="Your email" autocomplete="email" aria-label="Your email" aria-describedby="{{ gid }}-err" required />
+        <button class="rp-btn rp-dark" type="submit">Download the PDF</button>
+      </div>
+      <p class="rp-err" id="{{ gid }}-err" role="alert"></p>
+      <div class="rp-ticks">
+        <span>{% include icon.html name="check" %}Instant download</span>
+        <span>{% include icon.html name="check" %}24-page PDF</span>
+        <span>{% include icon.html name="check" %}No newsletter</span>
+      </div>
+      <div class="rp-opt">
+        <label class="rp-check"><input type="checkbox" name="opt_in" value="yes" /><span>Email me when I publish new research.</span></label>
+        <small>Your email is only used for this. Unsubscribe any time.</small>
+      </div>
+    </form>
+  </div>
+  <div class="rp-gate-done" aria-live="polite">
+    <h3>Downloading…</h3>
+    <p><a class="rp-link" href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" download>Click here if it didn't start</a></p>
+  </div>
+  <div class="rp-gate-direct">
+    {%- unless include.plain %}<h3>Get the full paper.</h3>{% endunless %}
+    <p>24-page PDF, free to read and share.</p>
+    <a class="rp-btn rp-dark" href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" download>Download PDF</a>
+  </div>
+</div>

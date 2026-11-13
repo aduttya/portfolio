@@ -1,0 +1,37 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% include head-common.html %}
+  <title>Page not found — Ajay Yadav</title>
+  <meta name="description" content="This page doesn't exist on aduttya.com. Head back home, or browse the research and the blog." />
+  <meta name="robots" content="noindex" />
+  {% include analytics.html %}
+</head>
+<body>
+
+{% include site-header.html %}
+
+<main id="main">
+  <section class="rp-hero rp-ink rp-404">
+    <canvas class="rp-ht" aria-hidden="true"></canvas>
+    <div class="rp-wrap">
+      <span class="rp-eyebrow">404</span>
+      <h1 class="rp-display">Page not found. <span class="rp-dim">The link may have moved.</span></h1>
+      <div class="rp-acts">
+        <a class="rp-btn" href="/">Home</a>
+        <a class="rp-btn rp-ghost" href="/research/">Research</a>
+        <a class="rp-btn rp-ghost" href="/blog/">Blog</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include site-close.html no_cta=true %}
+
+</body>
+</html>

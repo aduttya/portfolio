@@ -1,0 +1,10 @@
+<svg class="cv" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cover for Ajay Yadav's SEO and AEO work at Neue World: stacked planes">
+<defs></defs>
+<rect width="300" height="420" fill="#f0e8dc"/>
+<path d="M60 300 L180 300 L210 270 L90 270 Z" fill="#141210" fill-opacity="1"/><path d="M74 266 L194 266 L224 236 L104 236 Z" fill="none" stroke="#141210" stroke-width="1.2" fill-opacity="0"/><path d="M88 232 L208 232 L238 202 L118 202 Z" fill="none" stroke="#141210" stroke-width="1.2" fill-opacity="0"/><path d="M102 198 L222 198 L252 168 L132 168 Z" fill="none" stroke="#141210" stroke-width="1.2" fill-opacity="0"/><path d="M116 164 L236 164 L266 134 L146 134 Z" fill="#fa6614" fill-opacity="1"/>
+<rect x="20" y="356" width="260" height="1" fill="#141210" fill-opacity=".45"/>
+<text class="cv-t" x="20" y="48" fill="#141210" font-size="25">Neue</text><text class="cv-t" x="20" y="75" fill="#141210" font-size="25">World</text><text x="20" y="106" fill="#625e58" font-size="7.4">SEO and AEO systems</text><text x="20" y="116" fill="#625e58" font-size="7.4">for client teams</text>
+<text class="cv-b" x="280" y="42" fill="#141210" font-size="7.6" text-anchor="end" letter-spacing=".4">AJAY.YADAV</text>
+<text class="cv-m" x="20" y="398" fill="#141210" font-size="13" letter-spacing="-.2">SEO &amp; AEO Lead</text>
+<text x="280" y="398" fill="#625e58" font-size="7.6" text-anchor="end">Role</text>
+</svg>

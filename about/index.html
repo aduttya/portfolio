@@ -1,21 +1,14 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
-  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
+{% include head-common.html %}
   <title>About — Ajay Yadav, Product & Growth in AI Search</title>
   <meta name="description" content="From blockchain development to building AI search, SEO, and AEO systems. Ajay Yadav's background, current work at Flozi and Neue World, and timeline." />
   <link rel="canonical" href="https://aduttya.com/about/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="profile"
@@ -63,120 +56,87 @@
 </head>
 <body>
 
-{% include nav-warm.html %}
+{% include site-header.html %}
 
-<main>
+<main id="main">
 
-  <!-- ── Intro ── -->
-  <section class="sheet">
-    <div class="panel about-photo c-4 settle">
-      <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png" alt="Ajay Yadav" width="1145" height="1374" />
-      <span class="badge-ay">AY</span>
-    </div>
-
-    <div class="panel p-ink about-copy c-8 settle">
-      <h1 class="display h-xl">About</h1>
-      <p class="lede lede--wide">I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World's clients too, and stay hands-on across engineering and QA.</p>
+  <!-- Hero -->
+  <section class="rp-hero rp-compact rp-ink">
+    <div class="rp-wrap">
+      <span class="rp-eyebrow">About</span>
+      <h1 class="rp-display">About. <span class="rp-dim">Blockchain developer turned product and growth lead in AI search.</span></h1>
     </div>
   </section>
 
-  <!-- ── Current Work ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Current Work</h2></div>
-
-    <a class="panel p-orange card-link c-6 settle" href="https://flozi.io/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">Product &amp; Technical Lead</span>
-      <h3 class="display h-md">Flozi</h3>
-      <p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p>
-    </a>
-
-    <a class="panel p-panel card-link c-6 settle" href="https://www.neue.world/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">SEO &amp; AEO Lead</span>
-      <h3 class="display h-md">Neue World</h3>
-      <p class="meta meta--sub">Systems that help teams execute SEO faster with AI tooling and automation.</p>
-    </a>
-  </section>
-
-  <!-- ── Timeline ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Timeline</h2></div>
-
-    <div class="panel p-panel c-12">
-      <div class="tl-row">
-        <span class="num">01</span>
-        <div>
-          <h3 class="display h-sm">SEO &amp; AEO</h3>
-          <p>Working on AI search visibility and answer engine optimization.</p>
+  <section class="rp-g rp-light">
+    <div class="rp-wrap">
+      <article>
+        <div class="rp-blk rp-prose">
+          <p>I started as a blockchain developer, building Nightwing, an NFT analytics product. At Layers, I moved into managing developers while staying hands-on with blockchain. When Flozi started, I moved into growth and distribution, which is where SEO and AEO entered my work. Now I lead that for Neue World's clients too, and stay hands-on across engineering and QA.</p>
         </div>
-        <span class="meta period">2025 to Now</span>
-      </div>
-      <div class="tl-row">
-        <span class="num">02</span>
-        <div>
-          <h3 class="display h-sm">AI Strategy &amp; Systems</h3>
-          <p>Exploring AI adoption, internal tools and automation.</p>
+
+        <div class="rp-blk">
+          <h2>Current work</h2>
+          <div class="rp-rows">
+            <a class="rp-row rp-nothumb" href="https://flozi.io/" target="_blank" rel="noopener">
+              <div><small>Product &amp; Technical Lead</small><h3>Flozi</h3><p>Website visibility in ChatGPT, Gemini and other LLM-powered discovery.</p></div>
+              <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens flozi.io)</span></span>
+            </a>
+            <a class="rp-row rp-nothumb" href="https://www.neue.world/" target="_blank" rel="noopener">
+              <div><small>SEO &amp; AEO Lead</small><h3>Neue World</h3><p>Systems that help teams execute SEO faster with AI tooling and automation.</p></div>
+              <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens neue.world)</span></span>
+            </a>
+          </div>
         </div>
-        <span class="meta period">2024 to Now</span>
-      </div>
-      <div class="tl-row">
-        <span class="num">03</span>
-        <div>
-          <h3 class="display h-sm">Project Lead</h3>
-          <p>Led development of internal blockchain product initiatives.</p>
+
+        <div class="rp-blk">
+          <h2>Timeline</h2>
+          <ol class="rp-kf rp-dated">
+            <li><span class="rp-n">01</span><div><h3>SEO &amp; AEO</h3><p>Working on AI search visibility and answer engine optimization.</p></div><span class="rp-when">2025 to now</span></li>
+            <li><span class="rp-n">02</span><div><h3>AI Strategy &amp; Systems</h3><p>Exploring AI adoption, internal tools and automation.</p></div><span class="rp-when">2024 to now</span></li>
+            <li><span class="rp-n">03</span><div><h3>Project Lead</h3><p>Led development of internal blockchain product initiatives.</p></div><span class="rp-when">2022 to 2024</span></li>
+            <li><span class="rp-n">04</span><div><h3>Blockchain Developer</h3><p>Smart contracts, decentralized systems and Web3 infrastructure.</p></div><span class="rp-when">2021 to 2022</span></li>
+          </ol>
         </div>
-        <span class="meta period">2022 to 2024</span>
-      </div>
-      <div class="tl-row">
-        <span class="num">04</span>
-        <div>
-          <h3 class="display h-sm">Blockchain Developer</h3>
-          <p>Smart contracts, decentralized systems and Web3 infrastructure.</p>
+
+        <div class="rp-blk">
+          <h2>Outside work</h2>
+          <div class="rp-strip-grid rp-cols-2">
+            <a href="https://www.apexinsights.racing/" target="_blank" rel="noopener">
+              <span class="rp-k">Racing</span>
+              <h3>apexinsights.racing <span aria-hidden="true">↗</span></h3>
+              <p>GT3, WEC, IMSA and Formula 1, watched for strategy, not the cars. I write about it at Apex Insights.</p>
+            </a>
+            <div>
+              <span class="rp-k">Competitive coding</span>
+              <p>Still competing when the itch shows up.</p>
+            </div>
+          </div>
         </div>
-        <span class="meta period">2021 to 2022</span>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <!-- ── Now ── -->
-  <section class="sheet">
-    <div class="panel p-ink c-12">
-      <span class="meta"><span class="dot"></span>Live</span>
-      <h2 class="display h-lg" style="margin-top:10px">Now</h2>
-      <ul class="now-list">
-        <li>Building Flozi</li>
-        <li>Experimenting with AI search retrieval</li>
-        <li>Developing AEO frameworks</li>
-        <li>Testing AI citation patterns</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ── Outside Work ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Outside Work</h2></div>
-
-    <a class="panel p-orange card-link c-4 settle" href="https://www.apexinsights.xyz/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">Outside Work</span>
-      <h3 class="display h-md">Racing</h3>
-      <p class="meta meta--sub">GT3, WEC, IMSA and Formula 1, watched for strategy, not the cars. I write about it at apexinsights.xyz.</p>
-    </a>
-
-    <div class="panel p-panel c-4 settle">
-      <span class="meta meta--solid">Outside Work</span>
-      <h3 class="display h-md">Film</h3>
-      <p class="meta meta--sub">Cinephile.</p>
-    </div>
-
-    <div class="panel p-panel c-4 settle">
-      <span class="meta meta--solid">Outside Work</span>
-      <h3 class="display h-md">Competitive Coding</h3>
-      <p class="meta meta--sub">Still competing when the itch shows up.</p>
+      <aside class="rp-side">
+        <div class="rp-scene rp-photo">
+          <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png" alt="Ajay Yadav" width="1145" height="1374" />
+        </div>
+        <div class="rp-dl rp-now">
+          <span class="rp-live"><i></i>Live</span>
+          <h3>Now</h3>
+          <ul class="rp-learn">
+            <li>{% include icon.html name="check" %}<span>Building Flozi</span></li>
+            <li>{% include icon.html name="check" %}<span>Experimenting with AI search retrieval</span></li>
+            <li>{% include icon.html name="check" %}<span>Developing AEO frameworks</span></li>
+            <li>{% include icon.html name="check" %}<span>Testing AI citation patterns</span></li>
+          </ul>
+          <a class="rp-btn rp-dark" href="mailto:anjayyadaav379@gmail.com">Start a conversation</a>
+        </div>
+      </aside>
     </div>
   </section>
 
 </main>
 
-{% include footer-warm.html %}
+{% include site-close.html %}
 
 </body>
 </html>

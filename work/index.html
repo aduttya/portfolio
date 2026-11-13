@@ -1,21 +1,14 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
-  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
+{% include head-common.html %}
   <title>Work — AI Search Projects, Research &amp; Experiments</title>
   <meta name="description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
   <link rel="canonical" href="https://aduttya.com/work/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="website"
@@ -64,108 +57,113 @@
 </head>
 <body>
 
-{% include nav-warm.html %}
+{% include site-header.html %}
 
-<main>
+<main id="main">
 
-  <!-- ── Intro ── -->
-  <section class="sheet">
-    <div class="panel p-ink c-12 settle">
-      <span class="shape circle sh-orange" aria-hidden="true" style="width:34%;padding-bottom:34%;right:-8%;top:-16%"></span>
-      <h1 class="display h-xl">Work</h1>
-      <p class="lede lede--wide">I don't just study AI search, I build the products and run the experiments that test what actually gets cited.</p>
+  <!-- Hero -->
+  <section class="rp-hero rp-compact rp-ink">
+    <div class="rp-wrap">
+      <span class="rp-eyebrow">Work</span>
+      <h1 class="rp-display">Work. <span class="rp-dim">I build the products and run the experiments that test what actually gets cited.</span></h1>
     </div>
   </section>
 
-  <!-- ── Projects ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Projects</h2></div>
-
-    <a class="panel p-orange card-link c-12 settle" href="https://flozi.io/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">★ Flagship project</span>
-      <h3 class="display h-md">Flozi</h3>
-      <p class="meta meta--sub">Platform designed to analyze how websites perform in AI search systems and provide guidance for improving retrievability and citations.</p>
-      <div class="tags">
-        <span class="tag">AI search visibility</span>
-        <span class="tag">retrievability analysis</span>
-        <span class="tag">AEO diagnostics</span>
+  <!-- Projects -->
+  <section class="rp-sec rp-light" aria-labelledby="proj-h" data-rail>
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Projects</span>
+          <h2 id="proj-h" class="rp-display">Projects. <span class="rp-dim">Live products and the systems behind them.</span></h2>
+        </div>
+        {% include arrows.html label="project" %}
       </div>
-    </a>
-
-    <a class="panel p-ink card-link c-12 settle" href="https://www.apexinsights.xyz/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">Founder &middot; Live product</span>
-      <h3 class="display h-md">Apex Insights</h3>
-      <p class="meta meta--sub">Educational platform for GT3 racing. Championships, teams, drivers and race weekends with round-by-round results, built as a testbed for entity-based SEO and answer engine optimization on a real, growing site.</p>
-      <div class="tags">
-        <span class="tag">GT3 racing data</span>
-        <span class="tag">entity SEO</span>
-        <span class="tag">structured data</span>
-      </div>
-    </a>
-
-    <div class="panel p-panel c-6 settle">
-      <span class="meta meta--solid">Experiment</span>
-      <h3 class="display h-md">Embedding Similarity Analyzer</h3>
-      <p class="meta meta--sub">System that analyzes semantic similarity across website pages using vector embeddings and cosine similarity to detect redundancy and topic drift.</p>
-      <div class="tags">
-        <span class="tag">vector embeddings</span>
-        <span class="tag">cosine similarity</span>
-        <span class="tag">semantic clustering</span>
-      </div>
-    </div>
-
-    <div class="panel p-panel c-6 settle">
-      <span class="meta meta--solid">Internal System</span>
-      <h3 class="display h-md">AI SEO Execution System</h3>
-      <p class="meta meta--sub">AI-assisted workflow system for executing SEO tasks faster using modern AI tools combined with traditional SEO platforms.</p>
-      <div class="tags">
-        <span class="tag">AI automation</span>
-        <span class="tag">SEO execution</span>
-        <span class="tag">content optimization</span>
+      <div class="rp-rail">
+        <a class="rp-gcard" href="https://flozi.io/" target="_blank" rel="noopener">
+          <div class="rp-scene"><div class="rp-bk">{% include covers/flozi.svg %}</div></div>
+          <div class="rp-meta"><span class="rp-badge">Flagship</span><span>Product &amp; Technical Lead &middot; Live product</span></div>
+          <h3>Flozi</h3>
+          <p>Platform designed to analyze how websites perform in AI search systems and provide guidance for improving retrievability and citations.</p>
+          <div class="rp-chips"><span>AI search visibility</span><span>retrievability analysis</span><span>AEO diagnostics</span></div>
+          <span class="rp-go">Visit flozi.io {% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-gcard" href="https://www.apexinsights.racing/" target="_blank" rel="noopener">
+          <div class="rp-scene"><div class="rp-bk">{% include covers/apex-insights.svg %}</div></div>
+          <div class="rp-meta"><span>Founder &middot; Live product</span></div>
+          <h3>Apex Insights</h3>
+          <p>Educational platform for GT3 racing. Championships, teams, drivers and race weekends with round-by-round results, built as a testbed for entity-based SEO and answer engine optimization on a real, growing site.</p>
+          <div class="rp-chips"><span>GT3 racing data</span><span>entity SEO</span><span>structured data</span></div>
+          <span class="rp-go">Visit apexinsights.racing {% include icon.html name="arrow" %}</span>
+        </a>
+        <div class="rp-gcard" id="embedding-analyzer">
+          <div class="rp-scene"><div class="rp-bk">{% include covers/embedding-analyzer.svg %}</div></div>
+          <div class="rp-meta"><span>Experiment</span></div>
+          <h3>Embedding Similarity Analyzer</h3>
+          <p>System that analyzes semantic similarity across website pages using vector embeddings and cosine similarity to detect redundancy and topic drift.</p>
+          <div class="rp-chips"><span>vector embeddings</span><span>cosine similarity</span><span>semantic clustering</span></div>
+        </div>
+        <div class="rp-gcard" id="ai-seo-system">
+          <div class="rp-scene"><div class="rp-bk">{% include covers/ai-seo-system.svg %}</div></div>
+          <div class="rp-meta"><span>Internal system</span></div>
+          <h3>AI SEO Execution System</h3>
+          <p>AI-assisted workflow system for executing SEO tasks faster using modern AI tools combined with traditional SEO platforms.</p>
+          <div class="rp-chips"><span>AI automation</span><span>SEO execution</span><span>content optimization</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Research ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Research</h2></div>
-
-    <a class="panel p-ink card-link c-12 settle" href="/research/beyond-rankings/">
-      <span class="meta meta--solid">Pilot Study &middot; GPT-4o &middot; April 2026</span>
-      <h3 class="display h-md">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h3>
-      <p class="meta meta--sub">Introduces ISIC, a four-dimensional probabilistic visibility model (Inclusion, Stability, Influence, Coverage), as the measurement framework for AI-driven discovery. Empirically validates that LLM and Google search channels direct buyers toward fundamentally different vendors, with an average Jaccard overlap of 0.03 across 27 B2B CRM queries.</p>
-      <div class="tags">
-        <span class="tag">AEO measurement</span>
-        <span class="tag">probabilistic visibility</span>
-        <span class="tag">LLM citation bias</span>
-        <span class="tag">B2B discovery</span>
+  <!-- Research -->
+  <section class="rp-strip rp-paper" aria-labelledby="res-h">
+    <div class="rp-wrap">
+      <div class="rp-strip-head">
+        <div>
+          <span class="rp-eyebrow">Research &middot; Pilot study &middot; GPT-4o &middot; April 2026</span>
+          <h2 id="res-h" class="rp-display">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h2>
+          <p class="rp-lede">Introduces ISIC, a four-dimensional probabilistic visibility model (Inclusion, Stability, Influence, Coverage), as the measurement framework for AI-driven discovery. Empirically validates that LLM and Google search channels direct buyers toward fundamentally different vendors, with an average Jaccard overlap of 0.03 across 27 B2B CRM queries.</p>
+          <div class="rp-chips"><span>AEO measurement</span><span>probabilistic visibility</span><span>LLM citation bias</span><span>B2B discovery</span></div>
+        </div>
+        <a class="rp-btn rp-dark" href="/research/beyond-rankings/">Read the paper</a>
       </div>
-    </a>
+      <div class="rp-strip-foot">
+        <a class="rp-link" href="/research/">All research →</a>
+      </div>
+    </div>
   </section>
 
-  <!-- ── Experiments ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Experiments</h2></div>
-
-    <div class="panel p-panel c-4 settle">
-      <h3 class="display h-md">AI Citation Testing</h3>
-      <p class="meta meta--sub">Testing how different content structures influence whether AI systems cite a page in generated answers.</p>
-    </div>
-
-    <div class="panel p-panel c-4 settle">
-      <h3 class="display h-md">Retrievability vs Authority</h3>
-      <p class="meta meta--sub">Exploring why pages retrieved by search engines are not always cited by AI systems.</p>
-    </div>
-
-    <div class="panel p-panel c-4 settle">
-      <h3 class="display h-md">Semantic Content Mapping</h3>
-      <p class="meta meta--sub">Using embeddings to visualize relationships between pages and detect content gaps.</p>
+  <!-- Experiments -->
+  <section class="rp-sec rp-light" aria-labelledby="exp-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Experiments</span>
+          <h2 id="exp-h" class="rp-display">Experiments.</h2>
+        </div>
+      </div>
+      <div class="rp-rows">
+        <a class="rp-row" href="/blog/six-months-of-aeo-experiments/">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-citation.svg %}</div></div>
+          <div><small>Experiment</small><h3>AI Citation Testing</h3><p>Testing how different content structures influence whether AI systems cite a page in generated answers.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-row" href="/blog/why-ai-wont-cite-my-content/">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-retrievability.svg %}</div></div>
+          <div><small>Experiment</small><h3>Retrievability vs Authority</h3><p>Exploring why pages retrieved by search engines are not always cited by AI systems.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-row" href="/blog/text-embeddings-for-aeo-and-seo/">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-semantic.svg %}</div></div>
+          <div><small>Experiment</small><h3>Semantic Content Mapping</h3><p>Using embeddings to visualize relationships between pages and detect content gaps.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+      </div>
     </div>
   </section>
 
 </main>
 
-{% include footer-warm.html %}
+{% include site-close.html %}
 
 </body>
 </html>

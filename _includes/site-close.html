@@ -1,0 +1,64 @@
+{%- comment -%}
+  Closing CTA (every page except 404) + footer. Ink, continuous.
+{%- endcomment -%}
+<div class="rp-ink">
+{%- unless include.no_cta %}
+  <section class="cx-close" aria-labelledby="cx-h">
+    <div class="rp-wrap">
+      <span class="rp-eyebrow">Get in touch</span>
+      <h2 id="cx-h" class="cx-close-h rp-display">If you're wondering how your product shows up in AI search, ask me.</h2>
+      <p class="cx-close-sub">ChatGPT, Perplexity, AI Overviews. Happy to look at your specific situation before either of us talks about working together.</p>
+      <div class="cx-dcs">
+        <a class="cx-dc" href="mailto:anjayyadaav379@gmail.com">
+          <span class="rp-eyebrow">Email</span>
+          <span class="cx-dc-h">Email me</span>
+          <span class="cx-dc-d">anjayyadaav379@gmail.com</span>
+          <span class="cx-dc-f"><span>Opens your mail app</span><i>{% include icon.html name="arrow" %}</i></span>
+        </a>
+        <a class="cx-dc" href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener">
+          <span class="rp-eyebrow">LinkedIn</span>
+          <span class="cx-dc-h">Send me a DM</span>
+          <span class="cx-dc-d">linkedin.com/in/ajayyadav420</span>
+          <span class="cx-dc-f"><span>Opens LinkedIn</span><i>{% include icon.html name="arrow" %}</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+{%- endunless %}
+  <footer class="ft">
+    <div class="rp-wrap">
+      <div class="ft-main">
+        <div>
+          <div class="ft-mark">AJAY.YADAV</div>
+          <p class="ft-line">Research and products on how AI search decides which companies to recommend.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/work/">Work</a></li>
+            <li><a href="/research/">Research</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Elsewhere</h2>
+          <ul>
+            <li><a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/aduttya" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://x.com/aduttya" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://flozi.io/" target="_blank" rel="noopener">Flozi</a></li>
+            <li><a href="https://www.neue.world/" target="_blank" rel="noopener">Neue World</a></li>
+            <li><a href="https://www.apexinsights.racing/" target="_blank" rel="noopener">Apex Insights</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-legal">
+        <span>&copy; {{ 'now' | date: "%Y" }} Ajay Yadav</span>
+        <a href="mailto:anjayyadaav379@gmail.com">anjayyadaav379@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="/assets/js/site.js" defer></script>

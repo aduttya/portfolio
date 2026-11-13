@@ -1,0 +1,26 @@
+{%- comment -%}
+  Modal version of the paper gate, opened by any link with data-dl-open.
+  Include once per page that has such a link.
+{%- endcomment -%}
+<div class="rp-modal" id="rp-modal" role="dialog" aria-modal="true" aria-labelledby="rp-modal-h" aria-hidden="true">
+  <div class="rp-modal-card">
+    <button class="rp-modal-x" type="button" aria-label="Close">{% include icon.html name="close" %}</button>
+    <div class="rp-modal-body">
+      <span class="rp-eyebrow">Research paper</span>
+      <h2 id="rp-modal-h">Get Beyond Rankings.</h2>
+      <p>The full pilot study on how AI and Google send buyers to different vendors, and the ISIC model for measuring visibility instead.</p>
+      {% include paper-gate.html id="modal-gate" plain=true %}
+    </div>
+    <div class="rp-modal-art" aria-hidden="true">
+      <div class="rp-score">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--bone-veil)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--orange)" stroke-width="8" stroke-linecap="round" stroke-dasharray="9.8 400"/></svg>
+        <div><b>0.03</b><span>avg overlap, AI vs Google</span></div>
+      </div>
+      <ul class="rp-checks">
+        <li>{% include icon.html name="check" %}19 of 27 queries shared nothing</li>
+        <li>{% include icon.html name="check" %}81 GPT-4o responses</li>
+        <li>{% include icon.html name="check" %}The ISIC visibility model</li>
+      </ul>
+    </div>
+  </div>
+</div>

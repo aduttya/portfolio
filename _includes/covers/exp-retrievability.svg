@@ -1,0 +1,10 @@
+<svg class="cv" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Thumbnail for Retrievability vs Authority: two bars of unequal height">
+<defs></defs>
+<rect width="300" height="420" fill="#e6dccc"/>
+<rect x="70" y="150" width="62" height="190" fill="#141210"/><rect x="168" y="262" width="62" height="78" fill="#fa6614"/><text x="101" y="140" fill="#625e58" font-size="8" text-anchor="middle">Retrieved</text><text x="199" y="252" fill="#625e58" font-size="8" text-anchor="middle">Cited</text>
+<rect x="20" y="356" width="260" height="1" fill="#141210" fill-opacity=".45"/>
+<text class="cv-t" x="20" y="48" fill="#141210" font-size="25">Retrieval</text><text class="cv-t" x="20" y="75" fill="#141210" font-size="25">vs Authority</text>
+<text class="cv-b" x="280" y="42" fill="#141210" font-size="7.6" text-anchor="end" letter-spacing=".4">AJAY.YADAV</text>
+<text class="cv-m" x="20" y="398" fill="#141210" font-size="13" letter-spacing="-.2">Experiment</text>
+<text x="280" y="398" fill="#625e58" font-size="7.6" text-anchor="end">Testing</text>
+</svg>

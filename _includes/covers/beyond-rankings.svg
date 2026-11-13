@@ -1,0 +1,17 @@
+<svg class="cv" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cover of Beyond Rankings, a research paper by Ajay Yadav: two circles for Google and AI answers that barely overlap">
+<defs><pattern id="brl" width="300" height="4" patternUnits="userSpaceOnUse"><rect width="300" height="1.6" fill="#fff"/></pattern><mask id="brlm"><rect width="300" height="420" fill="url(#brl)"/></mask><clipPath id="brA"><circle cx="84" cy="238" r="72"/></clipPath></defs>
+<rect width="300" height="420" fill="#141210"/>
+<g mask="url(#brlm)"><circle cx="84" cy="238" r="72" fill="#f0e8dc"/><circle cx="216" cy="238" r="72" fill="#98928a"/></g>
+<circle cx="216" cy="238" r="72" fill="#fa6614" clip-path="url(#brA)"/>
+<circle cx="84" cy="238" r="72" fill="none" stroke="#f0e8dc" stroke-opacity=".5" stroke-width=".8"/>
+<circle cx="216" cy="238" r="72" fill="none" stroke="#98928a" stroke-opacity=".6" stroke-width=".8"/>
+<line x1="150" y1="162" x2="150" y2="142" stroke="#fa6614" stroke-width=".8"/>
+<text class="cv-m" x="150" y="136" fill="#fa6614" font-size="11" text-anchor="middle">0.03</text>
+<text x="84" y="330" fill="#b2aca3" font-size="8" text-anchor="middle">Google</text>
+<text x="216" y="330" fill="#b2aca3" font-size="8" text-anchor="middle">AI answers</text>
+<rect x="20" y="356" width="260" height="1" fill="#f0e8dc" fill-opacity=".45"/>
+<text class="cv-t" x="20" y="48" fill="#f0e8dc" font-size="25">Beyond</text><text class="cv-t" x="20" y="75" fill="#f0e8dc" font-size="25">Rankings</text><text x="20" y="106" fill="#98928a" font-size="7.4">Measuring vendor visibility</text><text x="20" y="116" fill="#98928a" font-size="7.4">in AI-driven discovery</text>
+<text class="cv-b" x="280" y="42" fill="#f0e8dc" font-size="7.6" text-anchor="end" letter-spacing=".4">AJAY.YADAV</text>
+<text class="cv-m" x="20" y="398" fill="#f0e8dc" font-size="13" letter-spacing="-.2">Research Paper</text>
+<text x="280" y="398" fill="#98928a" font-size="7.6" text-anchor="end">April 2026</text>
+</svg>

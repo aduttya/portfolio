@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
-  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
+{% include head-common.html %}
   <title>{{ page.seo_title | default: page.title }} — Ajay Yadav</title>
   <meta name="description" content="{{ page.description }}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style-warm.css" />
 
   {%- comment -%}
     og_image feeds the social card only; image renders as a visible hero
@@ -43,6 +36,10 @@
         "datePublished": "{{ page.date | date_to_xmlschema }}",
         "dateModified": "{{ page.date | date_to_xmlschema }}",
         "url": "{{ page.url | absolute_url }}",
+        {%- if social_image %}
+        "image": "{{ social_image | absolute_url }}",
+        {%- endif %}
+        "wordCount": {{ page.content | number_of_words }},
         "author": {
           "@type": "Person",
           "@id": "https://aduttya.com/#person",
@@ -96,65 +93,76 @@
 </head>
 <body>
 
-{% include nav-warm.html %}
+{% include site-header.html %}
 
-<main>
+{%- assign words = content | number_of_words -%}
+{%- assign read_time = words | divided_by: 200 -%}
+{%- if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
 
-  <!-- ── Header ── -->
-  <section class="sheet">
-    <div class="panel p-ink c-12">
-      <div class="post-hero-meta">
-        <a href="/blog/" class="back">
-          <svg class="back-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 5 10l7 6"/><path d="M5 10h11"/></svg>
-          <span class="back-label">← Blog</span>
-        </a>
-        <span class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
-      </div>
-      <h1 class="display h-xl">{{ page.title }}</h1>
-      {% if page.description %}<p class="lede lede--wide">{{ page.description }}</p>{% endif %}
-    </div>
+<main id="main">
 
-    {% if page.image %}
-    <div class="panel p-ink post-thumb c-12">
-      <img src="{{ page.image }}" alt="{{ page.title }}" />
-    </div>
-    {% endif %}
-  </section>
-
-  <!-- ── Body ── -->
-  <section class="sheet">
-    <article class="panel p-panel c-12 post-content">
-      {{ content }}
-    </article>
-  </section>
-
-  <!-- ── Related ── -->
-  {% assign related = site.posts | where_exp: "post", "post.url != page.url" %}
-  {% if related.size > 0 %}
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">Related</h2></div>
-    <div class="panel p-panel posts">
-      {% for post in related limit:3 %}
-      {%- assign words = post.content | number_of_words -%}
-      {%- assign read_time = words | divided_by: 200 -%}
-      {%- if read_time == 0 %}{% assign read_time = 1 %}{% endif -%}
-      <a class="post" href="{{ post.url }}">
-        <div class="post-main">
-          <h3 class="display h-sm">{{ post.title }}</h3>
-          {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+  <section class="rp-g rp-post rp-light">
+    <div class="rp-wrap">
+      <article>
+        <nav class="rp-crumbs" aria-label="Breadcrumb">
+          <a href="/blog/">Blog</a>{% include icon.html name="crumb" %}<span aria-current="page">{{ page.title }}</span>
+        </nav>
+        <h1 class="rp-display">{{ page.title }}</h1>
+        {%- if page.description %}
+        <p class="rp-lede">{{ page.description }}</p>
+        {%- endif %}
+        <p class="rp-src"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time> &middot; {{ read_time }} min read &middot; <a href="/about/">Ajay Yadav</a></p>
+        <hr />
+        {%- if page.image %}
+        <figure class="rp-blk rp-shot"><img src="{{ page.image }}" alt="{{ page.title | escape }}" /></figure>
+        {%- endif %}
+        <div class="rp-blk rp-prose rp-long" data-toc-src>
+          {{ content }}
         </div>
-        <span class="meta">{{ post.date | date: "%-d %b %Y" }} &middot; {{ read_time }} min</span>
-      </a>
-      {% endfor %}
+      </article>
+
+      <aside class="rp-side rp-post-side rp-post-toc" aria-label="On this page">
+        <nav class="rp-toc" data-toc hidden aria-labelledby="toc-h">
+          <span class="rp-eyebrow" id="toc-h">On this page</span>
+          <ol></ol>
+        </nav>
+      </aside>
+
+      <aside class="rp-side rp-post-side rp-post-paper" aria-label="Related research">
+        <a class="rp-dl rp-mini" href="/research/beyond-rankings/">
+          <div class="rp-scene"><div class="rp-bk">{% include covers/beyond-rankings.svg %}</div></div>
+          <div>
+            <span class="rp-eyebrow">Read the study</span>
+            <h3>Beyond Rankings</h3>
+            <span class="rp-go">Read the paper {% include icon.html name="arrow" %}</span>
+          </div>
+        </a>
+      </aside>
     </div>
   </section>
-  {% endif %}
+
+  {%- assign related = site.posts | where_exp: "post", "post.url != page.url" %}
+  {%- if related.size > 0 %}
+  <section class="rp-rel rp-light" aria-labelledby="more-h" data-rail>
+    <div class="rp-wrap">
+      <div class="rp-rel-top">
+        <div class="rp-sec-head">
+          <h2 id="more-h" class="rp-display">More writing</h2>
+          {% include arrows.html label="post" %}
+        </div>
+        <div class="rp-rail">
+          {%- for post in related limit:3 %}
+          {% include post-card.html post=post %}
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {%- endif %}
 
 </main>
 
-{% include footer-warm.html %}
-
-<script src="/main.js" defer></script>
+{% include site-close.html %}
 
 </body>
 </html>

@@ -1,0 +1,187 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% include head-common.html %}
+  <title>Research: AI Search Visibility Studies — Ajay Yadav</title>
+  <meta name="description" content="Studies and experiments on how AI systems find, choose and cite companies, including the Beyond Rankings pilot study on AI vs Google vendor overlap." />
+  <link rel="canonical" href="https://aduttya.com/research/" />
+
+{% include head-meta.html
+     type="website"
+     url="https://aduttya.com/research/"
+     title="Research: AI Search Visibility Studies — Ajay Yadav"
+     description="Studies and experiments on how AI systems find, choose and cite companies, including the Beyond Rankings pilot study on AI vs Google vendor overlap."
+     image="/assets/images/og/research.png"
+     image_alt="Research by Ajay Yadav on how AI systems find, choose and cite companies"
+     image_width="1200"
+     image_height="630" %}
+
+  <!-- JSON-LD: CollectionPage + ItemList + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://aduttya.com/research/#page",
+        "name": "Research: AI Search Visibility Studies",
+        "url": "https://aduttya.com/research/",
+        "description": "Studies and experiments on how AI systems find, choose and cite companies.",
+        "author": { "@id": "https://aduttya.com/#person" },
+        "mainEntity": { "@id": "https://aduttya.com/research/#list" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://aduttya.com/research/#list",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "ScholarlyArticle",
+              "name": "Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery",
+              "url": "https://aduttya.com/research/beyond-rankings/",
+              "datePublished": "2026-04-01",
+              "author": { "@id": "https://aduttya.com/#person" }
+            }
+          },
+          { "@type": "ListItem", "position": 2, "name": "AI Citation Testing", "url": "https://aduttya.com/blog/six-months-of-aeo-experiments/" },
+          { "@type": "ListItem", "position": 3, "name": "Retrievability vs Authority", "url": "https://aduttya.com/blog/why-ai-wont-cite-my-content/" },
+          { "@type": "ListItem", "position": 4, "name": "Semantic Content Mapping", "url": "https://aduttya.com/blog/text-embeddings-for-aeo-and-seo/" },
+          { "@type": "ListItem", "position": 5, "name": "Embedding Similarity Analyzer", "url": "https://aduttya.com/work/" },
+          { "@type": "ListItem", "position": 6, "name": "Flozi", "url": "https://flozi.io/" }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aduttya.com/#person",
+        "name": "Ajay Yadav",
+        "url": "https://aduttya.com/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aduttya.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://aduttya.com/research/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  {% include analytics.html %}
+</head>
+<body>
+
+{% include site-header.html %}
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="rp-hero rp-ink">
+    <canvas class="rp-ht" aria-hidden="true"></canvas>
+    <div class="rp-wrap">
+      <span class="rp-eyebrow">AJAY.YADAV research</span>
+      <h1 class="rp-display">Research. <span class="rp-dim">What I test about AI search, measured and published.</span></h1>
+      <p class="rp-lede">Studies and experiments on how AI systems find, choose and cite companies. Every number says what it's based on.</p>
+      <div class="rp-acts">
+        <a class="rp-btn" href="/research/beyond-rankings/">Read the latest paper</a>
+        <a class="rp-btn rp-ghost" href="mailto:anjayyadaav379@gmail.com">Ask me about your product</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Papers -->
+  <section class="rp-sec rp-light" aria-labelledby="papers-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Papers</span>
+          <h2 id="papers-h" class="rp-display">Papers. <span class="rp-dim">One question, measured properly.</span></h2>
+        </div>
+      </div>
+      <div class="rp-feature">
+        <a class="rp-gcard" href="/research/beyond-rankings/">
+          <div class="rp-scene"><div class="rp-bk">{% include covers/beyond-rankings.svg %}</div></div>
+          <div>
+            <div class="rp-meta"><span class="rp-badge">Latest</span><span>Pilot study &middot; GPT-4o &middot; April 2026</span></div>
+            <h3>Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h3>
+            <p>Why rankings break down in AI search, and a four-part model to measure visibility instead. Across 27 B2B queries, AI and Google almost never sent buyers to the same vendors.</p>
+            <span class="rp-go">Read the paper {% include icon.html name="arrow" %}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Findings strip -->
+  <section class="rp-strip rp-paper" aria-labelledby="find-h">
+    <div class="rp-wrap">
+      <div class="rp-strip-head">
+        <div>
+          <span class="rp-eyebrow">From the latest paper</span>
+          <h2 id="find-h" class="rp-display">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h2>
+        </div>
+        <a class="rp-btn rp-dark" href="/research/beyond-rankings/">Read the paper</a>
+      </div>
+      <div class="rp-strip-grid">
+        <div><b>0.03</b><p>Average overlap between the vendors AI recommends and the ones Google ranks.</p></div>
+        <div><b>19 of 27</b><p>Queries where AI and Google shared no vendors at all.</p></div>
+        <div><b>81</b><p>GPT-4o responses showed the answer changes from one run to the next.</p></div>
+      </div>
+      <div class="rp-strip-foot">
+        <a class="rp-link" href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" data-dl-open>Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiments and tools -->
+  <section class="rp-sec rp-light" aria-labelledby="more-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">More research</span>
+          <h2 id="more-h" class="rp-display">Experiments and tools.</h2>
+        </div>
+        <a class="rp-link" href="/work/">All work →</a>
+      </div>
+      <div class="rp-rows">
+        <a class="rp-row" href="/blog/six-months-of-aeo-experiments/">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-citation.svg %}</div></div>
+          <div><small>Experiment</small><h3>AI Citation Testing</h3><p>Testing how different content structures influence whether AI systems cite a page in generated answers.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-row" href="/blog/why-ai-wont-cite-my-content/">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-retrievability.svg %}</div></div>
+          <div><small>Experiment</small><h3>Retrievability vs Authority</h3><p>Exploring why pages retrieved by search engines are not always cited by AI systems.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-row" href="/blog/text-embeddings-for-aeo-and-seo/">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-semantic.svg %}</div></div>
+          <div><small>Experiment</small><h3>Semantic Content Mapping</h3><p>Using embeddings to visualize relationships between pages and detect content gaps.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-row" href="/work/#embedding-analyzer">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/embedding-analyzer.svg %}</div></div>
+          <div><small>Tool</small><h3>Embedding Similarity Analyzer</h3><p>Analyzes semantic similarity across website pages using vector embeddings and cosine similarity to detect redundancy and topic drift.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
+        <a class="rp-row" href="https://flozi.io/" target="_blank" rel="noopener">
+          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/flozi.svg %}</div></div>
+          <div><small>Product</small><h3>Flozi</h3><p>Analyzes how websites perform in AI search systems and gives guidance for improving retrievability and citations.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens flozi.io)</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% include paper-modal.html %}
+{% include site-close.html %}
+
+</body>
+</html>

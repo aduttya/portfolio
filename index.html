@@ -1,21 +1,14 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
-  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
+{% include head-common.html %}
   <title>Ajay Yadav — AI Search, SEO & AEO</title>
   <meta name="description" content="I work on AI search problems before there's a playbook for them. SEO, AEO and research on how AI decides which companies to recommend." />
   <link rel="canonical" href="https://aduttya.com/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="website"
@@ -67,9 +60,9 @@
       },
       {
         "@type": "Organization",
-        "@id": "https://www.apexinsights.xyz/#organization",
+        "@id": "https://www.apexinsights.racing/#organization",
         "name": "Apex Insights",
-        "url": "https://www.apexinsights.xyz/"
+        "url": "https://www.apexinsights.racing/"
       }
     ]
   }
@@ -78,142 +71,142 @@
 </head>
 <body>
 
-{% include nav-warm.html %}
+{% include site-header.html %}
 
-<main>
+<main id="main">
 
-  <!-- ── Hero ── -->
-  <section class="sheet">
-    <div class="panel hero-portrait settle">
-      <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png"
-           alt="Ajay Yadav, Product and Technical Lead working on AI search systems"
-           width="1145" height="1374" />
-    </div>
-
-    <div class="panel p-ink hero-main settle">
-      <h1 class="display h-xl">I work on problems before there's a playbook for them.</h1>
-      <p class="lede">Blockchain in 2021, AI search now. I figure out what actually drives the outcome, then build the systems that act on it.</p>
-      <div class="btn-row">
-        <a class="btn btn-quiet" href="/research/beyond-rankings/">Read the study</a>
-        <a class="btn" href="mailto:anjayyadaav379@gmail.com">Start a conversation</a>
+  <!-- Hero -->
+  <section class="rp-hero rp-home rp-ink">
+    <div class="rp-wrap rp-hero-split">
+      <div>
+        <span class="rp-eyebrow">Growth &middot; AI search &middot; AEO</span>
+        <h1 class="rp-display">I work on growth before there's a playbook for it. <span class="rp-dim">Blockchain in 2021, AI search now.</span></h1>
+        <p class="rp-lede">I figure out what actually drives the outcome, then build the systems that act on it.</p>
+        <div class="rp-acts">
+          <a class="rp-btn" href="/research/beyond-rankings/">Read the study</a>
+          <a class="rp-btn rp-ghost" href="mailto:anjayyadaav379@gmail.com">Start a conversation</a>
+        </div>
+      </div>
+      <div class="rp-portrait">
+        <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/hero.png"
+             alt="Ajay Yadav, Product and Technical Lead working on AI search systems"
+             width="1145" height="1374" fetchpriority="high" />
       </div>
     </div>
-
-    <a class="panel p-orange role role--a settle" href="https://flozi.io/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">Product &amp; Technical Lead</span>
-      <h2 class="display h-md">Flozi</h2>
-      <p class="meta meta--sub">Website visibility in ChatGPT, Gemini and other AI search platforms.</p>
-    </a>
-
-    <a class="panel p-panel role role--b settle" href="https://www.neue.world/" target="_blank" rel="noopener">
-      <span class="meta meta--solid">SEO &amp; AEO Lead</span>
-      <h2 class="display h-md">Neue World</h2>
-      <p class="meta meta--sub">Systems that help teams execute SEO faster with AI tooling and automation.</p>
-    </a>
   </section>
 
-  <!-- ── Research ── -->
-  <section class="sheet">
-    <div class="panel p-ink proof-text proof-text--full">
-      <h2 class="display h-lg">I researched how AI decides who to recommend</h2>
-      <div>
-        <div class="beat">
-          <span>The question</span>
+  <!-- Current roles -->
+  <section class="rp-sec rp-light" aria-labelledby="now-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Now</span>
+          <h2 id="now-h" class="rp-display">Where I work.</h2>
+        </div>
+        <a class="rp-link" href="/about/">About me →</a>
+      </div>
+      <div class="rp-co">
+        <a class="rp-co-card" href="https://flozi.io/" target="_blank" rel="noopener">
+          <div class="rp-co-brand rp-co-flozi">
+            <span class="rp-co-tag">Product</span>
+            <h3 class="rp-co-name">Flozi</h3>
+          </div>
+          <div class="rp-co-body">
+            <small>Product &amp; Technical Lead</small>
+            <p>Website visibility in ChatGPT, Gemini and other AI search platforms.</p>
+          </div>
+          <div class="rp-co-foot"><span>flozi.io</span><span class="rp-ar">{% include icon.html name="arrow" %}</span></div>
+        </a>
+        <a class="rp-co-card" href="https://www.neue.world/" target="_blank" rel="noopener">
+          <div class="rp-co-brand rp-co-neue">
+            <span class="rp-co-tag">Company</span>
+            <h3 class="rp-co-name">Neue World</h3>
+          </div>
+          <div class="rp-co-body">
+            <small>SEO &amp; AEO Lead</small>
+            <p>Systems that help teams execute SEO faster with AI tooling and automation.</p>
+          </div>
+          <div class="rp-co-foot"><span>neue.world</span><span class="rp-ar">{% include icon.html name="arrow" %}</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research teaser -->
+  <section class="rp-strip rp-paper" aria-labelledby="study-h">
+    <div class="rp-wrap">
+      <div class="rp-strip-head">
+        <div>
+          <span class="rp-eyebrow">From the latest paper</span>
+          <h2 id="study-h" class="rp-display">I researched how AI decides who to recommend</h2>
+        </div>
+        <a class="rp-btn rp-dark" href="/research/beyond-rankings/">Read the study</a>
+      </div>
+      <div class="rp-strip-grid">
+        <div>
+          <b>The question</b>
           <p>Buyers are starting to ask AI instead of Google. So I checked whether the two send them to the same companies.</p>
         </div>
-        <div class="beat">
-          <span>What I found</span>
+        <div>
+          <b>What I found</b>
           <p>They almost never do. On 19 of 27 software searches, AI and Google shared nothing. And AI often gave a different answer to the same question each time it was asked.</p>
         </div>
-        <div class="beat">
-          <span>What I did</span>
+        <div>
+          <b>What I did</b>
           <p>Built a new way to measure visibility, since a ranking means little when the answer keeps changing, and wrote it up as a research paper.</p>
         </div>
       </div>
-      <div class="btn-row">
-        <a class="btn" href="/research/beyond-rankings/">Read the study</a>
-        <a class="btn btn-quiet" href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" target="_blank" rel="noopener">Download PDF ↗</a>
+      <div class="rp-strip-foot">
+        <a class="rp-link" href="/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf" data-dl-open>Download PDF</a>
+        <a class="rp-link" href="/research/">All research →</a>
       </div>
     </div>
   </section>
 
-  <!-- ── How I work ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">How I work</h2></div>
-    <div class="panel p-ink band">
-      <img src="https://fawxnsifdeofqihiehnr.supabase.co/storage/v1/object/public/Portfolio/sitting.png"
-           alt="Ajay Yadav sitting still against colliding planes of orange and black"
-           loading="lazy" />
-    </div>
-    <div class="panel p-panel band-note">
-      <p class="lede">Most of the work arrives undefined. Nobody knows which signals matter yet, the tooling is three months old, and the metric everyone agreed on is measuring the wrong thing.</p>
-      <p class="lede">That part doesn't bother me. Deciding what the problem actually is comes before solving it, and it's the half that gets skipped.</p>
-    </div>
-  </section>
-
-  <!-- ── What I do ── -->
-  <section class="sheet">
-    <div class="strip"><h2 class="display h-lg">What I do</h2></div>
-
-    <div class="panel p-panel c-4 what">
-      <span class="meta">01</span>
-      <h3 class="display h-md">Find where buyers actually look</h3>
-      <p>Right now that's AI answers, and why one company gets named and another doesn't.</p>
-    </div>
-
-    <div class="panel p-ink c-4 what">
-      <span class="meta">02</span>
-      <h3 class="display h-md">Build the tooling</h3>
-      <p>Turn manual work into systems a small team can run daily.</p>
-    </div>
-
-    <div class="panel p-orange c-4 what">
-      <span class="meta meta--solid">03</span>
-      <h3 class="display h-md">Measure what moves</h3>
-      <p>When the ground shifts weekly, you need numbers you can trust more than opinions.</p>
+  <!-- How I work -->
+  <section class="rp-g rp-nos rp-light" aria-labelledby="how-h">
+    <div class="rp-wrap">
+      <div>
+        <span class="rp-eyebrow">Approach</span>
+        <h2 id="how-h" class="rp-display rp-sec-h2">How I work.</h2>
+        <div class="rp-prose rp-mt">
+          <p>Most of the work arrives undefined. Nobody knows which signals matter yet, the tooling is three months old, and the metric everyone agreed on is measuring the wrong thing.</p>
+          <p>That part doesn't bother me. Deciding what the problem actually is comes before solving it, and it's the half that gets skipped.</p>
+        </div>
+      </div>
+      <div>
+        <span class="rp-eyebrow">What I do</span>
+        <ol class="rp-kf rp-kf-top">
+          <li><span class="rp-n">01</span><div><h3>Find where buyers actually look</h3><p>Right now that's AI answers, and why one company gets named and another doesn't.</p></div></li>
+          <li><span class="rp-n">02</span><div><h3>Build the tooling</h3><p>Turn manual work into systems a small team can run daily.</p></div></li>
+          <li><span class="rp-n">03</span><div><h3>Measure what moves</h3><p>When the ground shifts weekly, you need numbers you can trust more than opinions.</p></div></li>
+        </ol>
+      </div>
     </div>
   </section>
 
-  <!-- ── Writing ── -->
-  <section class="sheet">
-    <div class="strip">
-      <h2 class="display h-lg">Writing</h2>
-      <a class="meta" href="/blog/">All posts</a>
-    </div>
-
-    {% if site.posts.size > 0 %}
-    <div class="panel p-panel posts">
-      {% for post in site.posts limit:3 %}
-      {%- assign words = post.content | number_of_words -%}
-      {%- assign read_time = words | divided_by: 200 -%}
-      {%- if read_time == 0 %}{% assign read_time = 1 %}{% endif -%}
-      <a class="post" href="{{ post.url }}">
-        <h3 class="display h-sm">{{ post.title }}</h3>
-        <span class="meta">{{ post.date | date: "%-d %b %Y" }} &middot; {{ read_time }} min</span>
-      </a>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </section>
-
-  <!-- ── Contact ── -->
-  <section class="sheet">
-    <div class="panel p-ink contact">
-      <span class="shape circle sh-orange contact-dot" aria-hidden="true"></span>
-      <h2 class="display h-lg">If you're wondering how your product shows up in AI search, ask me.</h2>
-      <p class="lede">ChatGPT, Perplexity, AI Overviews. Happy to look at your specific situation before either of us talks about working together.</p>
-      <a class="mail" href="mailto:anjayyadaav379@gmail.com">anjayyadaav379@gmail.com</a>
-      <div class="elsewhere">
-        <a href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/aduttya" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://x.com/aduttya" target="_blank" rel="noopener">X</a>
+  <!-- Writing -->
+  <section class="rp-sec rp-tight rp-light" aria-labelledby="writing-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Writing</span>
+          <h2 id="writing-h" class="rp-display">Latest thinking.</h2>
+        </div>
+        <a class="rp-link" href="/blog/">All posts →</a>
+      </div>
+      <div class="rp-rows">
+        {%- for post in site.posts limit:3 %}
+        {% include post-row.html post=post %}
+        {%- endfor %}
       </div>
     </div>
   </section>
 
 </main>
 
-{% include footer-warm.html %}
+{% include paper-modal.html %}
+{% include site-close.html %}
 
 </body>
 </html>

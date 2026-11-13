@@ -1,21 +1,14 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/favicon-512.png" />
-  <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
+{% include head-common.html %}
   <title>Blog — Ajay Yadav</title>
   <meta name="description" content="Experiments and field notes on AI search, SEO, AEO and LLM citation patterns, from building and testing visibility systems." />
   <link rel="canonical" href="https://aduttya.com/blog/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style-warm.css" />
 
 {% include head-meta.html
      type="website"
@@ -64,45 +57,67 @@
 </head>
 <body>
 
-{% include nav-warm.html %}
+{% include site-header.html %}
 
-<main>
+<main id="main">
 
-  <!-- ── Intro ── -->
-  <section class="sheet">
-    <div class="panel p-ink c-12 settle">
-      <h1 class="display h-xl">Blog</h1>
-      <p class="lede lede--wide">Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns.</p>
+  <!-- Hero -->
+  <section class="rp-hero rp-compact rp-ink">
+    <div class="rp-wrap">
+      <span class="rp-eyebrow">Blog</span>
+      <h1 class="rp-display">Blog. <span class="rp-dim">Thoughts and experiments on AI search, SEO, AEO and LLM citation patterns.</span></h1>
     </div>
   </section>
 
-  <!-- ── Posts ── -->
-  <section class="sheet">
-    {% if site.posts.size > 0 %}
-    <div class="panel p-panel posts">
-      {% for post in site.posts %}
-      {%- assign words = post.content | number_of_words -%}
-      {%- assign read_time = words | divided_by: 200 -%}
-      {%- if read_time == 0 %}{% assign read_time = 1 %}{% endif -%}
-      <a class="post" href="{{ post.url }}">
-        <div class="post-main">
-          <h3 class="display h-sm">{{ post.title }}</h3>
-          {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+  {%- assign latest = site.posts.first %}
+  {%- if latest %}
+  {%- assign words = latest.content | number_of_words -%}
+  {%- assign read_time = words | divided_by: 200 -%}
+  {%- if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
+  <!-- Latest -->
+  <section class="rp-strip rp-paper" aria-labelledby="latest-h">
+    <div class="rp-wrap">
+      <div class="rp-strip-head">
+        <div>
+          <span class="rp-eyebrow">Latest</span>
+          <h2 id="latest-h" class="rp-display"><a href="{{ latest.url }}">{{ latest.title }}</a></h2>
+          {%- if latest.description %}
+          <p class="rp-lede">{{ latest.description }}</p>
+          {%- endif %}
+          <p class="rp-meta"><time datetime="{{ latest.date | date: '%Y-%m-%d' }}">{{ latest.date | date: "%-d %b %Y" }}</time> &middot; {{ read_time }} min</p>
         </div>
-        <span class="meta">{{ post.date | date: "%-d %b %Y" }} &middot; {{ read_time }} min</span>
-      </a>
-      {% endfor %}
+        <a class="rp-btn rp-dark" href="{{ latest.url }}" aria-label="Read {{ latest.title | escape }}">Read {% include icon.html name="arrow" %}</a>
+      </div>
     </div>
-    {% else %}
-    <div class="panel p-panel c-12">
-      <p class="meta">No posts yet.</p>
+  </section>
+  {%- endif %}
+
+  <!-- All posts -->
+  <section class="rp-sec rp-light" aria-labelledby="all-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Archive</span>
+          <h2 id="all-h" class="rp-display">All posts.</h2>
+        </div>
+      </div>
+      <div class="rp-rows">
+        {%- assign year = "" %}
+        {%- for post in site.posts %}
+        {%- assign y = post.date | date: "%Y" %}
+        {%- if y != year %}
+        {%- assign year = y %}
+        <div class="rp-year"><span class="rp-eyebrow">{{ y }}</span></div>
+        {%- endif %}
+        {% include post-row.html post=post %}
+        {%- endfor %}
+      </div>
     </div>
-    {% endif %}
   </section>
 
 </main>
 
-{% include footer-warm.html %}
+{% include site-close.html %}
 
 </body>
 </html>
