@@ -44,39 +44,43 @@ CARDS = [
 ]
 
 POST_CARDS = [
-    ("og-why-ai-wont-cite", "AEO Series · 1/8",
+    ("og-why-ai-wont-cite", "AEO Series · 1/9",
      "Why AI Won't Cite Your Content (And What to Fix)",
      "Your page can rank and still never appear in AI answers. Why AI "
      "retrieves but doesn't cite, and what actually fixes it."),
-    ("og-text-embeddings", "AEO Series · 2/8",
+    ("og-text-embeddings", "AEO Series · 2/9",
      "Text Embeddings for AEO and SEO",
      "A practitioner's guide to how embeddings power AI answer engines, "
      "where they fail, and how to audit for it."),
-    ("og-geo-aeo-strategy-shift", "AEO Series · 3/8",
+    ("og-geo-aeo-strategy-shift", "AEO Series · 3/9",
      "GEO / AEO Strategy Shift",
      "Why renaming SEO metrics won't work: prompt volume, AI visibility, "
      "and attribution are all weaker signals than they look."),
-    ("og-six-months-aeo-experiments", "AEO Series · 4/8",
+    ("og-six-months-aeo-experiments", "AEO Series · 4/9",
      "Six Months of AEO Experiments",
      "What actually gets you cited in ChatGPT, AI Overviews, and "
      "Perplexity, versus what the AEO industry says you should do."),
-    ("og-aeo-tracking-verification", "AEO Series · 5/8",
+    ("og-aeo-tracking-verification", "AEO Series · 5/9",
      "AEO Tracking Tells You If You're Winning, Not How to Win",
      "Most AEO tracking optimizes against unknown demand. Why GSC and "
      "Bing are the decision layer, and AEO tracking only verifies."),
-    ("og-aeo-optimization-categories", "AEO Series · 6/8",
+    ("og-aeo-optimization-categories", "AEO Series · 6/9",
      "Categories I Check Before Trusting an AI Recommendation",
      "Nine categories cover almost every AEO/SEO fix. Why I still run "
      "every AI recommendation through them by hand."),
-    ("og-seo-automation", "AEO Series · 7/8",
+    ("og-seo-automation", "AEO Series · 7/9",
      "SEO Automation That Doesn't Hallucinate",
      "Most SEO automation generates plausible recommendations, not grounded "
      "ones. The architecture I use to tell them apart."),
-    ("og-apex-insights-gt3", "AEO Series · 8/8",
+    ("og-apex-insights-gt3", "AEO Series · 8/9",
      "I Tried to Make GT3 Easier to Understand, Then Google "
      "Started Finding Apex Insights",
      "A GT3 knowledge base with no backlinks started showing up across "
      "teams, championships, and races within weeks."),
+    ("og-aeo-beyond-queries", "AEO Series · 9/9",
+     "AEO Needs to Move Beyond Queries",
+     "AI search is a conversation, but AEO still tracks queries like blue "
+     "links. Moving from queries to conversational touchpoints."),
     ("og-beyond-ai-automation", "Essay",
      "Beyond AI Automation",
      "Not just making AI do more. Designing how human and AI intelligence "
