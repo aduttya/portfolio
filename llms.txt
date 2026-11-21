@@ -1,0 +1,52 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+{%- assign p = site.data.profile -%}
+# {{ p.person.name }}
+
+> {{ p.person.summary }}
+
+{{ p.person.bio }}
+
+Structured version of everything below: {{ "/profile.json" | absolute_url }}
+
+## Current work
+{% for r in p.roles %}{% if r.current %}
+- [{{ r.org }}]({{ r.url }}): {{ r.title }}, {{ r.start }} to now. {{ r.summary }}{% endif %}{% endfor %}
+
+## Case studies
+{% for c in p.case_studies %}
+{% assign link = c.url | default: c.site %}- {% if link %}[{{ c.name }}]({{ link }}){% else %}{{ c.name }}{% endif %}: {{ c.role }}, {{ c.period }}. {{ c.summary }}{% if c.results %} Results: {{ c.results | join: "; " }}.{% endif %}{% endfor %}
+
+## Research
+{% for r in p.research %}
+- [{{ r.title }}]({{ r.url }}): {{ r.type }}, {{ r.published | date: "%B %Y" }}. {{ r.summary }} {{ r.findings | join: " " }} PDF: {{ r.pdf }}{% endfor %}
+
+## Writing
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.description }}{% endfor %}
+
+## Tools
+{% for t in p.tools %}
+- [{{ t.name }}]({{ t.url }}): {{ t.summary }}{% endfor %}
+
+## Earlier roles
+{% for r in p.roles %}{% unless r.current %}
+- {{ r.org }}: {{ r.title }}, {{ r.start }} to {{ r.end }}. {{ r.summary }}{% endunless %}{% endfor %}
+
+## Contact
+
+- Email: {{ p.contact.email }}
+- LinkedIn: {{ p.links.linkedin }}
+- GitHub: {{ p.links.github }}
+- X: {{ p.links.x }}
+- {{ p.contact.audit.note }} [{{ p.contact.audit.name }}]({{ p.contact.audit.url }})
+
+## Optional
+
+- [About]({{ "/about/" | absolute_url }})
+- [Work]({{ "/work/" | absolute_url }})
+- [Research]({{ "/research/" | absolute_url }})
+- [Blog]({{ "/blog/" | absolute_url }})

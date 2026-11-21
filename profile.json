@@ -1,0 +1,34 @@
+---
+layout: null
+permalink: /profile.json
+sitemap: false
+---
+{%- assign p = site.data.profile -%}
+{
+  "schema_version": 1,
+  "generated_at": {{ site.time | date_to_xmlschema | jsonify }},
+  "source": "https://aduttya.com/profile.json",
+  "person": {{ p.person | jsonify }},
+  "links": {{ p.links | jsonify }},
+  "contact": {{ p.contact | jsonify }},
+  "focus": {{ p.focus | jsonify }},
+  "skills": {{ p.skills | jsonify }},
+  "roles": {{ p.roles | jsonify }},
+  "case_studies": {{ p.case_studies | jsonify }},
+  "research": {{ p.research | jsonify }},
+  "tools": {{ p.tools | jsonify }},
+  "open_source": {{ p.open_source | jsonify }},
+  "interests": {{ p.interests | jsonify }},
+  "writing": [
+    {%- for post in site.posts %}
+    {
+      "slug": {{ post.slug | jsonify }},
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "description": {{ post.description | jsonify }},
+      "text": {{ post.content | strip_html | normalize_whitespace | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

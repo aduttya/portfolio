@@ -1,0 +1,222 @@
+# Single source of truth for who Ajay is and what he has built.
+# Published as /profile.json and /llms.txt, and read by the MCP server.
+# Blog posts and their text come from _posts automatically, so they are not listed here.
+
+person:
+  name: Ajay Yadav
+  headline: Product and growth for the AI search era
+  summary: >-
+    I build and grow products for the AI search era. Research on how AI decides
+    who to recommend, shipped products, and the SEO and AEO growth that follows.
+  bio: >-
+    Engineer turned product and growth lead. I started as a blockchain developer,
+    designing the Layers protocol and deploying its smart contracts on Polygon and
+    Ethereum. At Flozi, an AI growth engine for websites, I joined as a partner,
+    defined the product and led the growth team, which is where SEO and AEO became
+    my specialty. Today I lead SEO and AEO growth at Neue World, build Neue Analyse
+    end to end, run Apex Insights, and publish research on how AI systems decide
+    who to recommend.
+  image: https://aduttya.com/assets/images/profile/ajay-yadav.png
+  website: https://aduttya.com/
+
+links:
+  website: https://aduttya.com/
+  linkedin: https://linkedin.com/in/ajayyadav420
+  github: https://github.com/aduttya
+  x: https://x.com/aduttya
+
+contact:
+  email: anjayyadaav379@gmail.com
+  preferred: Email, or a message on LinkedIn
+  good_for:
+    - Product and growth roles or partnerships for AI search products
+    - SEO and AEO growth work, from analytics diagnosis to AI workflows
+    - Research collaboration on AI search visibility and human and AI interaction
+  audit:
+    name: Neue Analyse
+    url: https://analyse.neue.world/
+    note: For a website or AI visibility audit, start here.
+
+focus:
+  - AI search visibility and how AI systems choose which companies to recommend
+  - Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)
+  - SEO, especially entity based site structure and measured growth experiments
+  - Product definition and shipping for AI era products
+  - Research on human and AI interaction
+
+skills:
+  - AI search optimization (AEO, GEO)
+  - Search engine optimization
+  - LLM citation analysis
+  - Vector embeddings and semantic content analysis
+  - Growth experiments and measurement
+  - Product management
+  - Product design
+  - Data pipelines
+  - Next.js, TypeScript, Supabase, Vercel
+  - Solidity, Rust and smart contract development
+
+roles:
+  - id: flozi
+    org: Flozi
+    url: https://flozi.io/
+    title: Partner, Product & Technical Lead
+    start: 2024
+    current: true
+    summary: >-
+      An AI growth engine for websites. I brought the idea, defined the product,
+      prototyped it, ran QA and releases, and lead its AEO growth team.
+  - id: neue-world
+    org: Neue World
+    url: https://www.neue.world/
+    title: SEO & AEO Growth Lead
+    start: 2025
+    current: true
+    summary: >-
+      I run the SEO and AEO growth service for clients, from analytics diagnosis
+      to AI workflows, and lead the team.
+  - id: neue-analyse
+    org: Neue Analyse
+    url: https://analyse.neue.world/
+    title: Builder
+    start: 2025
+    current: true
+    summary: >-
+      Industry research and website audits. I built it end to end, from the
+      research and audit system to the growth guides, code, design and marketing.
+  - id: apex-insights
+    org: Apex Insights
+    url: https://www.apexinsights.racing/
+    title: Founder
+    start: 2026
+    current: true
+    summary: >-
+      A GT3 racing data pipeline that turns timing data into stories, reels and a
+      podcast. Built solo. Also my SEO testbed.
+  - id: layers
+    org: Layers
+    title: Product and engineering lead
+    start: 2022
+    end: 2024
+    current: false
+    summary: >-
+      A protocol that gives freelancers their own identity and data. I designed the
+      architecture, wrote and deployed the smart contracts on Polygon and Ethereum,
+      and led a team of developers, designers and marketers.
+  - id: early-web3
+    org: Nightwing and early Web3
+    title: Blockchain developer
+    start: 2021
+    end: 2022
+    current: false
+    summary: NFT analytics and smart contracts.
+
+case_studies:
+  - id: apex-insights
+    name: Apex Insights
+    role: Founder, built solo
+    period: July 2026 to now
+    url: https://aduttya.com/work/apex-insights/
+    site: https://www.apexinsights.racing/
+    stack: [Next.js, Supabase, Vercel]
+    summary: >-
+      A GT3 racing data product built solo, from the data pipeline and design to
+      the growth. Official race documents become a connected site of driver, team,
+      championship and race pages, plus data stories, reels and a podcast.
+    results:
+      - 6.7x monthly Google impressions, July to October 2026
+      - 473 pages, most of them built from race data
+      - 411 pages earning impressions on the new domain
+      - 100 clicks from Google within a month of moving to the new domain
+      - 130 official documents read across the 2026 season, 15k+ rows of results
+      - 0 points off the official Sprint Cup standings, rebuilt from raw results
+    approach:
+      - Structure over prose. Index pages use stat strips, breakdown tables and a short FAQ rather than long guides.
+      - A weekly measurement loop against an eight week baseline, with a learnings log that grades each claim as a hypothesis, supported or confirmed.
+      - One change per experiment, with a baseline snapshot before shipping, such as before 266 driver pages.
+      - A clean domain move from apexinsights.xyz to apexinsights.racing with permanent redirects and a Change of Address.
+    what_did_not_work:
+      - A 600 word prose guide on the teams page, replaced with a structured page.
+      - Hidden headings repeating the team list, which created about 38 duplicate headings and were reverted.
+      - Publishing and waiting. A week after launch 6 of 7 story pages were unknown to Google, so sitemaps, IndexNow and manual requests are now part of every release.
+    owned: Idea, product, information architecture, design, code, data pipeline, analysis, SEO, stories, podcast and socials.
+  - id: flozi
+    name: Flozi
+    role: Partner, Product & Technical Lead
+    period: 2024 to now
+    site: https://flozi.io/
+    summary: >-
+      An AI growth engine for websites. I brought the idea, defined the product,
+      prototyped it, ran QA and releases, and lead its AEO growth. My validated
+      practice there is building connected topical libraries rather than single
+      keyword pages.
+  - id: neue-analyse
+    name: Neue Analyse
+    role: Builder
+    period: 2025 to now
+    site: https://analyse.neue.world/
+    summary: >-
+      Industry research and website audits, built end to end, from the research and
+      audit system to the code and design.
+  - id: layers
+    name: Layers
+    role: Product and engineering lead
+    period: 2022 to 2024
+    summary: >-
+      A protocol that gives freelancers their own identity and data. I designed it,
+      wrote and deployed the smart contracts on Polygon and Ethereum, and led the team.
+
+research:
+  - id: beyond-rankings
+    title: "Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery"
+    type: Pilot study
+    published: 2026-04-01
+    url: https://aduttya.com/research/beyond-rankings/
+    pdf: https://aduttya.com/beyond-rankings-measuring-vendor-visibility-in-ai-driven-discovery.pdf
+    summary: >-
+      Why rankings break down in AI search, and ISIC, a four part model
+      (Inclusion, Stability, Influence, Coverage) to measure visibility instead.
+    findings:
+      - AI and Google almost never send buyers to the same vendors. The average Jaccard overlap was 0.03 across 27 B2B queries.
+      - 19 of 27 queries had zero overlap between the vendors GPT-4o named and the domains Google ranked.
+      - Across 81 GPT-4o responses, the same prompt returned different vendors from run to run, so a ranking is the wrong metric.
+    method: >-
+      27 queries across 9 problem areas taken from real buyer discussions, Google
+      results via SerpAPI, GPT-4o via the Responses API with web search, three runs
+      per query, domains mapped to vendors before computing Jaccard overlap.
+    citation: "Yadav, A. (2026). Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery. Pilot study. https://aduttya.com/research/beyond-rankings/"
+
+tools:
+  - name: Content SEO & AEO skill for Claude
+    type: Open source, MIT
+    url: https://github.com/aduttya/claude-skills
+    summary: A reusable Claude skill that audits, improves and writes web content for both search engines and AI answers.
+  - name: Embedding Similarity Analyzer
+    type: Tool
+    url: https://aduttya.com/blog/text-embeddings-for-aeo-and-seo/
+    summary: Analyzes semantic similarity across a site's pages with vector embeddings and cosine similarity, to find redundancy and topic drift.
+  - name: AI SEO Execution System
+    type: Internal system
+    url: https://aduttya.com/blog/seo-automation-recommendation-system/
+    summary: An AI assisted workflow for running SEO tasks faster, combining AI tools with traditional SEO platforms.
+
+open_source:
+  - name: In-browser Solidity compiler
+    url: https://github.com/aduttya/In-Browser-Solidity-Compiler
+    summary: Compiles Solidity contracts in the browser, built with Next.js and solc-js.
+  - name: Solana NFT
+    url: https://github.com/aduttya/solanaNFT
+    summary: An NFT project on Solana, written in Rust with Anchor and Metaplex.
+  - name: Quilt
+    url: https://github.com/aduttya/Quilt
+    summary: Ethereum contracts ported to Solana, including how storage mapping differs between the two chains.
+  - name: Solidity storage collisions
+    url: https://github.com/aduttya/Solidity-Storage-Collision
+    summary: Code to avoid storage collisions in Solidity proxy contracts.
+  - name: Smart contract hacks
+    url: https://github.com/aduttya/smartContractHacks
+    summary: Working examples of common smart contract exploits, reentrancy and delegatecall.
+
+interests:
+  - GT3, WEC, IMSA and Formula 1, watched for strategy. Writes about it and hosts a podcast at Apex Insights.
+  - Competitive coding
