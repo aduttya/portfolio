@@ -80,31 +80,31 @@
         {% include arrows.html label="project" %}
       </div>
       <div class="rp-rail">
-        <a class="rp-gcard" href="https://flozi.io/" target="_blank" rel="noopener">
-          <div class="rp-scene"><div class="rp-bk">{% include covers/flozi.svg %}</div></div>
+        <div class="rp-gcard">
+          {% include cover.html kind="frame" url="flozi.io" brand="flozi" name="Flozi" %}
           <div class="rp-meta"><span class="rp-badge">Flagship</span><span>Product &amp; Technical Lead &middot; Live product</span></div>
           <h3>Flozi</h3>
           <p>Platform designed to analyze how websites perform in AI search systems and provide guidance for improving retrievability and citations.</p>
           <div class="rp-chips"><span>AI search visibility</span><span>retrievability analysis</span><span>AEO diagnostics</span></div>
-          <span class="rp-go">Visit flozi.io {% include icon.html name="arrow" %}</span>
-        </a>
-        <a class="rp-gcard" href="https://www.apexinsights.racing/" target="_blank" rel="noopener">
-          <div class="rp-scene"><div class="rp-bk">{% include covers/apex-insights.svg %}</div></div>
+          {% include project-actions.html case="/work/flozi/" url="https://flozi.io/" name="Flozi" %}
+        </div>
+        <div class="rp-gcard">
+          {% include cover.html kind="video" src="/assets/images/work/apex-insights/car.mp4" poster="/assets/images/work/apex-insights/car-poster.webp" %}
           <div class="rp-meta"><span>Founder &middot; Live product</span></div>
           <h3>Apex Insights</h3>
           <p>Educational platform for GT3 racing. Championships, teams, drivers and race weekends with round-by-round results, built as a testbed for entity-based SEO and answer engine optimization on a real, growing site.</p>
           <div class="rp-chips"><span>GT3 racing data</span><span>entity SEO</span><span>structured data</span></div>
-          <span class="rp-go">Visit apexinsights.racing {% include icon.html name="arrow" %}</span>
-        </a>
+          {% include project-actions.html case="/work/apex-insights/" url="https://www.apexinsights.racing/" name="Apex Insights" %}
+        </div>
         <div class="rp-gcard" id="embedding-analyzer">
-          <div class="rp-scene"><div class="rp-bk">{% include covers/embedding-analyzer.svg %}</div></div>
+          {% include cover.html kind="flat" svg="embedding-analyzer" %}
           <div class="rp-meta"><span>Experiment</span></div>
           <h3>Embedding Similarity Analyzer</h3>
           <p>System that analyzes semantic similarity across website pages using vector embeddings and cosine similarity to detect redundancy and topic drift.</p>
           <div class="rp-chips"><span>vector embeddings</span><span>cosine similarity</span><span>semantic clustering</span></div>
         </div>
         <div class="rp-gcard" id="ai-seo-system">
-          <div class="rp-scene"><div class="rp-bk">{% include covers/ai-seo-system.svg %}</div></div>
+          {% include cover.html kind="flat" svg="ai-seo-system" %}
           <div class="rp-meta"><span>Internal system</span></div>
           <h3>AI SEO Execution System</h3>
           <p>AI-assisted workflow system for executing SEO tasks faster using modern AI tools combined with traditional SEO platforms.</p>
@@ -143,17 +143,17 @@
       </div>
       <div class="rp-rows">
         <a class="rp-row" href="/blog/six-months-of-aeo-experiments/">
-          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-citation.svg %}</div></div>
+          {% include cover.html kind="flat" svg="exp-citation" class="rp-thumb" %}
           <div><small>Experiment</small><h3>AI Citation Testing</h3><p>Testing how different content structures influence whether AI systems cite a page in generated answers.</p></div>
           <span class="rp-ar">{% include icon.html name="arrow" %}</span>
         </a>
         <a class="rp-row" href="/blog/why-ai-wont-cite-my-content/">
-          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-retrievability.svg %}</div></div>
+          {% include cover.html kind="flat" svg="exp-retrievability" class="rp-thumb" %}
           <div><small>Experiment</small><h3>Retrievability vs Authority</h3><p>Exploring why pages retrieved by search engines are not always cited by AI systems.</p></div>
           <span class="rp-ar">{% include icon.html name="arrow" %}</span>
         </a>
         <a class="rp-row" href="/blog/text-embeddings-for-aeo-and-seo/">
-          <div class="rp-scene rp-thumb"><div class="rp-bk">{% include covers/exp-semantic.svg %}</div></div>
+          {% include cover.html kind="flat" svg="exp-semantic" class="rp-thumb" %}
           <div><small>Experiment</small><h3>Semantic Content Mapping</h3><p>Using embeddings to visualize relationships between pages and detect content gaps.</p></div>
           <span class="rp-ar">{% include icon.html name="arrow" %}</span>
         </a>

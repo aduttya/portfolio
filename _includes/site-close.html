@@ -1,13 +1,14 @@
 {%- comment -%}
   Closing CTA (every page except 404) + footer. Ink, continuous.
+  Pages can tailor the ask with cta_h and cta_sub; both fall back to the default.
 {%- endcomment -%}
 <div class="rp-ink">
 {%- unless include.no_cta %}
   <section class="cx-close" aria-labelledby="cx-h">
     <div class="rp-wrap">
       <span class="rp-eyebrow">Get in touch</span>
-      <h2 id="cx-h" class="cx-close-h rp-display">Building something, or wondering how your product shows up in AI search? Ask me.</h2>
-      <p class="cx-close-sub">A product idea, a growth problem, or your visibility in ChatGPT and AI Overviews. Happy to look at your specific situation before either of us talks about working together.</p>
+      <h2 id="cx-h" class="cx-close-h rp-display">{{ include.cta_h | default: "Building something, or wondering how your product shows up in AI search? Ask me." }}</h2>
+      <p class="cx-close-sub">{{ include.cta_sub | default: "A product idea, a growth problem, or your visibility in ChatGPT and AI Overviews. Happy to look at your specific situation before either of us talks about working together." }}</p>
       <div class="cx-dcs">
         <a class="cx-dc" href="mailto:anjayyadaav379@gmail.com">
           <span class="rp-eyebrow">Email</span>
@@ -51,6 +52,7 @@
             <li><a href="https://flozi.io/" target="_blank" rel="noopener">Flozi</a></li>
             <li><a href="https://www.neue.world/" target="_blank" rel="noopener">Neue World</a></li>
             <li><a href="https://analyse.neue.world/" target="_blank" rel="noopener">Neue Analyse</a></li>
+            <li><a href="https://www.ayesadreamcouture.com/" target="_blank" rel="noopener">Ayesa Dream Couture</a></li>
             <li><a href="https://www.apexinsights.racing/" target="_blank" rel="noopener">Apex Insights</a></li>
           </ul>
         </div>

@@ -22,6 +22,12 @@
   </url>
 
   <url>
+    <loc>https://aduttya.com/work/apex-insights/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://aduttya.com/research/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

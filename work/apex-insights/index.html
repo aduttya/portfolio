@@ -1,0 +1,280 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% include head-common.html %}
+  <title>Apex Insights Case Study | Ajay Yadav</title>
+  <meta name="description" content="How I built Apex Insights solo, from the GT3 data pipeline and design to growth and the community. 6.7x more Google impressions from July to October, 473 pages built from race data." />
+  <link rel="canonical" href="https://aduttya.com/work/apex-insights/" />
+
+{% include head-meta.html
+     type="article"
+     url="https://aduttya.com/work/apex-insights/"
+     title="Apex Insights Case Study | Ajay Yadav"
+     description="How I built Apex Insights solo, from the GT3 data pipeline and design to growth and the community. 6.7x more Google impressions from July to October, 473 pages built from race data."
+     image="/assets/images/work/apex-insights/car-poster.webp"
+     image_alt="The Apex Insights GT3 car, from a racing data site built and grown by Ajay Yadav"
+     image_width="960"
+     image_height="540" %}
+
+  <!-- JSON-LD: Article + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Building Apex Insights, a GT3 data product, solo",
+        "url": "https://aduttya.com/work/apex-insights/",
+        "datePublished": "2026-11-21",
+        "image": "https://aduttya.com/assets/images/work/apex-insights/car-poster.webp",
+        "description": "How I built Apex Insights solo, from the GT3 data pipeline and design to growth and the community.",
+        "author": { "@id": "https://aduttya.com/#person" },
+        "about": {
+          "@type": "Organization",
+          "@id": "https://www.apexinsights.racing/#organization",
+          "name": "Apex Insights",
+          "url": "https://www.apexinsights.racing/",
+          "founder": { "@id": "https://aduttya.com/#person" }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aduttya.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://aduttya.com/work/" },
+          { "@type": "ListItem", "position": 3, "name": "Apex Insights", "item": "https://aduttya.com/work/apex-insights/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  {% include analytics.html %}
+</head>
+<body>
+
+{% include site-header.html %}
+
+<main id="main">
+
+  <section class="rp-g rp-light">
+    <div class="rp-wrap">
+      <article data-toc-src>
+        <nav class="rp-crumbs" aria-label="Breadcrumb">
+          <a href="/work/">Work</a>{% include icon.html name="crumb" %}<span aria-current="page">Apex Insights</span>
+        </nav>
+        <h1 class="rp-display">Building a GT3 data product solo, from pipeline to audience.</h1>
+        <p class="rp-lede">Apex Insights turns official GT3 race data into a connected site, data stories, reels and a podcast. I designed it, built it, run the data and grow it.</p>
+        <p class="rp-src">Founder &middot; Built solo &middot; July 2026 to now &middot; Next.js, Supabase, Vercel &middot; Search Console data to 17 Nov 2026</p>
+
+        <figure class="rp-fig rp-fig-lead">
+          <video src="/assets/images/work/apex-insights/car.mp4" poster="/assets/images/work/apex-insights/car-poster.webp" width="960" height="540" autoplay muted loop playsinline preload="auto" aria-label="The Apex Insights GT3 car, slowly turning on a dark floor"></video>
+        </figure>
+
+        <div class="rp-blk">
+          <h2>Results</h2>
+          <div class="rp-strip-grid rp-stats">
+            <div><span class="rp-num">6.7&times;</span><span class="rp-num-l">Monthly Google impressions, July to October 2026</span></div>
+            <div><span class="rp-num">473</span><span class="rp-num-l">Pages, most of them built from race data</span></div>
+            <div><span class="rp-num">411</span><span class="rp-num-l">Pages earning impressions on the new domain</span></div>
+            <div><span class="rp-num">10</span><span class="rp-num-l">Race weekends ingested from official documents</span></div>
+          </div>
+        </div>
+
+        <div class="rp-blk rp-prose">
+          <h2>Why I built it</h2>
+          <p>I started with Formula 1 and went down the rabbit hole into GT3. Ferrari, Porsche, BMW and McLaren racing near-identical cars in championships across Europe, Asia, Australia and America, with grids of 50 cars and races up to 24 hours long.</p>
+          <p>Every race weekend produces a lot of data, and most coverage focuses on who won and the title fight. I like finding patterns in data and making them fun for other people, so I started building the site I wanted to read.</p>
+        </div>
+
+        <div class="rp-blk">
+          <h2>Design</h2>
+          <p class="rp-blk-p">A dark, data-first look built for race weekends. Big type up front, and dense data laid out to read quickly.</p>
+          <figure class="rp-fig">
+            <a href="/assets/images/work/apex-insights/ui-home.webp" target="_blank" rel="noopener" aria-label="Open full size"><img src="/assets/images/work/apex-insights/ui-home.webp" alt="The Apex Insights home page hero. GT3 Racing, yours to follow, over a dark GT3 car, with Start following and Browse championships buttons and a new podcast episode banner" width="1128" height="916" loading="lazy" /></a>
+            <figcaption class="rp-cap">The home page. Pick your teams and drivers once, and every race weekend brings their season back.</figcaption>
+          </figure>
+          <figure class="rp-fig">
+            <a href="/assets/images/work/apex-insights/ui-manufacturer-pace.webp" target="_blank" rel="noopener" aria-label="Open full size"><img src="/assets/images/work/apex-insights/ui-manufacturer-pace.webp" alt="A manufacturer pace heatmap. Eight makes from Porsche to Lamborghini across ten races, each cell a gap to the fastest car, greener for faster, with a median column" width="1870" height="780" loading="lazy" /></a>
+            <figcaption class="rp-cap">Manufacturer pace by race. Each cell is the best car of a make, as a gap to the fastest car of the session.</figcaption>
+          </figure>
+        </div>
+
+        <div class="rp-blk">
+          <h2>Product and architecture</h2>
+          <p class="rp-blk-p">One app that turns official race data into pages, insights and stories. A new race shows up across the whole site as soon as it's in.</p>
+          <ol class="rp-kf">
+            <li><span class="rp-n">01</span><div><h3>Entity pages</h3><p>329 drivers, 74 teams, 25 championships and 11 manufacturers, all linked to each other.</p></div></li>
+            <li><span class="rp-n">02</span><div><h3>Race weekend pages</h3><p>Practice, qualifying, grids, results and stewards' decisions for every round, with a "follow the weekend" feed that goes live as sessions run.</p></div></li>
+            <li><span class="rp-n">03</span><div><h3>Insights and stories</h3><p>Pace analysis across the season, and data stories built on top of it.</p></div></li>
+            <li><span class="rp-n">04</span><div><h3>Podcast</h3><p>Three episodes with their own pages and Spotify and YouTube embeds, stored in the same database as everything else.</p></div></li>
+          </ol>
+        </div>
+
+        <div class="rp-blk">
+          <h2>Data pipeline and analysis</h2>
+          <p class="rp-blk-p">The official results come out as documents, session by session. I built the pipeline that reads them as they land and turns them into clean, connected data, so the site follows the weekend as it happens.</p>
+          <div class="rp-wk">
+            <ol class="rp-wk-track">
+              <li><i aria-hidden="true"></i><span class="rp-wk-when">Before the weekend</span><p>Who's racing, every car, team and driver</p></li>
+              <li><i aria-hidden="true"></i><span class="rp-wk-when">Practice</span><p>The weekend page goes live</p></li>
+              <li><i aria-hidden="true"></i><span class="rp-wk-when">Qualifying</span><p>The grid, and who has the pace</p></li>
+              <li><i aria-hidden="true"></i><span class="rp-wk-when">Race</span><p>Results flow into the driver, team and championship pages</p></li>
+              <li class="rp-wk-end"><i aria-hidden="true"></i><span class="rp-wk-when">The week after</span><p>Data stories and reels</p></li>
+            </ol>
+          </div>
+          <div class="rp-strip-grid rp-stats rp-mt">
+            <div><span class="rp-num">130</span><span class="rp-num-l">Official documents read across the 2026 season</span></div>
+            <div><span class="rp-num">15k+</span><span class="rp-num-l">Rows of results, practice to race</span></div>
+            <div><span class="rp-num">24</span><span class="rp-num-l">Teams ranked on pace, Sprint and Endurance kept apart</span></div>
+            <div><span class="rp-num">0</span><span class="rp-num-l">Points off the official Sprint Cup standings, rebuilt from raw results</span></div>
+          </div>
+          <h3 class="rp-h3">What the analysis answers</h3>
+          <div class="rp-rows">
+            <a class="rp-row rp-nothumb" href="https://www.apexinsights.racing/stories/sprint-cup-pace-2026" target="_blank" rel="noopener">
+              <div><small>Pace vs results</small><h3>Fast on Saturday, invisible on Sunday</h3><p>Which teams turn qualifying pace into results, and which lose it on race day.</p></div>
+              <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on Apex Insights)</span></span>
+            </a>
+            <a class="rp-row rp-nothumb" href="https://www.apexinsights.racing/stories/bop-2026" target="_blank" rel="noopener">
+              <div><small>Balance of Performance</small><h3>Did BoP work?</h3><p>What the mid-weekend weight changes actually did to each manufacturer's pace.</p></div>
+              <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on Apex Insights)</span></span>
+            </a>
+            <a class="rp-row rp-nothumb" href="https://www.apexinsights.racing/stories/amateur-gap-2026" target="_blank" rel="noopener">
+              <div><small>Driver ratings</small><h3>How big is the amateur gap?</h3><p>Bronze, Silver and Gold drivers against the Pros, and who beats their rating.</p></div>
+              <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on Apex Insights)</span></span>
+            </a>
+            <a class="rp-row rp-nothumb" href="https://www.apexinsights.racing/stories/sprint-cup-season-2026" target="_blank" rel="noopener">
+              <div><small>Championship</small><h3>Four leaders, one champion</h3><p>How the 2026 Sprint Cup was won, round by round.</p></div>
+              <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on Apex Insights)</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="rp-blk">
+          <h2>Growth</h2>
+          <p class="rp-blk-p">The site is built around the entities in the sport and the links between them, rather than a keyword list, and changes are measured before I call them a win.</p>
+          {%- assign imp = "Jul:797,Aug:1509,Sep:1333,Oct:5346,Nov:5116" | split: "," %}
+          <div class="rp-chart-row">
+          <figure class="rp-chart" aria-labelledby="imp-h">
+            <figcaption id="imp-h" class="rp-chart-h">Google impressions per month, 2026 <span>Both domains combined. November runs to the 17th.</span></figcaption>
+            <div class="rp-bars" role="img" aria-label="Monthly Google impressions rose from 797 in July to 5,346 in October, with 5,116 in the first 17 days of November">
+              {%- for m in imp %}{% assign p = m | split: ":" %}{% assign v = p[1] | plus: 0 %}
+              <div class="rp-bar{% if p[0] == 'Nov' %} rp-bar-part{% endif %}" style="--h: {{ v | times: 150 | divided_by: 5346 }}" tabindex="0">
+                <span class="rp-bar-tip">{{ p[0] }}{% if p[0] == 'Nov' %} 1 to 17{% endif %} &middot; {{ v }} impressions</span>
+                {%- if p[0] == 'Jul' or p[0] == 'Oct' %}<span class="rp-bar-v">{{ v }}</span>{% endif %}
+                <i></i><span class="rp-bar-x">{{ p[0] }}</span>
+              </div>
+              {%- endfor %}
+            </div>
+            <table class="sr-only">
+              <caption>Google impressions per month, 2026</caption>
+              <tr><th scope="col">Month</th><th scope="col">Impressions</th></tr>
+              {%- for m in imp %}{% assign p = m | split: ":" %}<tr><td>{{ p[0] }}</td><td>{{ p[1] }}</td></tr>{% endfor %}
+            </table>
+          </figure>
+            <figure class="rp-badge-fig">
+              <img src="/assets/images/work/apex-insights/gsc-100-milestone.webp" alt="Google Search Impact badge from Search Console, a milestone of 100 clicks for apexinsights.racing" width="687" height="718" loading="lazy" />
+              <figcaption class="rp-cap">100 clicks from Google Search within a month of moving to the new domain.</figcaption>
+            </figure>
+          </div>
+          <ol class="rp-kf">
+            <li><span class="rp-n">01</span><div><h3>Structure over prose</h3><p>Index pages use stat strips, breakdown tables and a short FAQ rather than long guides. "GT3 teams in 2026" was one of the first searches Apex showed up for.</p></div></li>
+            <li><span class="rp-n">02</span><div><h3>A weekly measurement loop</h3><p>Each week is compared with an eight week baseline, with gates that filter out race weekend swings and small numbers. A learnings log grades each claim as a hypothesis, supported or confirmed.</p></div></li>
+            <li><span class="rp-n">03</span><div><h3>One change per experiment</h3><p>Before shipping 266 driver pages I snapshotted the baseline, then measured the same pages and queries weeks later.</p></div></li>
+            <li><span class="rp-n">04</span><div><h3>A clean domain move</h3><p>In October the site moved from apexinsights.xyz to apexinsights.racing with permanent redirects and a Change of Address in Search Console. Impressions kept climbing through the move, and the new domain passed 100 clicks from Google within its first month.</p></div></li>
+          </ol>
+        </div>
+
+        <div class="rp-blk">
+          <h2>Stories, reels and the podcast</h2>
+          <p class="rp-blk-p">F1 has plenty of data-led content, and GT3 has much less. So the data becomes stories on the site, and the stories become reels. Each reel is built as 1080 by 1920 HTML frames on its own small design system, then rendered to video.</p>
+          <div class="rp-figs rp-figs-4">
+            <figure class="rp-fig rp-fig-tall"><img src="/assets/images/work/apex-insights/reel-bop-2026.webp" alt="Reel cover. SRO changed the BoP 35 times, mid-weekend at 8 of 9 rounds. Did it actually work?" width="540" height="960" loading="lazy" /></figure>
+            <figure class="rp-fig rp-fig-tall"><img src="/assets/images/work/apex-insights/reel-gt3-explainer.webp" alt="Reel cover. You know F1. Meet the series where you could actually be on the grid." width="540" height="960" loading="lazy" /></figure>
+            <figure class="rp-fig rp-fig-tall"><img src="/assets/images/work/apex-insights/reel-sprint-cup-50-af-corse.webp" alt="Reel cover for a Sprint Cup story on AF Corse" width="540" height="960" loading="lazy" /></figure>
+            <figure class="rp-fig rp-fig-tall"><img src="/assets/images/work/apex-insights/reel-gtwc-r7-nurburgring-practice.webp" alt="Reel cover for Nürburgring practice in round 7 of GT World Challenge Europe" width="540" height="960" loading="lazy" /></figure>
+          </div>
+          <p class="rp-cap">Four of 16 reels. Nine data and editorial stories are live, and three podcast episodes.</p>
+        </div>
+
+        <div class="rp-blk">
+          <h2>What didn't work</h2>
+          <ul class="rp-learn rp-miss">
+            <li>{% include icon.html name="close" %}<span>A 600 word prose guide on the teams page. It was off-brand for a data site, so it was replaced with a structured page.</span></li>
+            <li>{% include icon.html name="close" %}<span>Hidden headings that repeated the team list for search engines. They created about 38 duplicate headings and were reverted.</span></li>
+            <li>{% include icon.html name="close" %}<span>Publishing and waiting. A week after launch, 6 of 7 story pages were still unknown to Google. Sitemaps, IndexNow and manual requests are now part of every release.</span></li>
+            <li>{% include icon.html name="close" %}<span>Accents in race names turned into broken slugs like "n-rburgring". Fixed with redirects to clean URLs.</span></li>
+          </ul>
+        </div>
+
+        <div class="rp-blk">
+          <h2>What I owned</h2>
+          <ul class="rp-learn">
+            <li>{% include icon.html name="check" %}<span>The idea, the product and the information architecture</span></li>
+            <li>{% include icon.html name="check" %}<span>Design for the site and the reels</span></li>
+            <li>{% include icon.html name="check" %}<span>The code, the data pipeline and the analysis</span></li>
+            <li>{% include icon.html name="check" %}<span>SEO, the measurement loop, the stories, the podcast and socials</span></li>
+          </ul>
+          <div class="rp-chips">
+            <span>product</span><span>design</span><span>Next.js</span><span>Supabase</span><span>data pipelines</span><span>entity SEO</span><span>growth experiments</span><span>content</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="rp-side rp-cs-side" aria-label="About Apex Insights">
+        <div class="rp-dl rp-now">
+          <h3>Apex Insights</h3>
+          <ul class="rp-learn">
+            <li>{% include icon.html name="check" %}<span>Founder, built solo</span></li>
+            <li>{% include icon.html name="check" %}<span>Started in July 2026</span></li>
+            <li>{% include icon.html name="check" %}<span>GT3 data, stories, reels and a podcast</span></li>
+          </ul>
+          <a class="rp-btn rp-dark" href="mailto:anjayyadaav379@gmail.com?subject=Building%20something%20like%20Apex%20Insights">Build something like this</a>
+          <a class="rp-link rp-now-alt" href="https://www.apexinsights.racing/" target="_blank" rel="noopener">Visit apexinsights.racing {% include icon.html name="arrow" %}</a>
+        </div>
+        <nav class="rp-toc" data-toc hidden aria-labelledby="toc-h">
+          <span class="rp-eyebrow" id="toc-h">On this page</span>
+          <ol></ol>
+        </nav>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="rp-rel rp-light" aria-labelledby="rel-h" data-rail>
+    <div class="rp-wrap">
+      <div class="rp-rel-top">
+        <div class="rp-sec-head">
+          <h2 id="rel-h" class="rp-display">Read more</h2>
+          {% include arrows.html label="related item" %}
+        </div>
+        <div class="rp-rail">
+          {%- assign rel_slugs = "gt3-knowledge-base-seo-apex-insights,seo-automation-recommendation-system,six-months-of-aeo-experiments" | split: "," %}
+          {%- for slug in rel_slugs %}
+          {%- assign rel_url = "/blog/" | append: slug | append: "/" %}
+          {%- assign rp = site.posts | where: "url", rel_url | first %}
+          {%- if rp %}{% include post-card.html post=rp %}{% endif %}
+          {%- endfor %}
+          <a class="rp-gcard" href="https://www.apexinsights.racing/stories/kessel-racing-2026" target="_blank" rel="noopener">
+            <div class="rp-shot"><img src="/assets/images/work/apex-insights/car-poster.webp" alt="" loading="lazy" /></div>
+            <div class="rp-meta"><span>Data story</span></div>
+            <h3>Kessel Racing won where it started at the front</h3>
+            <p>A data story on Kessel Racing's 2026 season, built from the Apex pipeline.</p>
+            <span class="rp-go">Read on Apex {% include icon.html name="arrow" %}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% include site-close.html
+     cta_h="Want a site that search understands this well? Ask me."
+     cta_sub="I'll look at how your pages, data and topics connect, and where Google and AI answers are missing you. Happy to talk it through before either of us commits to anything." %}
+
+</body>
+</html>

@@ -173,14 +173,14 @@
           {%- if rp %}{% include post-card.html post=rp %}{% endif %}
           {%- endfor %}
           <a class="rp-gcard" href="/blog/text-embeddings-for-aeo-and-seo/">
-            <div class="rp-scene rp-wide"><div class="rp-bk">{% include covers/exp-semantic.svg %}</div></div>
+            {% include cover.html kind="flat" svg="exp-semantic" class="rp-wide" %}
             <div class="rp-meta"><span>Experiment</span></div>
             <h3>Semantic Content Mapping</h3>
             <p>Using embeddings to visualize relationships between pages and detect content gaps.</p>
             <span class="rp-go">Read {% include icon.html name="arrow" %}</span>
           </a>
           <a class="rp-gcard" href="/work/#embedding-analyzer">
-            <div class="rp-scene rp-wide"><div class="rp-bk">{% include covers/embedding-analyzer.svg %}</div></div>
+            {% include cover.html kind="flat" svg="embedding-analyzer" class="rp-wide" %}
             <div class="rp-meta"><span>Tool</span></div>
             <h3>Embedding Similarity Analyzer</h3>
             <p>Detects redundancy and topic drift across a site's pages with vector embeddings.</p>

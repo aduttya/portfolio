@@ -285,3 +285,11 @@ function store(get, val) {
     if (visible && !raf) raf = requestAnimationFrame(loop);
   });
 })();
+
+/* ── Ambient videos: hold on the poster frame for reduced motion ── */
+(function () {
+  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('video[autoplay][muted]').forEach(function (v) {
+    v.removeAttribute('autoplay'); v.pause(); v.preload = 'none';
+  });
+})();

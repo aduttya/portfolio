@@ -1,0 +1,37 @@
+{%- comment -%}
+  Card cover. The shape says what kind of thing the card is:
+    book   research papers and reports (the 3D book scene)
+    flat   tools and experiments: the cover's diagram, full-bleed, no title
+    frame  products: a browser window with a screenshot (img), or a brand
+           panel until a screenshot exists (brand = flozi|neue|analyse|apex)
+    stat   case studies: one result number
+    video  a muted looping clip (src, poster), for projects with one
+  Params: kind, svg (cover name), class (extra scene classes, e.g. rp-thumb
+  rp-wide), url (frame domain), name, brand, img, alt, num, label, sub.
+{%- endcomment -%}
+{%- assign k = include.kind | default: "book" -%}
+{%- if k == "book" -%}
+<div class="rp-scene {{ include.class }}"><div class="rp-bk">{% include covers/{{ include.svg }}.svg %}</div></div>
+{%- elsif k == "flat" -%}
+{%- capture art %}{% include covers/{{ include.svg }}.svg %}{% endcapture -%}
+<div class="rp-scene rp-flat {{ include.class }}">{{ art | replace_first: "<svg ", '<svg preserveAspectRatio="xMidYMid slice" aria-hidden="true" ' }}</div>
+{%- elsif k == "frame" -%}
+<div class="rp-scene rp-frame {{ include.class }}">
+  <div class="rp-win">
+    <div class="rp-win-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ include.url }}</span></div>
+    {%- if include.img %}
+    <img class="rp-win-shot" src="{{ include.img }}" alt="{{ include.alt }}" loading="lazy" />
+    {%- else %}
+    <div class="rp-win-body rp-co-brand rp-co-{{ include.brand }}"><span class="rp-co-name">{{ include.name }}</span></div>
+    {%- endif %}
+  </div>
+</div>
+{%- elsif k == "video" -%}
+<div class="rp-scene rp-vid {{ include.class }}"><video src="{{ include.src }}" poster="{{ include.poster }}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+{%- elsif k == "stat" -%}
+<div class="rp-scene rp-statc {{ include.class }}">
+  <span class="rp-statc-num">{{ include.num }}</span>
+  <span class="rp-statc-l">{{ include.label }}</span>
+  {%- if include.sub %}<span class="rp-statc-s">{{ include.sub }}</span>{% endif %}
+</div>
+{%- endif -%}

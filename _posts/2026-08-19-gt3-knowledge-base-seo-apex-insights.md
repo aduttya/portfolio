@@ -97,3 +97,5 @@ Apex Insights is nowhere near finished. There are still more teams to cover, mor
 A brand-new site with no backlink advantage has started getting discovered for the topic it was deliberately built around. I didn't find a magic keyword, didn't try to become another generic motorsport publication, started with a problem: **why is it so difficult to understand GT3 from the web?** Then building the thing I wished existed.
 
 Now I'm watching to see how far that idea can go.
+
+I've since written up the whole project, from the data pipeline and design to how it grew, in the [Apex Insights case study](/work/apex-insights/).
