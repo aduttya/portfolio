@@ -546,6 +546,16 @@ a.rp-row:hover h3 { text-decoration: underline; text-underline-offset: 4px; text
   -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
   mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
 }
+.rp-co-analyse { background: var(--rust); color: var(--bone); }
+.rp-co-analyse::before {
+  background: repeating-linear-gradient(90deg, transparent 0 13px, var(--bone-veil-soft) 13px 14px);
+  -webkit-mask-image: linear-gradient(0deg, #000 0%, transparent 85%);
+  mask-image: linear-gradient(0deg, #000 0%, transparent 85%);
+}
+.rp-co-apex { background: var(--panel); color: var(--ink); }
+.rp-co-apex::before {
+  background: repeating-linear-gradient(135deg, transparent 0 16px, var(--ink-veil-soft) 16px 18px);
+}
 .rp-co-tag { align-self: flex-start; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-variation-settings: "wdth" 100, "wght" 600; }
 .rp-co-name { font-size: clamp(32px, 3.6vw, 48px); line-height: 1; letter-spacing: -.03em; font-variation-settings: var(--disp); }
 .rp-co-body { padding: 20px 14px 0; }
