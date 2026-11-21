@@ -1,31 +1,20 @@
 {%- comment -%}
-  Closing CTA (every page except 404) + footer. Ink, continuous.
-  Pages can tailor the ask with cta_h and cta_sub; both fall back to the default.
+  Footer for every page, plus a small "get in touch" popup that slides in
+  once the footer is on screen (bottom right on desktop, a pill above the
+  nav capsule on phones). Dismissing it keeps it hidden for the session.
+  Pages can set the popup line with cta_h; no_cta turns the popup off.
 {%- endcomment -%}
-<div class="rp-ink">
 {%- unless include.no_cta %}
-  <section class="cx-close" aria-labelledby="cx-h">
-    <div class="rp-wrap">
-      <span class="rp-eyebrow">Get in touch</span>
-      <h2 id="cx-h" class="cx-close-h rp-display">{{ include.cta_h | default: "Building something, or wondering how your product shows up in AI search? Ask me." }}</h2>
-      <p class="cx-close-sub">{{ include.cta_sub | default: "A product idea, a growth problem, or your visibility in ChatGPT and AI Overviews. Happy to look at your specific situation before either of us talks about working together." }}</p>
-      <div class="cx-dcs">
-        <a class="cx-dc" href="mailto:anjayyadaav379@gmail.com">
-          <span class="rp-eyebrow">Email</span>
-          <span class="cx-dc-h">Email me</span>
-          <span class="cx-dc-d">anjayyadaav379@gmail.com</span>
-          <span class="cx-dc-f"><span>Opens your mail app</span><i>{% include icon.html name="arrow" %}</i></span>
-        </a>
-        <a class="cx-dc" href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener">
-          <span class="rp-eyebrow">LinkedIn</span>
-          <span class="cx-dc-h">Send me a DM</span>
-          <span class="cx-dc-d">linkedin.com/in/ajayyadav420</span>
-          <span class="cx-dc-f"><span>Opens LinkedIn</span><i>{% include icon.html name="arrow" %}</i></span>
-        </a>
-      </div>
-    </div>
-  </section>
+<aside class="cx-pop" data-cx-pop hidden aria-label="Get in touch">
+  <p class="cx-pop-h">{{ include.cta_h | default: "Building something? Let's talk." }}</p>
+  <div class="cx-pop-acts">
+    <a class="rp-btn" href="mailto:anjayyadaav379@gmail.com">Email me</a>
+    <a class="rp-btn rp-line" href="https://linkedin.com/in/ajayyadav420" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <button class="cx-pop-x" type="button" data-cx-close aria-label="Close">{% include icon.html name="close" %}</button>
+</aside>
 {%- endunless %}
+<div class="rp-ink ft-wrap">
   <footer class="ft">
     <div class="rp-wrap">
       <div class="ft-main">
@@ -64,4 +53,4 @@
     </div>
   </footer>
 </div>
-<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>

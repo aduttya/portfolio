@@ -1,7 +1,7 @@
 {%- comment -%}
   Two actions for a project card: the case study (only once that page
   exists, so cards can name a case study before it ships) and the live site.
-  Params: case (site path, e.g. /work/flozi/), url, name (for screen readers).
+  Params: case (site path, e.g. /work/flozi/), url (optional), name (for screen readers).
 {%- endcomment -%}
 {%- assign cs = nil %}
 {%- if include.case %}{% assign cs = site.pages | where: "url", include.case | first %}{% endif %}
@@ -9,5 +9,7 @@
   {%- if cs %}
   <a class="rp-btn rp-dark" href="{{ include.case }}">View case study<span class="sr-only"> for {{ include.name }}</span></a>
   {%- endif %}
+  {%- if include.url %}
   <a class="rp-btn rp-line" href="{{ include.url }}" target="_blank" rel="noopener">Visit site<span class="sr-only"> of {{ include.name }} (opens in a new tab)</span> {% include icon.html name="arrow" %}</a>
+  {%- endif %}
 </div>

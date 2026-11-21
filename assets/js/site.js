@@ -293,3 +293,23 @@ function store(get, val) {
     v.removeAttribute('autoplay'); v.pause(); v.preload = 'none';
   });
 })();
+
+/* ── Get in touch popup: in when the footer shows, gone for the session once closed ── */
+(function () {
+  var pop = document.querySelector('[data-cx-pop]');
+  var foot = document.querySelector('.ft');
+  if (!pop || !foot || !('IntersectionObserver' in window)) return;
+  var KEY = 'cx-pop-closed';
+  try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+  pop.hidden = false;
+  var io = new IntersectionObserver(function (entries) {
+    pop.classList.toggle('is-in', entries[0].isIntersecting);
+  }, { threshold: 0.15 });
+  io.observe(foot);
+  pop.querySelector('[data-cx-close]').addEventListener('click', function () {
+    pop.classList.remove('is-in');
+    io.disconnect();
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    setTimeout(function () { pop.hidden = true; }, 300);
+  });
+})();

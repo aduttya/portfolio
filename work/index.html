@@ -6,17 +6,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {% include head-common.html %}
-  <title>Work — AI Search Projects, Research &amp; Experiments</title>
-  <meta name="description" content="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav." />
+  <title>Work | Products Ajay Yadav Built and Grew</title>
+  <meta name="description" content="Case studies, products, tools and experiments by Ajay Yadav. Apex Insights, Flozi, Neue Analyse and Layers, from the idea and the build to the growth that followed." />
   <link rel="canonical" href="https://aduttya.com/work/" />
 
 {% include head-meta.html
      type="website"
      url="https://aduttya.com/work/"
-     title="Work — AI Search Projects, Research & Experiments"
-     description="Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav."
+     title="Work | Products Ajay Yadav Built and Grew"
+     description="Case studies, products, tools and experiments by Ajay Yadav. Apex Insights, Flozi, Neue Analyse and Layers, from the idea and the build to the growth that followed."
      image="/assets/images/og/work.png"
-     image_alt="AI search projects, research and experiments in search visibility, retrievability and answer engine optimization"
+     image_alt="Products Ajay Yadav built and grew, with case studies, tools and experiments"
      image_width="1200"
      image_height="630" %}
 
@@ -27,9 +27,9 @@
     "@graph": [
       {
         "@type": "CollectionPage",
-        "name": "Work — AI Search Projects, Research & Experiments",
+        "name": "Work | Products Ajay Yadav Built and Grew",
         "url": "https://aduttya.com/work/",
-        "description": "Projects, research, and experiments in AI search visibility, retrievability, and answer engine optimization, built by Ajay Yadav.",
+        "description": "Case studies, products, tools and experiments by Ajay Yadav. Apex Insights, Flozi, Neue Analyse and Layers, from the idea and the build to the growth that followed.",
         "author": {
           "@type": "Person",
           "@id": "https://aduttya.com/#person",
@@ -65,70 +65,177 @@
   <section class="rp-hero rp-compact rp-ink">
     <div class="rp-wrap">
       <span class="rp-eyebrow">Work</span>
-      <h1 class="rp-display">Work. <span class="rp-dim">I build the products and run the experiments that test what actually gets cited.</span></h1>
+      <h1 class="rp-display">Products I've built and grown, and what happened.</h1>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="rp-sec rp-light" aria-labelledby="proj-h" data-rail>
+  <!-- Case studies -->
+  <section class="rp-sec rp-light" aria-labelledby="cs-h" data-rail>
     <div class="rp-wrap">
       <div class="rp-sec-head">
         <div>
-          <span class="rp-eyebrow">Projects</span>
-          <h2 id="proj-h" class="rp-display">Projects. <span class="rp-dim">Live products and the systems behind them.</span></h2>
+          <span class="rp-eyebrow">Selected work</span>
+          <h2 id="cs-h" class="rp-display">From the idea to the growth.</h2>
         </div>
         {% include arrows.html label="project" %}
       </div>
       <div class="rp-rail">
         <div class="rp-gcard">
+          {% include cover.html kind="video" src="/assets/images/work/apex-insights/car.mp4" poster="/assets/images/work/apex-insights/car-poster.webp" %}
+          <div class="rp-meta"><span class="rp-badge">Case study</span><span>Founder &middot; 2026 to now</span></div>
+          <h3>Apex Insights</h3>
+          <p>A GT3 racing data product built solo, from the data pipeline and design to the growth.</p>
+          <p class="rp-result"><b>6.7&times;</b> monthly Google impressions, July to October 2026</p>
+          {% include project-actions.html case="/work/apex-insights/" url="https://www.apexinsights.racing/" name="Apex Insights" %}
+        </div>
+        <div class="rp-gcard">
           {% include cover.html kind="frame" url="flozi.io" brand="flozi" name="Flozi" %}
-          <div class="rp-meta"><span class="rp-badge">Flagship</span><span>Product &amp; Technical Lead &middot; Live product</span></div>
+          <div class="rp-meta"><span>Partner, Product &amp; Technical Lead &middot; 2024 to now</span></div>
           <h3>Flozi</h3>
-          <p>Platform designed to analyze how websites perform in AI search systems and provide guidance for improving retrievability and citations.</p>
-          <div class="rp-chips"><span>AI search visibility</span><span>retrievability analysis</span><span>AEO diagnostics</span></div>
+          <p>An AI growth engine for websites. I brought the idea, defined the product, ran QA and releases, and lead its AEO growth.</p>
           {% include project-actions.html case="/work/flozi/" url="https://flozi.io/" name="Flozi" %}
         </div>
         <div class="rp-gcard">
-          {% include cover.html kind="video" src="/assets/images/work/apex-insights/car.mp4" poster="/assets/images/work/apex-insights/car-poster.webp" %}
-          <div class="rp-meta"><span>Founder &middot; Live product</span></div>
-          <h3>Apex Insights</h3>
-          <p>Educational platform for GT3 racing. Championships, teams, drivers and race weekends with round-by-round results, built as a testbed for entity-based SEO and answer engine optimization on a real, growing site.</p>
-          <div class="rp-chips"><span>GT3 racing data</span><span>entity SEO</span><span>structured data</span></div>
-          {% include project-actions.html case="/work/apex-insights/" url="https://www.apexinsights.racing/" name="Apex Insights" %}
+          {% include cover.html kind="frame" url="analyse.neue.world" brand="analyse" name="Neue Analyse" %}
+          <div class="rp-meta"><span>Builder &middot; 2025 to now</span></div>
+          <h3>Neue Analyse</h3>
+          <p>Industry research and website audits, built end to end, from the research and audit system to the code and design.</p>
+          {% include project-actions.html case="/work/neue-analyse/" url="https://analyse.neue.world/" name="Neue Analyse" %}
         </div>
-        <div class="rp-gcard" id="embedding-analyzer">
-          {% include cover.html kind="flat" svg="embedding-analyzer" %}
-          <div class="rp-meta"><span>Experiment</span></div>
-          <h3>Embedding Similarity Analyzer</h3>
-          <p>System that analyzes semantic similarity across website pages using vector embeddings and cosine similarity to detect redundancy and topic drift.</p>
-          <div class="rp-chips"><span>vector embeddings</span><span>cosine similarity</span><span>semantic clustering</span></div>
-        </div>
-        <div class="rp-gcard" id="ai-seo-system">
-          {% include cover.html kind="flat" svg="ai-seo-system" %}
-          <div class="rp-meta"><span>Internal system</span></div>
-          <h3>AI SEO Execution System</h3>
-          <p>AI-assisted workflow system for executing SEO tasks faster using modern AI tools combined with traditional SEO platforms.</p>
-          <div class="rp-chips"><span>AI automation</span><span>SEO execution</span><span>content optimization</span></div>
+        <div class="rp-gcard">
+          {% include cover.html kind="brand" brand="layers" name="Layers" %}
+          <div class="rp-meta"><span>Product and engineering lead &middot; 2022 to 2024</span></div>
+          <h3>Layers</h3>
+          <p>A protocol that gives freelancers their own identity and data. I designed it, wrote and deployed the smart contracts on Polygon and Ethereum, and led the team.</p>
+          {% include project-actions.html case="/work/layers/" name="Layers" %}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Research -->
-  <section class="rp-strip rp-paper" aria-labelledby="res-h">
+  <!-- Also worked on -->
+  <section class="rp-sec rp-tight rp-light" aria-labelledby="also-h">
     <div class="rp-wrap">
-      <div class="rp-strip-head">
+      <div class="rp-sec-head">
         <div>
-          <span class="rp-eyebrow">Research &middot; Pilot study &middot; GPT-4o &middot; April 2026</span>
-          <h2 id="res-h" class="rp-display">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h2>
-          <p class="rp-lede">Introduces ISIC, a four-dimensional probabilistic visibility model (Inclusion, Stability, Influence, Coverage), as the measurement framework for AI-driven discovery. Empirically validates that LLM and Google search channels direct buyers toward fundamentally different vendors, with an average Jaccard overlap of 0.03 across 27 B2B CRM queries.</p>
-          <div class="rp-chips"><span>AEO measurement</span><span>probabilistic visibility</span><span>LLM citation bias</span><span>B2B discovery</span></div>
+          <span class="rp-eyebrow">Also worked on</span>
+          <h2 id="also-h" class="rp-display">More projects.</h2>
         </div>
-        <a class="rp-btn rp-dark" href="/research/beyond-rankings/">Read the paper</a>
       </div>
-      <div class="rp-strip-foot">
-        <a class="rp-link" href="/research/">All research →</a>
+      <div class="rp-rows">
+        <a class="rp-row rp-nothumb" href="https://www.neue.world/" target="_blank" rel="noopener">
+          <div><small>SEO &amp; AEO Growth Lead &middot; 2025 to now</small><h3>Neue World</h3><p>The SEO and AEO growth service for clients, from analytics diagnosis to AI workflows.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens neue.world)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="https://www.ayesadreamcouture.com/" target="_blank" rel="noopener">
+          <div><small>Website</small><h3>Ayesa Dream Couture</h3><p>The portfolio site for a couture label.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens ayesadreamcouture.com)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="/">
+          <div><small>Website</small><h3>aduttya.com</h3><p>This site. Design, build, and its own SEO and AEO.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}</span>
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="rp-sec rp-tight rp-light" aria-labelledby="tools-h" data-rail>
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Tools</span>
+          <h2 id="tools-h" class="rp-display">Tools I built for the work.</h2>
+        </div>
+      </div>
+      <div class="rp-rail">
+        <div class="rp-gcard" id="seo-aeo-skill">
+          {% include cover.html kind="frame" url="github.com/aduttya/claude-skills" brand="skill" name="SEO &amp; AEO skill" %}
+          <div class="rp-meta"><span class="rp-badge">Open source</span><span>Claude skill &middot; MIT</span></div>
+          <h3>Content SEO &amp; AEO skill for Claude</h3>
+          <p>A reusable Claude skill that audits, improves and writes web content for both search engines and AI answers. The repo includes a worked analysis of flozi.io.</p>
+          <div class="rp-chips"><span>AEO</span><span>content audits</span><span>structured data</span></div>
+          <div class="rp-card-acts">
+            <a class="rp-btn rp-dark" href="https://github.com/aduttya/claude-skills" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+        <div class="rp-gcard" id="embedding-analyzer">
+          {% include cover.html kind="flat" svg="embedding-analyzer" %}
+          <div class="rp-meta"><span>Tool</span></div>
+          <h3>Embedding Similarity Analyzer</h3>
+          <p>Analyzes semantic similarity across a site's pages with vector embeddings and cosine similarity, to find redundancy and topic drift.</p>
+          <div class="rp-chips"><span>vector embeddings</span><span>cosine similarity</span><span>semantic clustering</span></div>
+          <div class="rp-card-acts">
+            <a class="rp-btn rp-dark" href="/blog/text-embeddings-for-aeo-and-seo/">Read how it works</a>
+            <a class="rp-btn rp-line" href="mailto:anjayyadaav379@gmail.com?subject=About%20the%20Embedding%20Similarity%20Analyzer">Ask me about it</a>
+          </div>
+        </div>
+        <div class="rp-gcard" id="ai-seo-system">
+          {% include cover.html kind="flat" svg="ai-seo-system" %}
+          <div class="rp-meta"><span>Internal system</span></div>
+          <h3>AI SEO Execution System</h3>
+          <p>An AI-assisted workflow for running SEO tasks faster, combining AI tools with traditional SEO platforms.</p>
+          <div class="rp-chips"><span>AI automation</span><span>SEO execution</span><span>content optimization</span></div>
+          <div class="rp-card-acts">
+            <a class="rp-btn rp-dark" href="/blog/seo-automation-recommendation-system/">Read how it works</a>
+            <a class="rp-btn rp-line" href="mailto:anjayyadaav379@gmail.com?subject=About%20the%20AI%20SEO%20Execution%20System">Ask me about it</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering -->
+  <section class="rp-sec rp-tight rp-light" aria-labelledby="eng-h">
+    <div class="rp-wrap">
+      <div class="rp-sec-head">
+        <div>
+          <span class="rp-eyebrow">Engineering</span>
+          <h2 id="eng-h" class="rp-display">From the blockchain years.</h2>
+        </div>
+        <a class="rp-link" href="https://github.com/aduttya?tab=repositories" target="_blank" rel="noopener">All repositories &rarr;</a>
+      </div>
+      <div class="rp-rows">
+        <a class="rp-row rp-nothumb" href="https://github.com/aduttya/In-Browser-Solidity-Compiler" target="_blank" rel="noopener">
+          <div><small>TypeScript &middot; Solidity &middot; 2023</small><h3>In-browser Solidity compiler</h3><p>Compiles Solidity contracts right in the browser, built with Next.js and solc-js.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on GitHub)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="https://github.com/aduttya/solanaNFT" target="_blank" rel="noopener">
+          <div><small>Rust &middot; Solana &middot; 2023</small><h3>Solana NFT</h3><p>An NFT project on Solana, written in Rust with Anchor and Metaplex.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on GitHub)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="https://github.com/aduttya/Quilt" target="_blank" rel="noopener">
+          <div><small>TypeScript &middot; Solana &middot; 2022</small><h3>Quilt</h3><p>Ethereum contracts ported to Solana, including how storage mapping differs between the two chains.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on GitHub)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="https://github.com/aduttya/Solidity-Storage-Collision" target="_blank" rel="noopener">
+          <div><small>Solidity &middot; 2023</small><h3>Solidity storage collisions</h3><p>Code to avoid storage collisions in Solidity, a common bug in proxy contracts.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on GitHub)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="https://github.com/aduttya/smartContractHacks" target="_blank" rel="noopener">
+          <div><small>Solidity &middot; 2021</small><h3>Smart contract hacks</h3><p>Working examples of common smart contract exploits, reentrancy and delegatecall.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on GitHub)</span></span>
+        </a>
+        <a class="rp-row rp-nothumb" href="https://github.com/aduttya/First-Blockchain-Project" target="_blank" rel="noopener">
+          <div><small>JavaScript &middot; 2021</small><h3>A blockchain from scratch</h3><p>A small blockchain built without any framework, to understand how one works underneath.</p></div>
+          <span class="rp-ar">{% include icon.html name="arrow" %}<span class="sr-only">(opens on GitHub)</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="rp-paperband rp-paper" aria-labelledby="res-h">
+    <div class="rp-wrap">
+      <a class="rp-paperband-in" href="/research/beyond-rankings/">
+        <div class="rp-paperband-cv">{% include cover.html kind="book" svg="beyond-rankings" %}</div>
+        <div>
+          <span class="rp-eyebrow">Research &middot; Pilot study &middot; April 2026</span>
+          <h2 id="res-h" class="rp-display">Beyond Rankings: Measuring Vendor Visibility in AI-Driven Discovery</h2>
+          <p>AI and Google almost never send buyers to the same vendors. Across 27 B2B queries the average overlap was 0.03, so I proposed a new way to measure visibility.</p>
+        </div>
+        <span class="rp-btn rp-dark">Read the paper</span>
+      </a>
     </div>
   </section>
 
@@ -138,7 +245,7 @@
       <div class="rp-sec-head">
         <div>
           <span class="rp-eyebrow">Experiments</span>
-          <h2 id="exp-h" class="rp-display">Experiments.</h2>
+          <h2 id="exp-h" class="rp-display">Working notes from AI search tests.</h2>
         </div>
       </div>
       <div class="rp-rows">

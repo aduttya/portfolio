@@ -6,6 +6,7 @@
            panel until a screenshot exists (brand = flozi|neue|analyse|apex)
     stat   case studies: one result number
     video  a muted looping clip (src, poster), for projects with one
+    brand  a brand panel on its own, for projects with no live site
   Params: kind, svg (cover name), class (extra scene classes, e.g. rp-thumb
   rp-wide), url (frame domain), name, brand, img, alt, num, label, sub.
 {%- endcomment -%}
@@ -26,6 +27,8 @@
     {%- endif %}
   </div>
 </div>
+{%- elsif k == "brand" -%}
+<div class="rp-scene rp-brandc rp-co-{{ include.brand }} {{ include.class }}"><span class="rp-co-name">{{ include.name }}</span></div>
 {%- elsif k == "video" -%}
 <div class="rp-scene rp-vid {{ include.class }}"><video src="{{ include.src }}" poster="{{ include.poster }}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
 {%- elsif k == "stat" -%}
