@@ -15,6 +15,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 from tokens import rgb
 
+REPO_ROOT = os.path.join(os.path.dirname(__file__), os.pardir)
+
 FONT_PATH = os.path.join(
     os.path.dirname(__file__), os.pardir, "assets", "fonts", "Archivo-Variable.ttf"
 )
@@ -132,8 +134,10 @@ def wrap(draw, text, f, max_w):
     return lines
 
 
-def render(fmt, eyebrow, title, subtitle):
-    """Compose one card and return the image."""
+def render(fmt, eyebrow, title, subtitle, icon=None):
+    """Compose one card and return the image. `icon` is an optional PNG
+    path (relative to the repo root) placed in a right-hand column; the
+    text block narrows to make room for it."""
     s = FORMATS[fmt]
     w, h = s["size"]
     ink, bone, orange = rgb("--ink"), rgb("--bone"), rgb("--orange")
@@ -143,6 +147,13 @@ def render(fmt, eyebrow, title, subtitle):
     d = ImageDraw.Draw(img)
     m = s["margin"]
     max_w = w - 2 * m
+
+    if icon:
+        icon_d = round(min(w, h) * 0.40)
+        mark = Image.open(os.path.join(REPO_ROOT, icon)).convert("RGBA")
+        mark = mark.resize((icon_d, icon_d), Image.LANCZOS)
+        img.paste(mark, (w - m - icon_d, (h - icon_d) // 2), mark)
+        max_w -= icon_d + 56
 
     # Eyebrow: bold, uppercase, letter-spaced, orange - matching the site's
     # .meta kicker treatment paired with an orange accent.

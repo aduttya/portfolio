@@ -24,7 +24,7 @@ OG_OUT = "assets/images/og"
 POST_OUT = "assets/images/posts"
 SOCIAL_OUT = "assets/images/social"
 
-# (name, eyebrow, title, subtitle)
+# (name, eyebrow, title, subtitle[, icon png])
 CARDS = [
     ("home", "AI Search / SEO / AEO", "Ajay Yadav",
      "Product & Technical Lead working on AI search systems, SEO/AEO "
@@ -93,6 +93,11 @@ POST_CARDS = [
      "AI for Growth",
      "More experiments isn't better growth. Using human and AI "
      "intelligence to ask better questions and learn what works."),
+    ("og-gemini-notebook-claude", "Guide",
+     "How to Connect Gemini Notebook to Claude",
+     "Set up Google's Notebook MCP server as a Claude custom "
+     "connector in about 15 minutes.",
+     "assets/images/posts/gemini-icon.png"),
 ]
 
 
