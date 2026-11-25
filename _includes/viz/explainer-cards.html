@@ -1,0 +1,40 @@
+{%- comment -%}
+  Preview cards linking to the interactive logit explainers. Each card shows a
+  static miniature of what the explainer does. Used in posts and on the
+  explainers hub. Pass css="no" where the page already loads the stylesheet,
+  and h="h2" where the card titles should be top-level headings (default h3).
+{%- endcomment -%}
+{%- unless include.css == "no" %}
+<link rel="stylesheet" href="/assets/css/logit-explainer.css?v={{ site.time | date: '%s' }}" />
+{%- endunless %}
+{%- assign h = include.h | default: "h3" %}
+<div class="lx-cards{% if include.size == 'lg' %} lx-cards-lg{% endif %}">
+  <a class="lx-card" href="/research/explainers/how-llms-generate-text/">
+    <div class="lx-card-art" aria-hidden="true">
+      <div class="lx-mini-ctx"><span class="lx-chip">capital</span><span class="lx-chip">of</span><span class="lx-chip">France</span><span class="lx-chip">?</span><span class="lx-mini-ar">→</span><span class="lx-chip lx-gen">Paris</span></div>
+      <div class="lx-mini-bars">
+        <span class="on">Paris</span><i class="on" style="--w:80%"></i><em class="on">80.2%</em>
+        <span>London</span><i style="--w:11%"></i><em>10.8%</em>
+        <span>Berlin</span><i style="--w:7%"></i><em>6.6%</em>
+        <span>Rome</span><i style="--w:3%"></i><em>2.4%</em>
+      </div>
+    </div>
+    <span class="lx-k">Interactive · 1 of 2</span>
+    <{{ h }} class="lx-card-h">What are logits? How LLMs choose the next token</{{ h }}>
+    <span class="lx-card-p">Step through tokens, logits and softmax as the model picks its next word.</span>
+    <span class="lx-tags"><span>Tokens</span><span>Logits</span><span>Softmax</span><span>Temperature</span></span>
+    <span class="lx-go">Open the explainer →</span>
+  </a>
+  <a class="lx-card" href="/research/explainers/logit-monitoring/">
+    <div class="lx-card-art" aria-hidden="true">
+      <span class="lx-mini-cot">The user is asking several unusual questions. Perhaps…</span>
+      <div class="lx-chips"><span class="lx-chip lx-target lx-lit">the</span><span class="lx-chip lx-target lx-lit">user</span><span class="lx-chip lx-target lx-lit">is</span><span class="lx-chip lx-target lx-lit">testing</span><span class="lx-chip lx-target lx-lit">me</span></div>
+      <div class="lx-mini-prod"><code>0.8 × 0.7 × 0.9 × 0.6 × 0.8</code><b>24.192%</b></div>
+    </div>
+    <span class="lx-k">Interactive · 2 of 2</span>
+    <{{ h }} class="lx-card-h">What is logit monitoring? Scoring what an LLM never says</{{ h }}>
+    <span class="lx-card-p">Score a sentence the model never writes, and compare it with what it actually says.</span>
+    <span class="lx-tags"><span>Teacher forcing</span><span>Sequence probability</span><span>Evaluation awareness</span></span>
+    <span class="lx-go">Open the explainer →</span>
+  </a>
+</div>

@@ -41,6 +41,14 @@ CARDS = [
     ("about", "About", "From Blockchain to AI Search",
      "Ajay Yadav's background, and current work as Product & Technical "
      "Lead at Flozi and SEO/AEO Lead at Neue World."),
+    ("explainer-llm-generation", "Interactive Explainer",
+     "What Are Logits? How LLMs Choose the Next Token",
+     "Step through tokens, raw logits, softmax and temperature, "
+     "one prediction at a time."),
+    ("explainer-logit-monitoring", "Interactive Explainer",
+     "What Is Logit Monitoring?",
+     "Score a sentence a model never writes, and see how it is used "
+     "to study evaluation awareness."),
 ]
 
 POST_CARDS = [
@@ -98,6 +106,10 @@ POST_CARDS = [
      "Set up Google's Notebook MCP server as a Claude custom "
      "connector in about 15 minutes.",
      "assets/images/posts/gemini-icon.png"),
+    ("og-logits-evaluation-awareness", "AI Safety",
+     "What If We Could See What an AI Almost Said?",
+     "Logits, evaluation awareness, and a different way of thinking "
+     "about human-AI interaction safety."),
 ]
 
 

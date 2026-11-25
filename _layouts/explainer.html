@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% include head-common.html %}
+  <title>{{ page.seo_title | default: page.title }} — Ajay Yadav</title>
+  <meta name="description" content="{{ page.description }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <link rel="stylesheet" href="/assets/css/logit-explainer.css?v={{ site.time | date: '%s' }}" />
+
+  {%- comment -%}
+    Interactive explainers under /research/explainers/. The hub page sets
+    hub: true and lists the explainers instead of running one.
+  {%- endcomment -%}
+  {%- assign social_url = page.url | absolute_url -%}
+  {%- assign social_date = page.date | date_to_xmlschema -%}
+{% include head-meta.html
+     type="article"
+     url=social_url
+     title=page.title
+     description=page.description
+     published_time=social_date
+     image=page.og_image
+     image_alt=page.og_image_alt %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "{% if page.hub %}CollectionPage{% else %}LearningResource{% endif %}",
+        "name": "{{ page.title | escape }}",
+        "headline": "{{ page.title | escape }}",
+        "description": "{{ page.description | escape }}",
+        "url": "{{ page.url | absolute_url }}",
+        {%- unless page.hub %}
+        "learningResourceType": "Interactive explainer",
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true,
+        "interactivityType": "active",
+        {%- if page.teaches %}
+        "teaches": "{{ page.teaches | escape }}",
+        {%- endif %}
+        {%- endunless %}
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "inLanguage": "en",
+        {%- if page.og_image %}
+        "image": "{{ page.og_image | absolute_url }}",
+        {%- endif %}
+        "author": {
+          "@type": "Person",
+          "@id": "https://aduttya.com/#person",
+          "name": "Ajay Yadav",
+          "url": "https://aduttya.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aduttya.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://aduttya.com/research/" },
+          { "@type": "ListItem", "position": 3, "name": "Explainers", "item": "https://aduttya.com/research/explainers/" }
+          {%- unless page.hub %},
+          { "@type": "ListItem", "position": 4, "name": "{{ page.title | escape }}", "item": "{{ page.url | absolute_url }}" }
+          {%- endunless %}
+        ]
+      }
+    ]
+  }
+  </script>
+  {% include analytics.html %}
+</head>
+<body>
+
+{% include site-header.html %}
+
+<main id="main">
+  <section class="rp-xp rp-light">
+    <div class="rp-wrap">
+      <nav class="rp-crumbs" aria-label="Breadcrumb">
+        <a href="/research/">Research</a>{% include icon.html name="crumb" %}
+        {%- if page.hub %}
+        <span aria-current="page">Explainers</span>
+        {%- else %}
+        <a href="/research/explainers/">Explainers</a>{% include icon.html name="crumb" %}<span aria-current="page">{{ page.short | default: page.title }}</span>
+        {%- endif %}
+      </nav>
+      {%- if page.eyebrow %}
+      <span class="rp-eyebrow rp-xp-eye">{{ page.eyebrow }}</span>
+      {%- endif %}
+      <h1 class="rp-display">{{ page.title }}</h1>
+      {%- if page.lede %}
+      <p class="rp-lede">{{ page.lede }}</p>
+      {%- endif %}
+      <div class="rp-prose rp-xp-body">
+        {{ content }}
+      </div>
+
+      {%- if page.next_url or page.post_url %}
+      <nav class="rp-xp-next" aria-label="Keep going">
+        {%- if page.next_url %}
+        <a class="rp-xp-go" href="{{ page.next_url }}">
+          <span class="rp-eyebrow">{{ page.next_label | default: "Next explainer" }}</span>
+          <strong>{{ page.next_title }}</strong>
+          <span class="rp-go">Open {% include icon.html name="arrow" %}</span>
+        </a>
+        {%- endif %}
+        {%- if page.post_url %}
+        <a class="rp-xp-go" href="{{ page.post_url }}">
+          <span class="rp-eyebrow">Read the essay</span>
+          <strong>{{ page.post_title }}</strong>
+          <span class="rp-go">Read {% include icon.html name="arrow" %}</span>
+        </a>
+        {%- endif %}
+      </nav>
+      {%- endif %}
+    </div>
+  </section>
+</main>
+
+{% include site-close.html %}
+<script src="/assets/js/logit-explainer.js?v={{ site.time | date: '%s' }}" defer></script>
+
+</body>
+</html>

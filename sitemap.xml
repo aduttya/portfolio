@@ -40,6 +40,24 @@
   </url>
 
   <url>
+    <loc>https://aduttya.com/research/explainers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://aduttya.com/research/explainers/how-llms-generate-text/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://aduttya.com/research/explainers/logit-monitoring/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://aduttya.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

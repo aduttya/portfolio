@@ -1,0 +1,159 @@
+{%- comment -%}
+  Interactive logit explainer, one part per call.
+    part="gen"  how an LLM generates text (tokens, logits, softmax, selection)
+    part="mon"  how logit monitoring scores a sentence the model never generates
+    part="res"  the evaluation-awareness research context (static)
+  Behaviour lives in /assets/js/logit-explainer.js, styles in
+  /assets/css/logit-explainer.css. Pages include the stylesheet and script
+  once (the explainer layout does). Every number is an illustrative
+  teaching value computed in the script.
+{%- endcomment -%}
+{%- assign part = include.part | default: "gen" -%}
+{%- if part == "gen" %}
+<figure class="lx" data-lx-gen aria-label="Interactive explainer, how an LLM chooses the next token">
+  <div class="lx-how" role="note">
+    <span class="lx-how-k">How to use</span>
+    <ol>
+      <li><b>▶ Play</b> runs it for you</li>
+      <li>The <b class="lx-how-o">orange button</b> goes step by step</li>
+      <li>Tap <span class="lx-how-u">underlined</span> words for a definition</li>
+    </ol>
+  </div>
+  <ol class="lx-pipe" aria-label="Where you are in the pipeline" data-a-pipe>
+    <li><span>Input tokens</span></li>
+    <li><span>Transformer model</span></li>
+    <li><span>Output <span class="lx-term" tabindex="0" data-tip="A raw, unnormalised score the model gives one candidate token. Logits can be any real number, positive or negative.">logits</span></span></li>
+    <li><span><span class="lx-term" tabindex="0" data-tip="A function that turns a list of scores into probabilities that are all positive and add up to 100%.">Softmax</span></span></li>
+    <li><span>Selected token</span></li>
+  </ol>
+
+  <div class="lx-box">
+    <span class="lx-k"><span class="lx-term" tabindex="0" data-tip="Everything the model conditions on when it predicts the next token. Here, the prompt plus any tokens generated so far.">Context</span></span>
+    <p class="lx-prompt" data-a-prompt>What is the capital of France?</p>
+    <div class="lx-chips" data-a-ctx aria-live="polite"></div>
+  </div>
+
+  <div class="lx-box lx-out">
+    <div class="lx-out-top">
+      <span class="lx-k" data-a-outlabel>Candidate next tokens</span>
+      <div class="lx-seg" role="group" aria-label="Show values as">
+        <button type="button" data-a-view="logits" aria-pressed="true">Logits</button>
+        <button type="button" data-a-view="probs" aria-pressed="false" disabled>Probabilities</button>
+      </div>
+    </div>
+    <div class="lx-bars" data-a-bars></div>
+    <div class="lx-formula" data-a-formula aria-live="polite"></div>
+  </div>
+
+  <p class="lx-explain" data-a-explain aria-live="polite"></p>
+
+  <div class="lx-controls">
+    <button type="button" class="lx-btn" data-a-next>Split into tokens</button>
+    <button type="button" class="lx-btn lx-ghost lx-play" data-a-play aria-pressed="false">▶ Play</button>
+    <button type="button" class="lx-btn lx-ghost" data-a-reset>Reset</button>
+    <label class="lx-temp" data-a-tempwrap hidden>
+      <span><span class="lx-term" tabindex="0" data-tip="Logits are divided by the temperature before softmax. Below 1 sharpens the distribution, above 1 flattens it. The logits themselves do not change.">Temperature</span> <output data-a-tempval>1.00</output></span>
+      <input type="range" min="0.25" max="2" step="0.05" value="1" data-a-temp />
+    </label>
+  </div>
+
+  <div class="lx-notes">
+    <p><b>Decoding.</b> This demo uses greedy selection and always takes the most likely token. Real systems often sample from the distribution, shaped by temperature and other settings, so a less likely token can be chosen.</p>
+    <p><b>Tokenization.</b> Each word here is one token to keep things readable. Real tokenizers often split words into pieces, so <code>unbelievable</code> might become <code>un</code> <code>believ</code> <code>able</code>.</p>
+    <p><b>Vocabulary.</b> Only four candidates are shown. A real model scores every token in a <span class="lx-term" tabindex="0" data-tip="The fixed set of tokens a model can produce, usually tens of thousands to a few hundred thousand entries.">vocabulary</span>, and softmax runs over all of them. Here it runs over these four.</p>
+  </div>
+
+  <figcaption class="lx-cap">All numbers here are illustrative teaching values. They are not outputs from a real model.</figcaption>
+  <noscript><p class="lx-cap">This explainer needs JavaScript to run its steps.</p></noscript>
+</figure>
+{%- elsif part == "mon" %}
+<figure class="lx" data-lx-mon aria-label="Interactive explainer, how logit monitoring works">
+  <div class="lx-how" role="note">
+    <span class="lx-how-k">How to use</span>
+    <ol>
+      <li><b>▶ Play</b> runs it for you</li>
+      <li>The <b class="lx-how-o">orange button</b> scores one token at a time</li>
+      <li>Tap <span class="lx-how-u">underlined</span> words for a definition</li>
+    </ol>
+  </div>
+  <div class="lx-box">
+    <span class="lx-k">Context C &middot; the model's reasoning so far</span>
+    <p class="lx-prompt lx-cot">The user is asking several unusual questions. Perhaps&hellip;</p>
+  </div>
+
+  <div class="lx-box">
+    <span class="lx-k">Target sequence S &middot; chosen by the researcher</span>
+    <div class="lx-chips" data-b-target></div>
+    <p class="lx-sub">Scored against C, never appended to the conversation.</p>
+  </div>
+
+  <div class="lx-box">
+    <span class="lx-k">Conditional token probabilities</span>
+    <ol class="lx-cond" data-b-rows></ol>
+    <div class="lx-prod" data-b-prod aria-live="polite"></div>
+  </div>
+
+  <p class="lx-explain" data-b-explain aria-live="polite"></p>
+
+  <div class="lx-controls">
+    <button type="button" class="lx-btn" data-b-next>Score the first token</button>
+    <button type="button" class="lx-btn lx-ghost lx-play" data-b-play aria-pressed="false">▶ Play</button>
+    <button type="button" class="lx-btn lx-ghost" data-b-all>Score all</button>
+    <button type="button" class="lx-btn lx-ghost" data-b-reset>Reset</button>
+  </div>
+
+  <div class="lx-vs" data-b-vs hidden>
+    <div class="lx-vs-col lx-vs-gen">
+      <span class="lx-k">Actual generation</span>
+      <p class="lx-cot lx-small">The user is asking several unusual questions. Perhaps&hellip;</p>
+      <div class="lx-chips" data-b-gen aria-live="polite"></div>
+      <p class="lx-sub">Sampled by the model and appended to the conversation.</p>
+    </div>
+    <div class="lx-vs-col lx-vs-mon">
+      <span class="lx-k">Logit monitoring</span>
+      <p class="lx-cot lx-small">The user is asking several unusual questions. Perhaps&hellip;</p>
+      <div class="lx-chips" data-b-mon></div>
+      <p class="lx-sub">Scored by the researcher. <b data-b-monval>P(S | C) = 24.192%</b></p>
+    </div>
+    <p class="lx-climax">Generation tells us what the model actually produced. Logit monitoring lets us measure the likelihood of a predefined alternative continuation.</p>
+    <button type="button" class="lx-btn lx-ghost lx-replay" data-b-replay>Replay generation</button>
+  </div>
+
+  <div class="lx-notes">
+    <p><b>One pass, not five.</b> In practice a researcher appends S after C and runs a single <span class="lx-term" tabindex="0" data-tip="One run of the model over a sequence. It returns a next-token distribution at every position at once.">forward pass</span>. That returns the probability of each target token at its position. This is called <span class="lx-term" tabindex="0" data-tip="Feeding a fixed sequence into the model as if it had produced it, so you can read the probability it gives each token, without letting it choose.">teacher forcing</span>. The demo steps through the tokens one at a time so you can see what each probability is conditioned on.</p>
+    <p><b>One sentence, not a concept.</b> The result is the probability of this exact wording. It is not the probability that the model is evaluation aware. Many other sentences could express the same idea, and the paper itself monitored <code>The user might be testing</code>.</p>
+  </div>
+
+  <figcaption class="lx-cap">All numbers here are illustrative teaching values. They are not outputs from a real model and not results from the paper.</figcaption>
+  <noscript><p class="lx-cap">This explainer needs JavaScript to run its steps.</p></noscript>
+</figure>
+{%- elsif part == "res" %}
+<figure class="lx lx-static" aria-label="How logit monitoring is used in evaluation-awareness research">
+  <p class="lx-explain lx-lead">Researchers use this approach to investigate whether a model recognises that it is being evaluated, even when it never explicitly says so.</p>
+
+  <ol class="lx-flow">
+    <li><span>1</span>Evaluation prompt</li>
+    <li><span>2</span>Model processes context</li>
+    <li><span>3</span>Logits are inspected</li>
+    <li><span>4</span>Target sequence receives a likelihood score</li>
+    <li><span>5</span>Researchers analyse the signal</li>
+  </ol>
+
+  <dl class="lx-defs">
+    <div>
+      <dt>Evaluation awareness</dt>
+      <dd>The model recognises clues suggesting that it is being evaluated.</dd>
+    </div>
+    <div>
+      <dt>Verbalization</dt>
+      <dd>The model explicitly expresses that recognition in its generated reasoning.</dd>
+    </div>
+    <div>
+      <dt>Logit monitoring</dt>
+      <dd>Researchers inspect the probability of predefined evaluation-related sequences.</dd>
+    </div>
+  </dl>
+
+  <p class="lx-caution">A high probability of an evaluation-related sentence does not prove that the model is consciously aware of an evaluation or deliberately deceiving the evaluator.</p>
+</figure>
+{%- endif %}

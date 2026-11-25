@@ -1,0 +1,11 @@
+<svg class="cv" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Thumbnail for Logit Explainers: probability bars with one highlighted">
+<rect width="300" height="420" fill="#141210"/>
+<line x1="70" y1="190" x2="70" y2="340" stroke="#f0e8dc" stroke-opacity=".45" stroke-dasharray="3 4"/>
+<rect x="70" y="200" width="190" height="20" rx="4" fill="#fa6614"/><rect x="70" y="232" width="62" height="20" rx="4" fill="#98928a"/><rect x="70" y="264" width="38" height="20" rx="4" fill="#98928a"/><rect x="70" y="296" width="16" height="20" rx="4" fill="#98928a"/>
+<text x="20" y="215" fill="#fa6614" font-size="11" font-family="monospace">Paris</text><text x="20" y="247" fill="#98928a" font-size="11" font-family="monospace">London</text><text x="20" y="279" fill="#98928a" font-size="11" font-family="monospace">Berlin</text><text x="20" y="311" fill="#98928a" font-size="11" font-family="monospace">Rome</text>
+<rect x="20" y="356" width="260" height="1" fill="#f0e8dc" fill-opacity=".45"/>
+<text class="cv-t" x="20" y="48" fill="#f0e8dc" font-size="25">Logit</text><text class="cv-t" x="20" y="75" fill="#f0e8dc" font-size="25">Explainers</text><text x="20" y="106" fill="#98928a" font-size="7.4">What a model</text><text x="20" y="116" fill="#98928a" font-size="7.4">almost said</text>
+<text class="cv-b" x="280" y="42" fill="#f0e8dc" font-size="7.6" text-anchor="end" letter-spacing=".4">AJAY.YADAV</text>
+<text class="cv-m" x="20" y="398" fill="#f0e8dc" font-size="13" letter-spacing="-.2">Interactive</text>
+<text x="280" y="398" fill="#98928a" font-size="7.6" text-anchor="end">Explainer</text>
+</svg>
